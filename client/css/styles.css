@@ -124,8 +124,8 @@ main {
 
 /* Header styles */
 header {
-  background-color: var(--secondary-color);
-  color: var(--white-color);
+  background-color: var(--white-color);
+  color: var(--secondary-color);
   padding: 20px;
 }
 
@@ -151,6 +151,12 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* Footer logo styles */
+footer img {
+  width: 150px;
+  margin: 10px auto;
 }
 
 /* User detail styles */
