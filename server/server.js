@@ -16,10 +16,12 @@ app.use(cors())
 app.use(express.json())
 
 // Import routes
-const userRoutes = require('./routes/users') // Make sure the file is named 'users.js', not 'user.js'
+const userRoutes = require('./routes/users')
+const transactionRoutes = require('./routes/transactions')
 
 // Use routes
 app.use('/user', userRoutes)
+app.use('/transactions', transactionRoutes)
 
 // Connect to MongoDB
 mongoose

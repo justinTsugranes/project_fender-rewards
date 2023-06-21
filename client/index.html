@@ -7,14 +7,13 @@
     <title>Fender Rewards</title>
     <meta name="description" content="A brief description" />
     <meta name="author" content="Insert site name" />
-    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="css/styles.css" />
   </head>
 
   <body>
     <header>
       <!-- Accessibility Skip Link -->
       <a href="#main" class="skip">Skip to main content</a>
-      <p>Fender Rewards</p>
     </header>
 
     <nav aria-label="main">
@@ -22,16 +21,28 @@
     </nav>
 
     <main id="main">
-      <!-- Add your main content here -->
-      <h1>Heading</h1>
+      <!-- <h1>Heading</h1> -->
       <!-- This is a section in Main Content -->
-      <section></section>
+      <section>
+        <div id="user-detail">
+          <h2>User Detail</h2>
+          <label for="user-id">Enter User ID:</label>
+          <input type="number" id="user-id" />
+          <button id="fetch-user-btn">Fetch User Data</button>
+          <p id="selected-user">
+            <!-- Selected user details will be dynamically populated here -->
+          </p>
+          <label for="new-points">Update Points:</label>
+          <input type="number" id="new-points" />
+          <button id="update-points-btn">Update Points</button>
+        </div>
+      </section>
     </main>
 
-    <footer>
+    <!-- <footer>
       <p>Footer</p>
-    </footer>
+    </footer> -->
 
-    <script src="js/scripts.js"></script>
+    <script src="js/client.js"></script>
   </body>
 </html>
