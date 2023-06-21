@@ -1,10 +1,13 @@
 // Reference needed DOM elements
-const userIdInput = document.getElementById('user-id')
-const fetchUserBtn = document.getElementById('fetch-user-btn')
-const selectedUserElement = document.getElementById('selected-user')
-const newPointsInput = document.getElementById('new-points')
-const updatePointsBtn = document.getElementById('update-points-btn')
+const userIdInput = document.getElementById("user-id");
+const fetchUserBtn = document.getElementById("fetch-user-btn");
+const userIdDisplay = document.getElementById("userId");
+const pointsDisplay = document.getElementById("points");
+const newPointsInput = document.getElementById("new-points");
+const updatePointsBtn = document.getElementById("update-points-btn");
+const errorMessageDisplay = document.getElementById("error-message"); // New
 
+// Fetch a single user's data based on their ID
 // Fetch a single user's data based on their ID
 async function fetchUser(id) {
   try {
@@ -13,14 +16,16 @@ async function fetchUser(id) {
 
     if (response.ok) {
       console.log(user)
-      document.querySelector(
-        '#selected-user',
-      ).textContent = `${user.name} has ${user.points_balance} points.`
+      document.querySelector('#user-name').textContent = user.name;
+      document.querySelector('#points').textContent = user.points_balance;
+
+      setErrorMessageVisibility(false); // Hide the error message
     } else {
       throw new Error(user.message)
     }
   } catch (error) {
     console.error('An error occurred:', error)
+    setErrorMessageVisibility(true, error.message); // Show the error message
   }
 }
 
@@ -37,19 +42,33 @@ async function updateUserPoints(id, points) {
 
     if (response.ok) {
       console.log(user)
-      document.querySelector(
-        '#selected-user',
-      ).textContent = `${user.name} now has ${user.points_balance} points.`
+      document.querySelector('#user-name').textContent = user.name;
+      document.querySelector('#points').textContent = user.points_balance;
+
+      setErrorMessageVisibility(false); // Hide the error message
     } else {
       throw new Error(user.message)
     }
   } catch (error) {
     console.error('An error occurred:', error)
+    setErrorMessageVisibility(true, error.message); // Show the error message
+  }
+}
+
+// helper function
+function setErrorMessageVisibility(show, message = '') {
+  const errorElement = document.getElementById('error-message');
+
+  if (show) {
+    errorElement.textContent = `Error: ${message}`;
+    errorElement.style.display = 'block';
+  } else {
+    errorElement.style.display = 'none';
   }
 }
 
 // Add event listeners
-fetchUserBtn.addEventListener('click', () => fetchUser(userIdInput.value))
-updatePointsBtn.addEventListener('click', () =>
-  updateUserPoints(userIdInput.value, newPointsInput.value),
-)
+fetchUserBtn.addEventListener("click", () => fetchUser(userIdInput.value));
+updatePointsBtn.addEventListener("click", () =>
+  updateUserPoints(userIdInput.value, newPointsInput.value)
+);

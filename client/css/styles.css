@@ -161,8 +161,28 @@ footer img {
 
 /* User detail styles */
 .user-details {
-  border: 1px solid var(--secondary-color);
-  padding: 20px 30px;
+  padding: 20px 48px;
+  margin-bottom: 20px;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.user-details h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#user-details-table {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+#user-details-table td {
+  padding: 10px;
 }
 
 /* Form styles */
@@ -214,5 +234,17 @@ button:hover {
 }
 
 p {
+  text-align: center;
+}
+
+/* Error message styles */
+#error-message {
+  display: none;
+  color: var(--secondary-color);
+  background-color: #f8d7da;
+  border: 1px solid #f5c2c7;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 20px;
   text-align: center;
 }
