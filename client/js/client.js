@@ -14,7 +14,7 @@ async function fetchUser(id) {
     if (response.ok) {
       console.log(user)
       document.querySelector(
-        '#user-detail',
+        '#selected-user',
       ).textContent = `${user.name} has ${user.points_balance} points.`
     } else {
       throw new Error(user.message)
@@ -38,7 +38,7 @@ async function updateUserPoints(id, points) {
     if (response.ok) {
       console.log(user)
       document.querySelector(
-        '#user-detail',
+        '#selected-user',
       ).textContent = `${user.name} now has ${user.points_balance} points.`
     } else {
       throw new Error(user.message)

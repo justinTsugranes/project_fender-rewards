@@ -25,7 +25,7 @@ Link: https://github.com/hankchizljaw/modern-css-reset */
   box-sizing: border-box;
 }
 
-/* Remove default margin */
+/* Remove default margin and list styles */
 body,
 h1,
 h2,
@@ -35,13 +35,11 @@ p,
 figure,
 blockquote,
 dl,
-dd {
-  margin: 0;
-}
-
-/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+dd,
 ul[role='list'],
 ol[role='list'] {
+  margin: 0;
+  padding: 0;
   list-style: none;
 }
 
@@ -55,6 +53,9 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+  background-color: var(--white-color);
+  font-family: Arial, sans-serif;
+  color: var(--secondary-color);
 }
 
 /* A elements that don't have a class get default styles */
@@ -69,15 +70,23 @@ picture {
   display: block;
 }
 
-/* Inherit fonts for inputs and buttons */
-input,
-button,
-textarea,
-select {
-  font: inherit;
+/* Form field styles */
+/* Hide the default arrow buttons in WebKit browsers */
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
-/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+/* Disable text selection on input */
+input[type='number'] {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Remove all animations, transitions, and smooth scroll for reduced motion */
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {
     scroll-behavior: auto;
@@ -94,3 +103,86 @@ select {
 }
 
 /* End CSS Reset */
+
+/* Define main colors */
+:root {
+  --primary-color: #d52b1e; /* red */
+  --secondary-color: #000000; /* black */
+  --white-color: #ffffff; /* white */
+}
+
+/* Main content styles */
+main {
+  background-color: var(--white-color);
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+}
+
+/* Header styles */
+header {
+  background-color: var(--secondary-color);
+  color: var(--white-color);
+  padding: 20px;
+}
+
+/* Logo styles */
+header img {
+  width: 150px;
+  margin: 10px auto;
+}
+
+/* Navigation styles */
+nav {
+  background-color: var(--secondary-color);
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* User detail styles */
+#user-detail {
+  width: 80%; /* specify a width to make margin: auto work */
+  max-width: 600px; /* limit maximum width */
+  color: var(--secondary-color);
+}
+
+#user-detail h2 {
+  text-align: center;
+}
+
+/* Form row styles */
+#user-detail div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Form field styles */
+input {
+  flex: 1;
+  padding: 10px;
+  margin-right: 10px;
+}
+
+/* Button styles */
+button {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  flex-shrink: 0; /* prevent buttons from shrinking */
+}
+
+button:hover {
+  background-color: var(--secondary-color);
+}
+
+p {
+  text-align: center;
+}
