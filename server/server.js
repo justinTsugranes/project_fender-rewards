@@ -10,6 +10,7 @@ dotenv.config()
 const app = express()
 
 // Middleware
+
 // Enable all CORS requests
 app.use(cors())
 // Parse incoming JSON bodies
