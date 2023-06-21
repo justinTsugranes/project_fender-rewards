@@ -11,8 +11,13 @@ const app = express()
 
 // Middleware
 
+const corsOptions = {
+  origin: 'http://fender-rewards.netlify.app',
+  optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+}
+
 // Enable all CORS requests
-app.use(cors())
+app.use(cors(corsOptions))
 // Parse incoming JSON bodies
 app.use(express.json())
 
