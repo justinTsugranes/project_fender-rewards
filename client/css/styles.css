@@ -35,11 +35,14 @@ p,
 figure,
 blockquote,
 dl,
-dd,
-ul[role='list'],
-ol[role='list'] {
+dd {
   margin: 0;
   padding: 0;
+}
+
+/* Remove default list style for semantics purposes */
+ul[role='list'],
+ol[role='list'] {
   list-style: none;
 }
 
@@ -161,8 +164,40 @@ footer img {
 
 /* User detail styles */
 .user-details {
-  border: 1px solid var(--secondary-color);
-  padding: 20px 30px;
+  padding: 20px 48px;
+  margin-bottom: 20px;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.user-details h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#user-details-table {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+#user-details-table td {
+  padding: 10px;
+}
+
+/* Error message styles */
+#error-message {
+  display: none;
+  color: var(--secondary-color);
+  background-color: #f8d7da;
+  border: 1px solid #f5c2c7;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 /* Form styles */
@@ -191,9 +226,11 @@ label {
 
 /* Form field styles */
 input {
-  width: 200px;
+  flex-grow: 1; /* Added to make the input fields responsive */
   padding: 10px;
   margin-left: 10px;
+  border: 1px solid var(--secondary-color);
+  border-radius: 4px;
 }
 
 /* Button styles */
@@ -203,8 +240,10 @@ button {
   color: var(--white-color);
   padding: 10px 20px;
   border: none;
+  border-radius: 4px;
   cursor: pointer;
   width: 200px;
+  min-width: 150px;
 }
 
 button:hover {
