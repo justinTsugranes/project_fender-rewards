@@ -116,6 +116,7 @@ main {
   background-color: var(--white-color);
   padding: 20px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 80vh;
