@@ -104,7 +104,7 @@ input[type='number'] {
 
 /* End CSS Reset */
 
-/* Define main colors */
+/* Main colors */
 :root {
   --primary-color: #d52b1e; /* red */
   --secondary-color: #000000; /* black */
@@ -144,40 +144,61 @@ nav {
   align-items: center;
 }
 
+/* Footer styles */
+footer {
+  background-color: var(--secondary-color);
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* User detail styles */
-#user-detail {
+.user-details {
+  border: 1px solid var(--secondary-color);
+  padding: 20px 30px;
+}
+
+/* Form styles */
+#user-detail-form {
   width: 80%; /* specify a width to make margin: auto work */
-  max-width: 600px; /* limit maximum width */
+  max-width: 500px;
+  margin-top: 28px;
   color: var(--secondary-color);
 }
 
-#user-detail h2 {
+#user-detail-form h2 {
   text-align: center;
 }
 
 /* Form row styles */
-#user-detail div {
+#user-detail-form div {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
 }
 
+label {
+  white-space: nowrap;
+}
+
 /* Form field styles */
 input {
-  flex: 1;
+  width: 200px;
   padding: 10px;
-  margin-right: 10px;
+  margin-left: 10px;
 }
 
 /* Button styles */
 button {
+  margin-left: 10px;
   background-color: var(--primary-color);
   color: var(--white-color);
   padding: 10px 20px;
   border: none;
   cursor: pointer;
-  flex-shrink: 0; /* prevent buttons from shrinking */
+  width: 200px;
 }
 
 button:hover {

@@ -13,36 +13,43 @@
   <body>
     <header>
       <a href="#main" class="skip">Skip to main content</a>
-      <img src="img/fender-logo.png" alt="Fender logo" />
+      <img src="img/fender-logo-black.png" alt="Fender logo" />
     </header>
 
     <nav aria-label="main"></nav>
 
     <main id="main" aria-labelledby="main-heading">
-      <h1 id="main-heading">Fender Rewards</h1>
-      <section>
-        <div id="user-detail">
-          <h2>User Detail</h2>
-          <div>
-            <label for="user-id">Enter User ID:</label>
-            <input type="number" id="user-id" autocomplete="off" />
-            <button id="fetch-user-btn">Fetch User Data</button>
-          </div>
-          <p id="selected-user">
-            <!-- Display user details here -->
-          </p>
-          <div>
-            <label for="new-points">Update Points:</label>
-            <input type="number" id="new-points" autocomplete="off" />
-            <button id="update-points-btn">Update Points</button>
-          </div>
+      <section class="user-details">
+        <h2>User Details</h2>
+        <table id="user-details-table">
+          <tr>
+            <td>userId:</td>
+            <td id="userId"></td>
+          </tr>
+          <tr>
+            <td>points:</td>
+            <td id="points"></td>
+          </tr>
+        </table>
+      </section>
+  
+      <section id="user-detail-form">
+        <div>
+          <label for="user-id">Enter User ID:</label>
+          <input type="number" id="user-id" autocomplete="off" />
+          <button id="fetch-user-btn">Get User Data</button>
+        </div>
+        <div>
+          <label for="new-points">Update Points:</label>
+          <input type="number" id="new-points" autocomplete="off" />
+          <button id="update-points-btn">Update Points</button>
         </div>
       </section>
     </main>
 
-    <!-- <footer>
+    <footer>
       <p>Footer</p>
-    </footer> -->
+    </footer>
 
     <script src="js/client.js"></script>
   </body>
