@@ -1,7 +1,8 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
+const PointSchema = require('./Point');
 
 const UserSchema = new mongoose.Schema({
-  id: {
+  userId: {
     type: String,
     required: true,
   },
@@ -9,10 +10,7 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  points_balance: {
-    type: Number,
-    required: true,
-  },
-})
+  points: [PointSchema],
+});
 
-module.exports = mongoose.model('User', UserSchema)
+module.exports = mongoose.model('User', UserSchema);

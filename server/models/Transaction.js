@@ -1,7 +1,7 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 
 const TransactionSchema = new mongoose.Schema({
-  user_id: {
+  userId: {
     type: String,
     required: true,
   },
@@ -17,6 +17,6 @@ const TransactionSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
-})
+});
 
-module.exports = mongoose.model('Transaction', TransactionSchema)
+module.exports = mongoose.model('Transaction', TransactionSchema);
