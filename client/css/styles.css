@@ -221,9 +221,12 @@ input[type="number"] {
   color: var(--white-color);
 }
 
-.user-details h2,
-section h2 {
+.user-details h2 {
   margin-bottom: 20px;
+  text-align: center;
+}
+
+section h2 {
   text-align: center;
 }
 
