@@ -41,7 +41,7 @@
         </table>
       </section>
 
-      <section id="get-user-section">
+      <section id="get-user-section" class="test-section">
         <h2>GET USER</h2>
         <div>
           <label for="user-id">Enter User ID:</label>
@@ -51,12 +51,32 @@
         <div id="user-message"></div>
       </section>
 
+      <section id="check-points-balance-section">
+        <h2>GET POINTS BALANCE</h2>
+        <div>
+          <label for="user-id">Enter User ID:</label>
+          <input type="number" id="user-id" autocomplete="off" />
+          <button id="fetch-user-btn">Get Points Balance</button>
+        </div>
+        <div id="user-message"></div>
+      </section>
+
       <section id="update-points-section">
         <h2>UPDATE POINTS</h2>
         <div>
-          <label for="new-points">Update Points:</label>
+          <label for="new-points">Add or Subtract Points:</label>
           <input type="number" id="new-points" autocomplete="off" />
           <button id="update-points-btn">Update Points</button>
+        </div>
+        <div id="update-message"></div>
+      </section>
+
+      <section id="update-points-section">
+        <h2>EARN POINTS</h2>
+        <div>
+          <label for="new-points">Points To Add:</label>
+          <input type="number" id="new-points" autocomplete="off" />
+          <button id="update-points-btn">Earn Points</button>
         </div>
         <div id="update-message"></div>
       </section>

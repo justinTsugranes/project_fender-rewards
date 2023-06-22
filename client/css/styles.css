@@ -223,7 +223,7 @@ section h2 {
 }
 
 section div {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -242,11 +242,8 @@ input {
 }
 
 /* Redeem points section styles */
-#get-user-section,
-#update-points-section,
-#redeem-points-section {
+.test-section {
   max-width: 500px;
-  margin-top: 14px;
   color: var(--secondary-color);
   width: 80%;
 }
