@@ -98,7 +98,6 @@ main {
 
 /* Header */
 header {
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Box-shadow */
 }
 
 .header-content {
@@ -139,14 +138,15 @@ nav li:not(:first-child) {
 }
 
 nav a {
-  color: var(--secondary-color);
+  color: #666666;
   text-decoration: none;
   text-transform: uppercase;
   font-weight: bold;
 }
 
 nav a:hover {
-  text-decoration: underline;
+  padding-bottom: 14px;
+  border-bottom: 3px solid var(--primary-color);
 }
 
 /* Footer styles */
