@@ -16,10 +16,12 @@ app.use(express.json()); // Parse incoming JSON bodies
 // Import routes
 const userRoutes = require('./routes/users');
 const transactionRoutes = require('./routes/transactions');
+const pointsRoutes = require('./routes/points'); // Import the new points router
 
 // Use routes
 app.use('/users', userRoutes);
 app.use('/transactions', transactionRoutes);
+app.use('/points', pointsRoutes); // Use the points router for points-related routes
 
 // Connect to MongoDB
 mongoose
