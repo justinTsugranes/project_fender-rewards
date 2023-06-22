@@ -9,44 +9,58 @@
     <meta name="author" content="Insert site name" />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
+
   <body>
     <header>
       <a href="#main" class="skip">Skip to main content</a>
       <img src="img/fender-logo-red.webp" alt="Fender logo" />
     </header>
+
     <nav aria-label="main">
       <h1>FENDER REWARDS</h1>
     </nav>
-    
+
     <main id="main" aria-labelledby="user-details-heading">
       <div id="error-message"></div>
+      
       <section class="user-details">
         <h2 id="user-details-heading">USER DETAILS</h2>
         <table id="user-details-table">
           <tr>
-            <td>userId:</td>
+            <td>User:</td>
             <td id="userId"></td>
           </tr>
           <tr>
-            <td>points:</td>
+            <td>Current points:</td>
+            <td id="points"></td>
+          </tr>
+           <tr>
+            <td>Points Redeemed:</td>
             <td id="points"></td>
           </tr>
         </table>
       </section>
-    
-      <section id="user-detail-form">
+
+      <section id="get-user-section">
+        <h2>GET USER</h2>
         <div>
           <label for="user-id">Enter User ID:</label>
           <input type="number" id="user-id" autocomplete="off" />
           <button id="fetch-user-btn">Get User Data</button>
         </div>
+        <div id="user-message"></div>
+      </section>
+
+      <section id="update-points-section">
+        <h2>UPDATE POINTS</h2>
         <div>
           <label for="new-points">Update Points:</label>
           <input type="number" id="new-points" autocomplete="off" />
           <button id="update-points-btn">Update Points</button>
         </div>
+        <div id="update-message"></div>
       </section>
-    
+
       <section id="redeem-points-section">
         <h2>REDEEM POINTS</h2>
         <div>
@@ -56,13 +70,13 @@
         </div>
         <div id="redeem-message"></div>
       </section>
-    
+
     </main>
-    
+
     <footer>
       <img src="img/fender-logo-red.webp" alt="Fender logo" />
     </footer>
-    
+
     <script src="js/client.js"></script>
   </body>
-  </html>
+</html>
