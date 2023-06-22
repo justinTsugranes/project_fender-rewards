@@ -3,6 +3,11 @@
   --primary-color: #d52b1e; /* red */
   --secondary-color: #000000; /* black */
   --white-color: #ffffff; /* white */
+
+  /* Common Spacings */
+  --space-sm: 10px;
+  --space-md: 20px;
+  --space-lg: 40px;
 }
 
 /* Box sizing rules */
@@ -59,8 +64,8 @@ dd {
 }
 
 /* Remove default list style for semantics purposes */
-ul[role='list'],
-ol[role='list'] {
+ul[role="list"],
+ol[role="list"] {
   list-style: none;
 }
 
@@ -91,14 +96,21 @@ main {
   background-color: var(--white-color);
 }
 
-/* Header styles */
+/* Header */
 header {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Box-shadow */
+}
+
+.header-content {
   display: flex;
+  flex-direction: column; /* Stack elements vertically on mobile */
   justify-content: center;
   align-items: center;
   padding: 20px;
   background-color: var(--white-color);
   color: var(--secondary-color);
+  max-width: 1200px; /* Maximum width of the header */
+  margin: 0 auto; /* Center the header on the screen */
 }
 
 /* Logo styles */
@@ -113,12 +125,28 @@ nav {
   justify-content: center;
   align-items: center;
   padding: 10px;
-  background-color: var(--secondary-color);
 }
 
-nav h1 {
-  padding: 20px;
-  color: var(--white-color);
+nav ul {
+  display: flex;
+  justify-content: flex-start;
+  list-style: none;
+  padding: 0;
+}
+
+nav li:not(:first-child) {
+  margin-left: 20px;
+}
+
+nav a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
 }
 
 /* Footer styles */
@@ -174,13 +202,13 @@ picture {
 }
 
 /* Form field styles */
-input[type='number']::-webkit-inner-spin-button,
-input[type='number']::-webkit-outer-spin-button {
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-input[type='number'] {
+input[type="number"] {
   -moz-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
@@ -258,4 +286,18 @@ input {
   text-align: center;
   color: var(--secondary-color);
   background-color: #f8d7da;
+}
+
+/* Using media query to target tablet devices */
+@media screen and (min-width: 768px) {
+  /* Adjust the header for tablets and up */
+  .header-content {
+    flex-direction: row; /* Align elements horizontally on tablet */
+    justify-content: space-between; /* Distribute space between logo and navigation */
+  }
+
+  /* Adjust the navigation for tablets and up */
+  nav {
+    justify-content: flex-end; /* Align nav items to the right */
+  }
 }
