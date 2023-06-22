@@ -44,31 +44,31 @@ async function fetchUser(id) {
   }
 }
 
-async function updateUserPoints(id, points) {
-  if (!id || !points) {
+async function updateUserPoints(id, pointsToRedeem) {
+  if (!id || !pointsToRedeem) {
     setErrorMessageVisibility(true, 'User ID and points cannot be empty');
     return;
   }
 
   try {
-    const response = await fetch(`/users/${id}`, {
-      method: 'PUT',
+    const response = await fetch(`/users/${id}/redeem`, {
+      method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ points }),
+      body: JSON.stringify({ pointsToRedeem }),
     });
 
-    const user = await response.json();
+    const result = await response.json();
 
     if (response.ok) {
-      console.log(user);
+      console.log(result);
       document.querySelector('#userId').textContent = id;
-      pointsInput.textContent = user.points_balance;
+      pointsInput.textContent = result.updatedPoints;
 
       setErrorMessageVisibility(false); // Hide the error message
     } else {
-      throw new Error(user.message);
+      throw new Error(result.message);
     }
   } catch (error) {
     console.error('An error occurred:', error);
@@ -79,5 +79,5 @@ async function updateUserPoints(id, points) {
 // Add event listeners
 fetchUserBtn.addEventListener('click', () => fetchUser(userIdInput.value.trim()));
 updatePointsBtn.addEventListener('click', () =>
-  updateUserPoints(userIdInput.value.trim(), newPointsInput.value.trim()),
+  updateUserPoints(userIdInput.value.trim(), newPointsInput.value.trim())
 );
