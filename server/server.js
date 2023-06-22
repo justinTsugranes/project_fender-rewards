@@ -16,7 +16,7 @@ app.use(express.json()); // Parse incoming JSON bodies
 // Import routes
 const userRoutes = require('./routes/users');
 const transactionRoutes = require('./routes/transactions');
-const pointsRoutes = require('./routes/points'); // Import the new points router
+const pointsRoutes = require('./routes/points');
 
 // Use routes
 app.use('/users', userRoutes);

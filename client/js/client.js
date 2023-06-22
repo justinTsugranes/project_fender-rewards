@@ -85,12 +85,12 @@ async function redeemPoints(id, pointsToRedeem) {
   }
 
   try {
-    const response = await fetch(`/users/${id}/redeem`, {
+    const response = await fetch(`/points/redeem`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ pointsToRedeem }),
+      body: JSON.stringify({ userId: id, pointsToRedeem }),
     });
 
     const result = await response.json();
