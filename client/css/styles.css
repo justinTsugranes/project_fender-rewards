@@ -8,6 +8,8 @@
   --space-sm: 10px;
   --space-md: 20px;
   --space-lg: 40px;
+  
+  --transition-speed: 0.3s;
 }
 
 /* Box sizing rules */
@@ -205,6 +207,7 @@ button {
   font-weight: 700;
   background-color: var(--primary-color);
   color: var(--white-color);
+  transition: all var(--transition-speed) ease;
 }
 
 button:hover {
