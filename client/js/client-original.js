@@ -6,24 +6,24 @@ const earnPointsInput = document.getElementById('earn-points')
 const earnPointsBtn = document.getElementById('earn-points-btn')
 const redeemPointsInput = document.getElementById('points-to-redeem')
 const redeemPointsBtn = document.getElementById('redeem-points-btn')
-const errorMessage = document.getElementById('error-message')
 
-// Helper function to display error messages
-function showError(message) {
-  errorMessage.textContent = `Error: ${message}`
-  errorMessage.style.display = 'block'
-}
+// Helper function to handle error message visibility
+function setErrorMessageVisibility(show, message = '') {
+  const errorElement = document.getElementById('error-message')
 
-// Helper function to clear error messages
-function clearError() {
-  errorMessage.style.display = 'none'
-  errorMessage.textContent = ''
+  if (show) {
+    errorElement.textContent = `Error: ${message}`
+    errorElement.style.display = 'block'
+  } else {
+    errorElement.style.display = 'none'
+    errorElement.textContent = '' // Empty the error message
+  }
 }
 
 // Fetch a single user's data based on their ID
 async function fetchUser(id) {
   if (!id) {
-    showError('User ID cannot be empty')
+    setErrorMessageVisibility(true, 'User ID cannot be empty')
     return
   }
 
@@ -34,20 +34,20 @@ async function fetchUser(id) {
     if (response.ok) {
       console.log(user)
       currentPoints.textContent = user.points // Update points
-      clearError() // Clear any previous error messages
+      setErrorMessageVisibility(false) // Hide the error message
     } else {
       throw new Error(user.message)
     }
   } catch (error) {
     console.error('An error occurred:', error)
-    showError(error.message)
+    setErrorMessageVisibility(true, error.message) // Show the error message
   }
 }
 
 // Function to earn points
 async function earnPoints(id, points) {
   if (!id || !points) {
-    showError('User ID and points cannot be empty')
+    setErrorMessageVisibility(true, 'User ID and points cannot be empty')
     return
   }
 
@@ -65,20 +65,23 @@ async function earnPoints(id, points) {
     if (response.ok) {
       console.log(result)
       currentPoints.textContent = result.points // Update points
-      clearError() // Clear any previous error messages
+      setErrorMessageVisibility(false) // Hide the error message
     } else {
       throw new Error(result.message)
     }
   } catch (error) {
     console.error('An error occurred:', error)
-    showError(error.message)
+    setErrorMessageVisibility(true, error.message) // Show the error message
   }
 }
 
 // Redeem user's points
 async function redeemPoints(id, pointsToRedeem) {
   if (!id || !pointsToRedeem) {
-    showError('User ID and points to redeem cannot be empty')
+    setErrorMessageVisibility(
+      true,
+      'User ID and points to redeem cannot be empty',
+    )
     return
   }
 
@@ -96,13 +99,13 @@ async function redeemPoints(id, pointsToRedeem) {
     if (response.ok) {
       console.log(result)
       currentPoints.textContent = result.points // Update points
-      clearError() // Clear any previous error messages
+      setErrorMessageVisibility(false) // Hide the error message
     } else {
       throw new Error(result.message)
     }
   } catch (error) {
     console.error('An error occurred:', error)
-    showError(error.message)
+    setErrorMessageVisibility(true, error.message) // Show the error message
   }
 }
 
