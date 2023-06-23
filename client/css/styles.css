@@ -306,7 +306,7 @@ input {
     align-items: start;
     flex-direction: row-reverse;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 60px auto;
   }
 
   .left-sections {
