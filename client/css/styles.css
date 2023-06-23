@@ -223,6 +223,7 @@ button:hover {
 
 /* User detail styles */
 .user-details {
+  width: 100%;
   margin-bottom: 20px;
   padding: 20px 64px;
   border-radius: 10px;
