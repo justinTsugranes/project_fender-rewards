@@ -4,15 +4,14 @@ const dotenv = require('dotenv')
 const mongoose = require('mongoose')
 const swaggerJsDoc = require('swagger-jsdoc')
 const swaggerUi = require('swagger-ui-express')
+const fs = require('fs')
+const customCss = fs.readFileSync(process.cwd() + '/swagger.css', 'utf8')
 
 // Load environment variables from .env file
 dotenv.config()
 
 // Create a new Express application instance
-const app = express(),
-  fs = require('fs')
-
-const customCss = fs.readFileSync(process.cwd() + '/swagger.css', 'utf8')
+const app = express()
 
 const swaggerOptions = {
   definition: {
