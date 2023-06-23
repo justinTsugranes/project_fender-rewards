@@ -1,10 +1,10 @@
 // Reference needed DOM elements
 const userIdInput = document.getElementById('user-id')
-const fetchUserBtn = document.getElementById('fetch-user-btn')
+const fetchUserBtn = document.getElementById('get-user-btn')
 const currentPoints = document.getElementById('current-points')
 const earnPointsInput = document.getElementById('earn-points')
 const earnPointsBtn = document.getElementById('earn-points-btn')
-const redeemPointsInput = document.getElementById('points-to-redeem')
+const redeemPointsInput = document.getElementById('redeem-points')
 const redeemPointsBtn = document.getElementById('redeem-points-btn')
 const errorMessage = document.getElementById('error-message')
 
