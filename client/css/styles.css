@@ -181,16 +181,23 @@ nav a:hover {
 /* Footer styles */
 footer {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 10px;
+  padding: 12px;
   background-color: var(--secondary-color);
 }
 
 /* Footer logo styles */
 footer img {
-  margin: 10px auto;
+  margin: 12px auto;
   width: 150px;
+}
+
+/* Footer tagline */
+footer h3 {
+  margin-top: 6px;
+  color: var(--white-color);
 }
 
 /* Button styles */
@@ -238,6 +245,12 @@ button:hover {
 
 #user-details-table td {
   padding: 10px;
+}
+
+.left-sections {
+  padding: 20px 64px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 /* Test section styles */
