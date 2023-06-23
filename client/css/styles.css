@@ -69,6 +69,28 @@ ol[role="list"] {
   list-style: none;
 }
 
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Form field styles */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin: 10px auto;
+}
+
 /* Hide the skip link */
 .skip {
   position: absolute;
@@ -94,22 +116,19 @@ main {
   min-height: 80vh;
   padding: 20px;
   background-color: var(--white-color);
-}
-
-/* Header */
-header {
+  margin: 0 auto;
 }
 
 .header-content {
   display: flex;
-  flex-direction: column; /* Stack elements vertically on mobile */
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 20px;
   background-color: var(--white-color);
   color: var(--secondary-color);
-  max-width: 1200px; /* Maximum width of the header */
-  margin: 0 auto; /* Center the header on the screen */
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 /* Logo styles */
@@ -150,6 +169,13 @@ nav a:hover {
   border-bottom: 3px solid var(--primary-color);
 }
 
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 /* Footer styles */
 footer {
   display: flex;
@@ -185,32 +211,6 @@ button:hover {
   background-color: var(--secondary-color);
 }
 
-p {
-  text-align: center;
-}
-
-/* Make images easier to work with */
-img,
-picture {
-  max-width: 100%;
-  display: block;
-}
-
-/* Form field styles */
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-input[type="number"] {
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  margin: 10px auto;
-}
-
 /* User detail styles */
 .user-details {
   margin-bottom: 20px;
@@ -226,10 +226,6 @@ input[type="number"] {
   text-align: center;
 }
 
-section h2 {
-  text-align: center;
-}
-
 #user-details-table {
   max-width: 500px;
   margin: 0 auto;
@@ -241,19 +237,9 @@ section h2 {
   padding: 10px;
 }
 
-/* Form styles */
-#detail-form {
-  max-width: 500px;
-  margin-top: 28px;
-  color: var(--secondary-color);
-  width: 80%; /* specify a width to make margin: auto work */
-}
-
 /* Test section styles */
 .test-section {
-  max-width: 500px;
-  color: var(--secondary-color);
-  width: 100%;
+  text-align: center;
 }
 
 .test-section div {
@@ -263,7 +249,6 @@ section h2 {
   justify-content: space-between;
   align-items: center;
 }
-
 
 label {
   white-space: nowrap;
@@ -301,12 +286,36 @@ input {
   }
   
   .test-section div {
+  margin-bottom: 10px;
+  display: flex;
   flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6px;
+}
+
+}
+
+@media screen and (min-width: 1024px) {
+  .content {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: row-reverse;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .left-sections {
+    flex: 1;
+    margin-right: 48px;
+  }
+  
+  .test-section {
+    text-align: left;
 }
   
-  input[type="number"] {
-  margin: 0 6px;
-}
+  .user-details {
+    flex: 1;
+  }
 }
