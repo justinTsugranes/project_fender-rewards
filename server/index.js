@@ -4,13 +4,15 @@ const dotenv = require('dotenv')
 const mongoose = require('mongoose')
 const swaggerJsDoc = require('swagger-jsdoc')
 const swaggerUi = require('swagger-ui-express')
-const customCss = fs.readFileSync((process.cwd()+"/swagger.css"), 'utf8');
 
 // Load environment variables from .env file
 dotenv.config()
 
 // Create a new Express application instance
-const app = express()
+const app = express(),
+  fs = require('fs')
+
+const customCss = fs.readFileSync(process.cwd() + '/swagger.css', 'utf8')
 
 const swaggerOptions = {
   definition: {
@@ -46,7 +48,11 @@ const swaggerSpec = swaggerJsDoc(swaggerOptions)
 app.use('/users', userRoutes)
 app.use('/transactions', transactionRoutes)
 app.use('/points', pointsRoutes)
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec, {customCss}))
+app.use(
+  '/api-docs',
+  swaggerUi.serve,
+  swaggerUi.setup(swaggerSpec, { customCss }),
+)
 
 // Connect to MongoDB
 mongoose
