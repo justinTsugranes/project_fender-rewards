@@ -245,7 +245,7 @@ Give a ⭐️ if you like this project and if you like my work, maybe you would 
 <!-- LINK & IMAGE VARIABLES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[project-screenshot]: images/project-screenshot.jpg
+[project-screenshot]: images/project-screenshot.png
 [project-url]: INSERT_PROJECT_URL
 [repo-url]: https://github.com/justintsugranes/project_fender-rewards.git
 [contributors-shield]: https://img.shields.io/github/contributors/justintsugranes/project_fender-rewards.svg?style=for-the-badge
