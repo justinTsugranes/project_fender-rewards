@@ -1,97 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fender Rewards</title>
+    <meta name="description" content="The Fender rewards program" />
+    <meta name="author" content="Insert site name" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fender Rewards</title>
-  <meta name="description" content="The Fender rewards program" />
-  <meta name="author" content="Insert site name" />
-  <link rel="stylesheet" href="css/styles.css" />
-</head>
-
-<body>
-  <header>
-    <div class="header-content">
-      <a href="#main" class="skip">Skip to main content</a>
-      <img src="img/fender-logo-red.webp" alt="Fender logo" />
-      <nav aria-label="main">
-        <ul>
-          <li><a href="index.html">Fender Rewards</a></li>
-          <li><a href="http://fender-rewards.netlify.app/api-docs" target="_blank">Docs</a></li>
-          <li><a href="prompt.html">Prompt Page</a></li>
-          <li><a href="notes.html">Notes</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <main id="main" aria-labelledby="main-content">
-
-    <div id="error-message"></div>
-
-    <div class="content">
-
-      <section class="user-details">
-        <h2 id="user-details-heading">USER DETAILS</h2>
-        <table id="user-details-table">
-          <tr>
-            <td>User:</td>
-            <td id="user-id"></td>
-          </tr>
-          <tr>
-            <td>Current points:</td>
-            <td id="current-points"></td>
-          </tr>
-          <tr>
-            <td>Points Redeemed:</td>
-            <td id="redeemed-points"></td>
-          </tr>
-        </table>
-      </section>
-
-      <div class="left-sections">
-
-        <section id="get-user-section" class="test-section">
-          <h2>GET USER</h2>
-          <label for="get-user-id">Enter User ID:</label>
-          <div class="input-button-container">
-            <input type="number" id="get-user-id" autocomplete="off" />
-            <button id="get-user-btn">Get User Data</button>
-          </div>
-          <div id="user-message"></div>
-        </section>
-
-        <section id="earn-points-section" class="test-section">
-          <h2>EARN POINTS</h2>
-          <label for="earn-points">Points To Add:</label>
-          <div class="input-container">
-            <input type="number" id="earn-points" autocomplete="off" />
-            <button id="earn-points-btn">Earn Points</button>
-          </div>
-          <div id="earn-message"></div>
-        </section>
-
-        <section id="redeem-points-section" class="test-section">
-          <h2>REDEEM POINTS</h2>
-          <label for="redeem-points">Points to Redeem:</label>
-          <div class="input-container">
-            <input type="number" id="redeem-points" autocomplete="off" />
-            <button id="redeem-points-btn">Redeem Points</button>
-          </div>
-          <div id="redeem-message"></div>
-        </section>
+  <body>
+    <header>
+      <div class="header-content">
+        <a href="#main" class="skip">Skip to main content</a>
+        <img src="img/fender-logo-red.webp" alt="Fender logo" />
+        <nav aria-label="main">
+          <ul>
+            <li><a href="index.html">Fender Rewards</a></li>
+            <li>
+              <a
+                href="http://fender-rewards.netlify.app/api-docs"
+                target="_blank"
+                >Docs</a
+              >
+            </li>
+            <li><a href="prompt.html">Prompt Page</a></li>
+            <li><a href="notes.html">Notes</a></li>
+          </ul>
+        </nav>
       </div>
-    </div>
-  </main>
+      <div class="home-hero">
+        <h1>Welcome to the Fender Rewards Program</h1>
+        <h2>Riff, Rewards, Repeat</h2>
+      </div>
+    </header>
 
-  <footer>
-    <img src="img/fender-logo-red.webp" alt="Fender logo" />
-    <h3>Riff, Rewards, Repeat: Welcome to the Fender Rewards Program</h3>
-  </footer>
+    <main id="main" aria-labelledby="main-content">
+      <div id="error-message"></div>
 
-  <script src="js/client.js"></script>
-</body>
+      <div class="content">
+        <section class="user-details">
+          <h3 id="user-details-heading">USER DETAILS</h3>
+          <table id="user-details-table">
+            <tr>
+              <td>User:</td>
+              <td id="user-id"></td>
+            </tr>
+            <tr>
+              <td>Current points:</td>
+              <td id="current-points"></td>
+            </tr>
+            <tr>
+              <td>Points Redeemed:</td>
+              <td id="redeemed-points"></td>
+            </tr>
+          </table>
+        </section>
 
+        <div class="left-sections">
+          <section id="get-user-section" class="test-section">
+            <h3>GET USER</h3>
+            <label for="get-user-id">Enter User ID:</label>
+            <div class="input-button-container">
+              <input type="number" id="get-user-id" autocomplete="off" />
+              <button id="get-user-btn">Get User Data</button>
+            </div>
+            <div id="user-message"></div>
+          </section>
+
+          <section id="earn-points-section" class="test-section">
+            <h3>EARN POINTS</h3>
+            <label for="earn-points">Points To Add:</label>
+            <div class="input-container">
+              <input type="number" id="earn-points" autocomplete="off" />
+              <button id="earn-points-btn">Earn Points</button>
+            </div>
+            <div id="earn-message"></div>
+          </section>
+
+          <section id="redeem-points-section" class="test-section">
+            <h3>REDEEM POINTS</h3>
+            <label for="redeem-points">Points to Redeem:</label>
+            <div class="input-container">
+              <input type="number" id="redeem-points" autocomplete="off" />
+              <button id="redeem-points-btn">Redeem Points</button>
+            </div>
+            <div id="redeem-message"></div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <img src="img/fender-logo-red.webp" alt="Fender logo" />
+    </footer>
+
+    <script src="js/client.js"></script>
+  </body>
 </html>
