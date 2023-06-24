@@ -1,32 +1,5 @@
-/* body {
-    background-color: #ffffff;
-}
-
-.swagger-ui .topbar {
-    background-color: #000000;
-}
-
-.swagger-ui .info .base-url {
-    font-size: 24px;
-}
-
-.swagger-ui .markdown p {
-    font-size: 40px;
-}
-
-.swagger-ui .btn.execute {
-    background-color: green;
-}
-
-.swagger-ui button {
-    background: orange;
-}
-
-.swagger-ui .scheme-container {
-    background-color: #d52b1e;
-} */
-
 @charset "UTF-8";
+
 .swagger-ui html {
   box-sizing: border-box;
 }

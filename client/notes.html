@@ -1,45 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fender Rewards | Notes</title>
+    <meta name="description" content="The Fender rewards program" />
+    <meta name="author" content="Insert site name" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fender Rewards | Notes</title>
-  <meta name="description" content="The Fender rewards program" />
-  <meta name="author" content="Insert site name" />
-  <link rel="stylesheet" href="css/styles.css" />
-</head>
+  <body>
+    <header>
+      <div class="header-content">
+        <!-- Accessibility Skip Link -->
+        <a href="#main" class="skip">Skip to main content</a>
+        <img src="img/fender-logo-red.webp" alt="Fender logo in red" />
+        <!-- Main Nav -->
+        <nav aria-label="main">
+          <ul>
+            <li>
+              <a href="index.html" title="Fender Rewards Home Page"
+                >Fender Rewards</a
+              >
+            </li>
+            <li>
+              <a
+                href="http://fender-rewards.netlify.app/api-docs"
+                target="_blank"
+                title="Visit the API documentation on a new tab"
+                >Docs</a
+              >
+            </li>
+            <li>
+              <a href="prompt.html" title="Project Prompt Page">Prompt Page</a>
+            </li>
+            <li><a href="notes.html" title="Project Notes Page">Notes</a></li>
+          </ul>
+        </nav>
+        <!-- /End Main Nav -->
+      </div>
+    </header>
 
-<body>
-  <header>
-    <div class="header-content">
-      <a href="#main" class="skip">Skip to main content</a>
+    <main id="main" aria-labelledby="main-content">
+      <div id="notes-container">
+        <iframe
+          style="border: 1px solid rgba(0, 0, 0, 0.1)"
+          width="800"
+          height="450"
+          src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FRHQGxNr90KpjI43Bukb9YV%2FAPI%3Ftype%3Dwhiteboard%26node-id%3D0%253A1%26t%3DoRBHJuILIh4vhUtw-1"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </main>
+
+    <footer>
       <img src="img/fender-logo-red.webp" alt="Fender logo" />
-      <nav aria-label="main">
-        <ul>
-          <li><a href="index.html">Fender Rewards</a></li>
-          <li><a href="http://fender-rewards.netlify.app/api-docs" target="_blank">Docs</a></li>
-          <li><a href="prompt.html">Prompt Page</a></li>
-          <li><a href="notes.html">Notes</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+      <h3>Riff, Rewards, Repeat: Welcome to the Fender Rewards Program</h3>
+    </footer>
 
-  <main id="main" aria-labelledby="main-content">
-    <div id="notes-container">
-    <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FRHQGxNr90KpjI43Bukb9YV%2FAPI%3Ftype%3Dwhiteboard%26node-id%3D0%253A1%26t%3DoRBHJuILIh4vhUtw-1" allowfullscreen></iframe>
-  </div>
-  </main>
-
-  <footer>
-    <img src="img/fender-logo-red.webp" alt="Fender logo" />
-    <h3>Riff, Rewards, Repeat: Welcome to the Fender Rewards Program</h3>
-  </footer>
-
-
-  <script src="js/client.js"></script>
-</body>
-
+    <script src="js/client.js"></script>
+  </body>
 </html>

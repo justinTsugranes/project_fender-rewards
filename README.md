@@ -59,6 +59,7 @@ _I'd love to hear any feedback or just thoughts. Feel free to reach out at my co
 #### Frontend
 
 <!-- - **Web** -->
+
 [![javascript]][javascript-url]
 [![html]][html-url]
 [![css]][css-url]
@@ -101,6 +102,7 @@ _I'd love to hear any feedback or just thoughts. Feel free to reach out at my co
 <!-- #### Misc Packages -->
 
 [concurrently](https://www.npmjs.com/package/concurrently)
+
 <!-- [![eslint]][eslint-url] -->
 <!-- [![prettier]][prettier-url] -->
 <!-- [![copilot]][copilot-url] -->
@@ -156,7 +158,7 @@ Use this space to show useful examples of how a project can be used. Additional 
 
 _For more examples, please refer to the [Documentation][repo-url]_ -->
 
-<!-- ### Folder Structure -->
+### Folder Structure
 
 <!-- ```md
 ├── client
@@ -175,25 +177,44 @@ _For more examples, please refer to the [Documentation][repo-url]_ -->
 └── package.json
 ``` -->
 
-<!-- ```md
-      ├── backend
-      │   ├── api
-      │   │   > NodeJS
-      │   │   > PORT 5000
-      │   │   > api.example.com
-      │   │
-      │   ├── database
-      │   │   > MongoDB
-      │   │   > PORT 27017
-      │
-      ├── frontend
-      │   │       > React
-      │   │       > Single page application
-      │   │       > PORT 5000
-      │   │       > app.example.com
-      │
-      └── README.md (you are here)
-``` -->
+```md
+/server
+|
+|--/config
+| |-- .env
+| |-- .env.production
+| |-- dbConfig.js
+|
+|--/controllers
+| |-- index.js
+| |-- pointsController.js
+| |-- transactionController.js
+| |-- userController.js
+|
+|--/models
+| |-- index.js
+| |-- pointsModel.js
+| |-- userModel.js
+| |-- transactionModel.js
+|
+|--/routes
+| |-- index.js
+| |-- pointsRoutes.js
+| |-- transactionRoutes.js
+| |-- userRoutes.js
+|
+|--/services
+| |-- index.js
+| |-- pointsService.js
+| |-- transactionService.js
+| |-- userService.js
+|
+|--/server
+| |-- index.js
+| |-- .gitignore
+| |-- package.json
+| |-- swagger.css
+```
 
 <!-- ## Features
 

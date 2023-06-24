@@ -7,4 +7,4 @@ const transactionSchema = new mongoose.Schema({
   timestamp: { type: Date, default: Date.now },
 })
 
-module.exports = mongoose.model('Transaction', transactionSchema)
+module.exports = mongoose.model('transactionModel', transactionSchema)

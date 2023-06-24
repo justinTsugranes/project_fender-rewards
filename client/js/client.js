@@ -1,4 +1,3 @@
-// Reference needed DOM elements
 // User Details
 const user = document.getElementById('user')
 const currentPoints = document.getElementById('current-points')
@@ -18,6 +17,9 @@ const redeemPointsMessage = document.getElementById('redeem-points-message')
 // ERROR MESSAGE
 const errorMessage = document.getElementById('error-message')
 
+// URL
+const baseUrl = 'http://localhost:5000'
+
 // Helper function to display error messages
 function showError(message) {
   errorMessage.textContent = `Error: ${message}`
@@ -32,20 +34,20 @@ function clearError() {
 
 // Fetch a single user's data based on their ID
 async function getUser(id) {
-  id = Number(id)
-  if (!id || id === 0 || id === '') {
-    showError('User ID cannot be empty or zero')
+  id = id.trim()
+  if (!id || !/^\d+$/.test(id)) {
+    showError('Invalid user ID')
     return
   }
 
   try {
-    const response = await fetch(`/users/${id}`)
+    const response = await fetch(`${baseUrl}/users/${id}`)
     const user = await response.json()
 
     if (response.ok) {
       clearError() // Clear any previous error messages
       console.log(user)
-      currentPoints.textContent = user.points // Update points
+      currentPoints.textContent = user.totalPoints // Update points
     } else {
       throw new Error(user.message)
     }
@@ -57,13 +59,15 @@ async function getUser(id) {
 
 // Function to earn points
 async function earnPoints(id, points) {
-  if (!id || !points || points === 0 || points === '') {
-    showError('User ID and points cannot be empty')
+  id = id.trim()
+  points = points.trim()
+  if (!id || !points || !/^\d+$/.test(id) || !/^\d+$/.test(points)) {
+    showError('Invalid user ID or points')
     return
   }
 
   try {
-    const response = await fetch(`/users/${id}/earnPoints`, {
+    const response = await fetch(`${baseUrl}/users/${id}/earnPoints`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -76,7 +80,7 @@ async function earnPoints(id, points) {
     if (response.ok) {
       clearError() // Clear any previous error messages
       console.log(result)
-      currentPoints.textContent = result.points // Update points
+      currentPoints.textContent = result.totalPoints // Update points
     } else {
       throw new Error(result.message)
     }
@@ -88,13 +92,15 @@ async function earnPoints(id, points) {
 
 // Redeem user's points
 async function redeemPoints(id, points) {
-  if (!id || !points || points === 0 || points === '') {
-    showError('User ID and points to redeem cannot be empty')
+  id = id.trim()
+  points = points.trim()
+  if (!id || !points || !/^\d+$/.test(id) || !/^\d+$/.test(points)) {
+    showError('Invalid user ID or points to redeem')
     return
   }
 
   try {
-    const response = await fetch(`/users/${id}/redeemPoints`, {
+    const response = await fetch(`${baseUrl}/users/${id}/redeemPoints`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -107,7 +113,7 @@ async function redeemPoints(id, points) {
     if (response.ok) {
       clearError() // Clear any previous error messages
       console.log(result)
-      currentPoints.textContent = result.points // Update points
+      currentPoints.textContent = result.totalPoints // Update points
     } else {
       throw new Error(result.message)
     }
@@ -118,10 +124,10 @@ async function redeemPoints(id, points) {
 }
 
 // Add event listeners
-getUserBtn.addEventListener('click', () => getUser(userIdInput.value.trim()))
+getUserBtn.addEventListener('click', () => getUser(userIdInput.value))
 earnPointsBtn.addEventListener('click', () =>
-  earnPoints(userIdInput.value.trim(), earnPointsInput.value.trim()),
+  earnPoints(userIdInput.value, earnPointsInput.value),
 )
 redeemPointsBtn.addEventListener('click', () =>
-  redeemPoints(userIdInput.value.trim(), redeemPointsInput.value.trim()),
+  redeemPoints(userIdInput.value, redeemPointsInput.value),
 )

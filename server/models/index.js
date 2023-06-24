@@ -1,9 +1,9 @@
-const User = require('./User')
-const Transaction = require('./Transaction')
-const Points = require('./Points')
+const userModel = require('./userModel')
+const transactionModel = require('./transactionModel')
+const pointsModel = require('./pointsModel')
 
 module.exports = {
-  User,
-  Transaction,
-  Points,
+  userModel,
+  transactionModel,
+  pointsModel,
 }

@@ -1,2 +1,30 @@
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Build artifacts
+dist/
+
+# Environment variables
 .env
-node_modules
+
+# IDE/Editor specific files
+.vscode/
+*.code-workspace
+
+# macOS specific files
+.DS_Store
+
+# Heroku
+.env.production
+
+# Logs
+logs/
+*.log
+
+# MongoDB Atlas
+.env.mongo
+
+# iTerm2
+com.googlecode.iterm2.plist

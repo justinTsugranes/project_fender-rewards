@@ -1,11 +1,14 @@
-const Transaction = require('../models/Transaction')
+const { transactionService } = require('../services')
 
 // Create a new transaction
 exports.createTransaction = async (req, res) => {
   try {
     const { userId, amount, description } = req.body
-    const transaction = new Transaction({ userId, amount, description })
-    const newTransaction = await transaction.save()
+    const newTransaction = await transactionService.createTransaction(
+      userId,
+      amount,
+      description,
+    )
     res.status(201).json(newTransaction)
   } catch (error) {
     res.status(400).json({ message: error.message })
@@ -16,7 +19,7 @@ exports.createTransaction = async (req, res) => {
 exports.getUserTransactions = async (req, res) => {
   try {
     const { userId } = req.params
-    const transactions = await Transaction.find({ userId })
+    const transactions = await transactionService.getUserTransactions(userId)
     res.json(transactions)
   } catch (error) {
     res.status(500).json({ message: error.message })
