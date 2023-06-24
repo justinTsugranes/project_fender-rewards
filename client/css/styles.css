@@ -206,7 +206,7 @@ nav a {
   color: var(--white-color);
 }
 
-.content {
+.main-content {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -363,12 +363,12 @@ input {
 
 /* Desktop */
 @media screen and (min-width: 1024px) {
-  .content {
+  .main-content {
     display: flex;
     justify-content: center;
     align-items: start;
     flex-direction: row-reverse;
-    max-width: 1200px;
+    max-width: 1240px;
     margin: 60px auto;
   }
 
@@ -383,5 +383,6 @@ input {
 
   .user-details {
     flex: 1;
+    width: 100%;
   }
 }
