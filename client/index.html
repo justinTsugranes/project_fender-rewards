@@ -6,46 +6,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fender Rewards</title>
     <meta name="description" content="The Fender rewards program" />
-    <meta name="author" content="Insert site name" />
+    <meta name="author" content="Justin Tsugranes" />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
 
   <body>
     <header>
+      <!-- Top Header Content -->
       <div class="header-content">
+        <!-- Accessibility Skip Link -->
         <a href="#main" class="skip">Skip to main content</a>
-        <img src="img/fender-logo-red.webp" alt="Fender logo" />
+        <img src="img/fender-logo-red.webp" alt="Fender logo in red" />
+        <!-- Main Nav -->
         <nav aria-label="main">
           <ul>
-            <li><a href="index.html">Fender Rewards</a></li>
+            <li>
+              <a href="index.html" title="Fender Rewards Home Page"
+                >Fender Rewards</a
+              >
+            </li>
             <li>
               <a
                 href="http://fender-rewards.netlify.app/api-docs"
                 target="_blank"
+                title="Visit the API documentation on a new tab"
                 >Docs</a
               >
             </li>
-            <li><a href="prompt.html">Prompt Page</a></li>
-            <li><a href="notes.html">Notes</a></li>
+            <li>
+              <a href="prompt.html" title="Project Prompt Page">Prompt Page</a>
+            </li>
+            <li><a href="notes.html" title="Project Notes Page">Notes</a></li>
           </ul>
         </nav>
+        <!-- /End Main Nav -->
       </div>
+      <!-- /End Top Header Content -->
+
+      <!-- Hero -->
       <div class="home-hero">
         <h1>Welcome to the Fender Rewards Program</h1>
         <h2>Riff, Rewards, Repeat</h2>
       </div>
+      <!-- /End Hero -->
     </header>
 
-    <main id="main" aria-labelledby="main-content">
+    <main id="main">
+      <!-- Error Message Container -->
       <div id="error-message"></div>
 
       <div class="content">
+        <!-- User Details Section -->
         <section class="user-details">
           <h3 id="user-details-heading">USER DETAILS</h3>
           <table id="user-details-table">
             <tr>
               <td>User:</td>
-              <td id="user-id"></td>
+              <td id="user"></td>
             </tr>
             <tr>
               <td>Current points:</td>
@@ -57,43 +74,57 @@
             </tr>
           </table>
         </section>
+        <!-- /End User Details Section -->
 
+        <!-- Test Section -->
         <div class="left-sections">
+          <!-- Get User Section -->
           <section id="get-user-section" class="test-section">
             <h3>GET USER</h3>
-            <label for="get-user-id">Enter User ID:</label>
+            <label for="user-id-input">Enter User ID:</label>
             <div class="input-button-container">
-              <input type="number" id="get-user-id" autocomplete="off" />
+              <input type="number" id="user-id-input" autocomplete="off" />
               <button id="get-user-btn">Get User Data</button>
             </div>
             <div id="user-message"></div>
           </section>
+          <!-- /End Get User Section -->
 
+          <!-- Earn Points Section -->
           <section id="earn-points-section" class="test-section">
             <h3>EARN POINTS</h3>
-            <label for="earn-points">Points To Add:</label>
+            <label for="earn-points-input">Points To Add:</label>
             <div class="input-container">
-              <input type="number" id="earn-points" autocomplete="off" />
+              <input type="number" id="earn-points-input" autocomplete="off" />
               <button id="earn-points-btn">Earn Points</button>
             </div>
-            <div id="earn-message"></div>
+            <div id="earn-points-message"></div>
           </section>
+          <!-- /End Earn Points Section -->
 
+          <!-- Redeem Points Section -->
           <section id="redeem-points-section" class="test-section">
             <h3>REDEEM POINTS</h3>
-            <label for="redeem-points">Points to Redeem:</label>
+            <label for="redeem-points-input">Points to Redeem:</label>
             <div class="input-container">
-              <input type="number" id="redeem-points" autocomplete="off" />
+              <input
+                type="number"
+                id="redeem-points-input"
+                autocomplete="off"
+              />
               <button id="redeem-points-btn">Redeem Points</button>
             </div>
-            <div id="redeem-message"></div>
+            <div id="redeem-points-message"></div>
           </section>
+          <!-- /End Redeem Points Section -->
         </div>
+        <!-- /End Test Section -->
       </div>
+      <!-- /End Content -->
     </main>
 
     <footer>
-      <img src="img/fender-logo-red.webp" alt="Fender logo" />
+      <img src="img/fender-logo-red.webp" alt="Fender logo in red" />
     </footer>
 
     <script src="js/client.js"></script>
