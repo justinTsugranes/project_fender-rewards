@@ -4,6 +4,13 @@ const { userController } = require('../controllers')
 
 /**
  * @swagger
+ * tags:
+ *   name: Users
+ *   description: User management endpoints
+ */
+
+/**
+ * @swagger
  * /:
  *   post:
  *     summary: Create a new user
@@ -42,7 +49,7 @@ router.post('/', userController.createUser)
  *           schema:
  *             type: object
  *             properties:
- *               userId:
+ *               id:
  *                 type: string
  *                 description: The ID of the user.
  *               points:
@@ -78,7 +85,7 @@ router.post('/earn-points', userController.earnPoints)
  *           schema:
  *             type: object
  *             properties:
- *               userId:
+ *               id:
  *                 type: string
  *                 description: The ID of the user.
  *               points:
@@ -97,27 +104,6 @@ router.post('/earn-points', userController.earnPoints)
  *         description: An error occurred on the server.
  */
 router.post('/redeem-points', userController.redeemPoints)
-
-/**
- * @swagger
- * /points-balance/{userId}:
- *   get:
- *     summary: Get the points balance for a user
- *     tags: [Users]
- *     parameters:
- *       - in: path
- *         name: userId
- *         required: true
- *         description: ID of the user to retrieve the points balance
- *         schema:
- *           type: string
- *     responses:
- *       200:
- *         description: The points balance was retrieved successfully.
- *       500:
- *         description: An error occurred on the server.
- */
-router.get('/points-balance/:userId', userController.getPointsBalance)
 
 /**
  * @swagger

@@ -55,22 +55,22 @@
       <!-- Error Message Container -->
       <div id="error-message"></div>
 
-      <div class="main-content">
+      <div class="content">
         <!-- User Details Section -->
         <section class="user-details">
           <h3 id="user-details-heading">USER DETAILS</h3>
           <table id="user-details-table">
             <tr>
-              <td>User:</td>
-              <td id="user"></td>
+              <td>User ID:</td>
+              <td id="user-id"></td>
+            </tr>
+            <tr>
+              <td>User Name:</td>
+              <td id="user-name"></td>
             </tr>
             <tr>
               <td>Current points:</td>
               <td id="current-points"></td>
-            </tr>
-            <tr>
-              <td>Points Redeemed:</td>
-              <td id="redeemed-points"></td>
             </tr>
           </table>
         </section>
@@ -83,7 +83,7 @@
             <h3>GET USER</h3>
             <label for="user-id-input">Enter User ID:</label>
             <div class="input-button-container">
-              <input type="number" id="user-id-input" autocomplete="off" />
+              <input type="text" id="user-id-input" autocomplete="off" />
               <button id="get-user-btn">Get User Data</button>
             </div>
             <div id="user-message"></div>

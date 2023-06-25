@@ -1,7 +1,7 @@
 // User Details
-const user = document.getElementById('user')
+const user = document.getElementById('user-id')
+const userName = document.getElementById('user-name')
 const currentPoints = document.getElementById('current-points')
-const redeemedPoints = document.getElementById('redeemed-points')
 // GET USER
 const userIdInput = document.getElementById('user-id-input')
 const getUserBtn = document.getElementById('get-user-btn')
@@ -47,12 +47,13 @@ async function getUser(id) {
     if (response.ok) {
       clearError() // Clear any previous error messages
       console.log(user)
-      currentPoints.textContent = user.totalPoints // Update points
+      userName.textContent = user.name // Update name
+      currentPoints.textContent = user.points_balance // Update points
     } else {
       throw new Error(user.message)
     }
   } catch (error) {
-    console.error('An error occurred:', error)
+    console.error('getUser Error:', error)
     showError(error.message)
   }
 }
@@ -67,7 +68,7 @@ async function earnPoints(id, points) {
   }
 
   try {
-    const response = await fetch(`${baseUrl}/users/${id}/earnPoints`, {
+    const response = await fetch(`${baseUrl}/users/${id}/earn-points`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -80,12 +81,12 @@ async function earnPoints(id, points) {
     if (response.ok) {
       clearError() // Clear any previous error messages
       console.log(result)
-      currentPoints.textContent = result.totalPoints // Update points
+      currentPoints.textContent = result.points_balance // Update points
     } else {
       throw new Error(result.message)
     }
   } catch (error) {
-    console.error('An error occurred:', error)
+    console.error('earnPoints Error:', error)
     showError(error.message)
   }
 }
@@ -100,7 +101,7 @@ async function redeemPoints(id, points) {
   }
 
   try {
-    const response = await fetch(`${baseUrl}/users/${id}/redeemPoints`, {
+    const response = await fetch(`${baseUrl}/users/${id}/redeem-points`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -113,12 +114,12 @@ async function redeemPoints(id, points) {
     if (response.ok) {
       clearError() // Clear any previous error messages
       console.log(result)
-      currentPoints.textContent = result.totalPoints // Update points
+      currentPoints.textContent = result.points_balance // Update points
     } else {
       throw new Error(result.message)
     }
   } catch (error) {
-    console.error('An error occurred:', error)
+    console.error('redeemPoints Error:', error)
     showError(error.message)
   }
 }

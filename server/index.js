@@ -38,16 +38,12 @@ app.use(express.urlencoded({ extended: true })) // for parsing application/x-www
 
 // Import routes
 const userRoutes = require('./routes/userRoutes')
-// const transactionRoutes = require('./routes/transactionRoutes')
-// const pointsRoutes = require('./routes/pointsRoutes')
 
 // Initialize swagger-jsdoc -> returns validated swagger spec in json format
 const swaggerSpec = swaggerJsDoc(swaggerOptions)
 
 // Use routes
 app.use('/users', userRoutes)
-// app.use('/transactions', transactionRoutes)
-// app.use('/points', pointsRoutes)
 app.use(
   '/api-docs',
   swaggerUi.serve,
