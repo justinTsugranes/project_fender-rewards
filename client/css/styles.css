@@ -194,16 +194,13 @@ nav a {
   font-weight: bold;
 }
 
-.home-hero {
+/* Hero content */
+.hero {
   width: 100%;
-  text-align: center;
-  background-color: var(--secondary-color);
-}
-
-/* Hero tagline */
-.home-hero {
   padding: 22px;
+  text-align: center;
   color: var(--white-color);
+  background-color: var(--secondary-color);
 }
 
 .content {
