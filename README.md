@@ -140,6 +140,12 @@ Make sure you have the following installed on your machine:
    MONGODB_URI = "ENTER YOUR URI"
    ```
 
+6. cd into root directory
+
+   ```sh
+   npm start
+   ```
+
 <!-- TODO: UPDATE USAGE EXAMPLES -->
 
 <!-- ## Usage
