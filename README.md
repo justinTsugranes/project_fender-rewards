@@ -266,8 +266,8 @@ Give a ⭐️ if you like this project and if you like my work, maybe you would 
 <!-- LINK & IMAGE VARIABLES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[project-screenshot]: images/project-screenshot.png
-[project-url]: INSERT_PROJECT_URL
+[project-screenshot]: images/project-screenshot.webp
+[project-url]: https://fender-rewards.netlify.app/
 [repo-url]: https://github.com/justintsugranes/project_fender-rewards.git
 [contributors-shield]: https://img.shields.io/github/contributors/justintsugranes/project_fender-rewards.svg?style=for-the-badge
 [contributors-url]: https://github.com/justintsugranes/project_fender-rewards/graphs/contributors
@@ -303,8 +303,6 @@ Give a ⭐️ if you like this project and if you like my work, maybe you would 
 [postman]: https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white
 [postman-url]: https://www.postman.com/
 
-<!-- APIS -->
-
 <!-- DATABASE -->
 
 [mongodb]: https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white
@@ -314,7 +312,6 @@ Give a ⭐️ if you like this project and if you like my work, maybe you would 
 <!-- AUTH / SECURITY-->
 
 <!-- [bcrypt]: https://www.npmjs.com/package/bcrypt -->
-<!-- [google-auth]: https://www.npmjs.com/package/google-auth-library -->
 <!-- [jwt]: https://jwt.io/ -->
 <!-- [nanoid]:  -->
 <!-- [uuid]:  -->
@@ -332,12 +329,3 @@ Give a ⭐️ if you like this project and if you like my work, maybe you would 
 [heroku-url]: https://www.heroku.com/
 [netlify]: https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white
 [netlify-url]: https://www.netlify.com/
-
-<!-- DEV -->
-
-<!-- [eslint]: https://img.shields.io/badge/ESLint-4B32C3?style=for-the-badge&logo=eslint&logoColor=white
-[eslint-url]: https://eslint.org/ -->
-<!-- [prettier]: https://img.shields.io/badge/Prettier-F7B93E?style=for-the-badge&logo=prettier&logoColor=white
-[prettier-url]: https://prettier.io/ -->
-<!-- [copilot]: https://img.shields.io/badge/CoPilot-181717?style=for-the-badge&logo=github&logoColor=white
-[copilot-url]: https://github.com/features/copilot -->
