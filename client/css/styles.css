@@ -320,6 +320,11 @@ input {
   background-color: #f8d7da;
 }
 
+/* Project Prompt */
+#prompt-container {
+  max-width: 1200px;
+}
+
 @media screen and (min-width: 320px) {
   /* User detail styles */
   .user-details {
