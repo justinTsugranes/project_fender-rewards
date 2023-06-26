@@ -14,7 +14,7 @@
 
 ### [Fender Rewards Program][project-url]
 
-The Fender Rewards Program is a simple full-stack application built using JavaScript, HTML, and CSS for the frontend that tests the functionality for implementing a rewards program. The frontend is hosted on Netlify, while the backend is developed using Node.js and Express and hosted on Heroku. The application utilizes MongoDB Atlas as the database.
+The Fender Rewards Program is a simple full-stack application built using JavaScript, HTML, and CSS for the frontend and Node.js / Express.js for the server. The frontend is hosted on Netlify. The backend is hosted on Heroku. The application utilizes MongoDB Atlas as the database. It's meant to test the functionality of a hypotethical rewards program for Fender Digital.
 
 [Explore the docs][repo-url] --- [View Demo][project-url] --- [Report Bug][issues-url]
 
