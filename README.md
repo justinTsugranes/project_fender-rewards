@@ -28,7 +28,7 @@ The Fender Rewards Program is a simple full-stack application built using JavaSc
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
-    <!-- <li>
+    <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
@@ -36,7 +36,7 @@ The Fender Rewards Program is a simple full-stack application built using JavaSc
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li> -->
+    <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
   </ol>
@@ -71,7 +71,6 @@ _I'd love to hear any feedback or just thoughts. Feel free to reach out at my co
 
 [![node]][node-url]
 [![express]][express-url]
-[mongoose]
 [![postman]][postman-url]
 [![mongodb]][mongodb-url]
 [![swagger]][swagger-url]
@@ -88,7 +87,6 @@ _I'd love to hear any feedback or just thoughts. Feel free to reach out at my co
 <!-- [bcrypt] -->
 <!-- [nanoid -->
 <!-- [uuid] -->
-
 [dotenv](https://www.npmjs.com/package/dotenv)
 
 #### Testing
@@ -100,6 +98,7 @@ _I'd love to hear any feedback or just thoughts. Feel free to reach out at my co
 
 [concurrently](https://www.npmjs.com/package/concurrently)
 [nodemon](https://nodemon.io/)
+[node-cron](https://www.npmjs.com/package/node-cron)
 
 <!-- TODO: UPDATE INFO -->
 
@@ -146,13 +145,11 @@ Make sure you have the following installed on your machine:
    npm start
    ```
 
-<!-- TODO: UPDATE USAGE EXAMPLES -->
+## Usage
 
-<!-- ## Usage
+From the frontend, you can get a user by id, add points to a user, and redeem points for a user.
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation][repo-url]_ -->
+_For more examples, please refer to the [Documentation][repo-url]_
 
 ### Folder Structure
 
@@ -205,16 +202,21 @@ _For more examples, please refer to the [Documentation][repo-url]_ -->
 └── node_modules
 ```
 
-<!-- <!-- ## Features -->
+## Features
 
 ### Frontend Features
 
-1.
+1. Built framework free using just JavaScript, HTML, and CSS
+2. Get User, Earn Points, and Redeem Points functions
+3. Hosted on Netlify
 
 ### Backend Features
 
-1.
-2.
+1. Node.js and Express server
+2. Follows MVP pattern
+3. Hosted on Heroku
+4. Connected to MongoDB Atlas Backend
+5. Swagger documentation
 
 <!-- TODO: UPDATE ROADMAP -->
 
@@ -223,9 +225,9 @@ _For more examples, please refer to the [Documentation][repo-url]_ -->
 - [ ] Feature 1
 - [ ] Feature 2
 - [ ] Feature 3
-  - [ ] Nested Feature
+  - [ ] Nested Feature -->
 
-See the [open issues][issues-url] for a full list of proposed features (and known issues). -->
+See the [open issues][issues-url] for a full list of proposed features (and known issues).
 
 ## License
 
@@ -296,7 +298,7 @@ Give a ⭐️ if you like this project and if you like my work, maybe you would 
 
 [mongodb]: https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white
 [mongodb-url]: https://www.mongodb.com/home
-[mongoose]: https://mongoosejs.com/docs/
+<!-- [mongoose]: https://mongoosejs.com/docs/ -->
 
 <!-- AUTH / SECURITY-->
 
