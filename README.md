@@ -14,7 +14,7 @@
 
 ### [Fender Rewards Program][project-url]
 
-The Fender Rewards Program is a simple full-stack application built using JavaScript, HTML, and CSS for the frontend. The frontend is hosted on Netlify, while the backend is developed using Node.js and Express and hosted on Heroku. The application utilizes MongoDB Atlas as the database.
+The Fender Rewards Program is a simple full-stack application built using JavaScript, HTML, and CSS for the frontend that tests the functionality for implementing a rewards program. The frontend is hosted on Netlify, while the backend is developed using Node.js and Express and hosted on Heroku. The application utilizes MongoDB Atlas as the database.
 
 [Explore the docs][repo-url] --- [View Demo][project-url] --- [Report Bug][issues-url]
 
@@ -46,11 +46,11 @@ The Fender Rewards Program is a simple full-stack application built using JavaSc
 
 [![Project Screen Shot][project-screenshot]][project-url] [![Contributors][contributors-shield]][contributors-url] [![Forks][forks-shield]][forks-url] [![Stargazers][stars-shield]][stars-url] [![Issues][issues-shield]][issues-url] [![MIT License][license-shield]][license-url]
 
-At this stage, the Fender Rewards Program is in its early development phase and focuses on creating a basic structure. The current implementation does not include the extensive features described in the previous response.
+At this stage, the Fender Rewards Program is in its early development phase and focuses on creating a basic structure for a rewards program. The current implementation does not include any extensive features.
 
-The purpose of the application is to manage a loyalty program where users can earn points for specific actions, such as purchases and achievements. The program aims to enhance customer engagement and provide incentives for continued interaction with Fender's products and services.
+The purpose of the application is to test the logic for managing a loyalty program where users can earn points for specific actions, such as purchases and achievements and redeem points.
 
-The project is just beginning, and the initial version includes the foundational setup and basic functionality. Future iterations will involve the integration of additional features, such as the points redemption algorithm, data management, user interactions, and testing.
+The project is just in the beginning stages and the initial version includes the foundational setup and basic functionality. Future iterations will involve the integration of additional features, such as the points redemption algorithm, data management, user interactions, and testing.
 
 _I'd love to hear any feedback or just thoughts. Feel free to reach out at my contact info below. Cheers!_
 
@@ -67,22 +67,19 @@ _I'd love to hear any feedback or just thoughts. Feel free to reach out at my co
 <!-- - **UI/UX / Graphic Design** -->
   <!-- [![figma]][figma-url] -->
 
-#### Backend
-
-<!-- - **API** -->
+#### Backend / API
 
 [![node]][node-url]
 [![express]][express-url]
-[![mongodb]][mongodb-url]
-[![postman]][postman-url]
 [mongoose]
+[![postman]][postman-url]
+[![mongodb]][mongodb-url]
+[![swagger]][swagger-url]
 
 #### Deployment / Hosting
 
 [![heroku]][heroku-url]
 [![netlify]][netlify-url]
-
-<!-- [![stackblitz]][stackblitz-url] -->
 
 #### Security / Auth / Encryption
 
@@ -102,10 +99,7 @@ _I'd love to hear any feedback or just thoughts. Feel free to reach out at my co
 <!-- #### Misc Packages -->
 
 [concurrently](https://www.npmjs.com/package/concurrently)
-
-<!-- [![eslint]][eslint-url] -->
-<!-- [![prettier]][prettier-url] -->
-<!-- [![copilot]][copilot-url] -->
+[nodemon](https://nodemon.io/)
 
 <!-- TODO: UPDATE INFO -->
 
@@ -160,55 +154,56 @@ _For more examples, please refer to the [Documentation][repo-url]_ -->
 
 ### Folder Structure
 
-<!-- ```md
-├── client
-│ ├── node_modules
-│ ├── public
-│ ├── src
-│ ├── .gitignore
-│ ├── package-lock.json
-│ ├── package.json
-
-│ └── README.md
-├── node_modules
-├── .gitignore
-├── index.js
-├── package-lock.json
-└── package.json
-``` -->
-
 ```md
-/server
-|
-|--/config
-| |-- .env
-| |-- .env.production
-| |-- dbConfig.js
-|
-|--/controllers
-| |-- index.js
-| |-- user.controller.js
-|
-|--/models
-| |-- index.js
-| |-- user.model.js
-|
-|--/routes
-| |-- index.js
-| |-- user.routes.js
-|
-|--/services
-| |-- index.js
-| |-- user.service.js
-|
-|--/server
-| |-- index.js
-| |-- .gitignore
-| |-- package.json
-| |-- swagger.css
+/root
+├── client
+│   ├── css
+│   │   └── styles.css
+│   ├── img
+│   ├── js
+│   │   └── client.js
+│   ├── index.html
+│   ├── notes.html
+│   └── prompt.html
+├── tests
+│   ├── unit
+│   │   ├── user.controller.test.js
+│   │   ├── user.model.test.js
+│   │   ├── user.routes.test.js
+│   │   └── user.service.test.js
+│   └── e2e
+│       └── e2e.js
+├── server
+│   ├── config
+│   │   ├── .env
+│   │   ├── .env.production
+│   │   └── dbConfig.js
+│   ├── controllers
+│   │   ├── index.js
+│   │   └── user.controller.js
+│   ├── models
+│   │   ├── index.js
+│   │   └── user.model.js
+│   ├── routes
+│   │   ├── index.js
+│   │   └── user.routes.js
+│   ├── services
+│   │   ├── index.js
+│   │   └── user.service.js
+│   ├── index.js
+│   ├── .gitignore
+│   ├── package.json
+│   └── swagger.css
+├── .gitignore
+├── package-lock.json
+├── package.json
+├── cypress.config.js
+├── jest.config.js
+├── procfile
+└── node_modules
 ```
 
-<!-- ## Features
+<!-- <!-- ## Features -->
 
 ### Frontend Features
 
@@ -217,7 +212,7 @@ _For more examples, please refer to the [Documentation][repo-url]_ -->
 ### Backend Features
 
 1.
-2. -->
+2.
 
 <!-- TODO: UPDATE ROADMAP -->
 
@@ -247,9 +242,9 @@ Give a ⭐️ if you like this project and if you like my work, maybe you would 
 
 <a href="https://www.buymeacoffee.com/tsugranes" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-red.png" alt="Buy Me A Coffee" width="150"></a>
 
-## Acknowledgments
+<!-- ## Acknowledgments
 
-- []()
+- []() -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
