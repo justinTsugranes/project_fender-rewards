@@ -187,27 +187,19 @@ _For more examples, please refer to the [Documentation][repo-url]_ -->
 |
 |--/controllers
 | |-- index.js
-| |-- pointsController.js
-| |-- transactionController.js
-| |-- userController.js
+| |-- user.controller.js
 |
 |--/models
 | |-- index.js
-| |-- pointsModel.js
-| |-- userModel.js
-| |-- transactionModel.js
+| |-- user.model.js
 |
 |--/routes
 | |-- index.js
-| |-- pointsRoutes.js
-| |-- transactionRoutes.js
-| |-- userRoutes.js
+| |-- user.routes.js
 |
 |--/services
 | |-- index.js
-| |-- pointsService.js
-| |-- transactionService.js
-| |-- userService.js
+| |-- user.service.js
 |
 |--/server
 | |-- index.js
