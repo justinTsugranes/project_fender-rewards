@@ -327,6 +327,10 @@ input {
   max-width: 1200px;
 }
 
+#notes-container img {
+  width: 500px;
+}
+
 @media screen and (min-width: 320px) {
   /* User detail styles */
   .user-details {
