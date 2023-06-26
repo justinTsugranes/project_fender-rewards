@@ -103,30 +103,24 @@ _I'd love to hear any feedback or just thoughts. Feel free to reach out at my co
 
 <!-- TODO: UPDATE INFO -->
 
-<!-- ## Getting Started
+## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps. -->
+To get started with the Fender Rewards Program, follow the instructions below:
 
-<!-- TODO: UPDATE PREREQUISITES -->
+### Prerequisites
 
-<!-- ### Prerequisites
+Make sure you have the following installed on your machine:
 
-This is an example of how to list things you need to use the software and how to install them.
-
-- npm
+- Node.js
+- npm (Node Package Manager)
 
   ```sh
-  npm install npm@latest -g
-  ``` -->
+  npm i npm@latest -g
+  ```
 
-<!-- TODO: UPDATE INSTALLATION INFO -->
+### Installation
 
-<!-- ### Installation
-
-1. Get a free API Key at [https://example.com][api-key-link]
-
-2. Clone the repo
+1. Clone the repository:
 
    ```sh
    git clone https://github.com/justintsugranes/project_fender-rewards.git
@@ -135,14 +129,16 @@ This is an example of how to list things you need to use the software and how to
 3. Install NPM packages
 
    ```sh
-   npm install
+   npm i
    ```
 
-4. Enter your API in `config.js`
+4. Create a .env in `/server/config/`
 
-   ```js
-   const API_KEY = "ENTER YOUR API"
-   ``` -->
+5. Create a your MONGODB_URI
+
+   ```sh
+   MONGODB_URI = "ENTER YOUR URI"
+   ```
 
 <!-- TODO: UPDATE USAGE EXAMPLES -->
 

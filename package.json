@@ -7,6 +7,9 @@
     "test:unit": "jest --config=jest.config.js",
     "test:e2e": "cypress run",
     "test": "concurrently \"npm run test:unit\" \"npm run test:e2e\"",
+    "install:client": "cd client && npm install",
+    "install:server": "cd server && npm install",
+    "install": "npm run install:client && npm run install:server",
     "start": "concurrently \"cd server && npm start\" \"cd client && npm start\""
   },
   "repository": {
