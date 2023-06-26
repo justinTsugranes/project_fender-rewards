@@ -1,9 +1,5 @@
-const userService = require('./userService')
-const pointsService = require('./pointsService')
-const transactionService = require('./transactionService')
+const UserService = require('./user.service')
 
 module.exports = {
-  userService,
-  pointsService,
-  transactionService,
+  UserService,
 }

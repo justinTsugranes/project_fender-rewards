@@ -1,9 +1,5 @@
-const userController = require('./userController')
-const transactionController = require('./transactionController')
-const pointsController = require('./pointsController')
+const UserController = require('./user.controller')
 
 module.exports = {
-  userController,
-  transactionController,
-  pointsController,
+  UserController,
 }
