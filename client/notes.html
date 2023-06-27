@@ -1,278 +1,585 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fender Rewards | Notes</title>
+    <meta name="description" content="The Fender rewards program" />
+    <meta name="author" content="Insert site name" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fender Rewards | Notes</title>
-  <meta name="description" content="The Fender rewards program" />
-  <meta name="author" content="Insert site name" />
-  <link rel="stylesheet" href="css/styles.css" />
-</head>
+  <body>
+    <header>
+      <!-- Top Header Content -->
+      <div class="header-content">
+        <!-- Accessibility Skip Link -->
+        <a href="#main" class="skip">Skip to main content</a>
+        <img src="img/fender-logo-red.webp" alt="Fender logo in red" />
+        <!-- Main Nav -->
+        <nav aria-label="main">
+          <ul>
+            <li>
+              <a href="index.html" title="Fender Rewards Home Page">Home</a>
+            </li>
+            <li>
+              <a href="prompt.html" title="Project Prompt Page">Prompt</a>
+            </li>
+            <li><a href="notes.html" title="Project Notes Page">Notes</a></li>
+            <li>
+              <a
+                href="https://github.com/justinTsugranes/project_fender-rewards"
+                target="_blank"
+                title="Visit the project repo on a new tab"
+                >Repo</a
+              >
+            </li>
+            <li>
+              <a
+                href="http://localhost:5000/api-docs"
+                target="_blank"
+                title="Visit the API documentation on a new tab"
+                >Docs</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <!-- /End Main Nav -->
+      </div>
+      <!-- /End Top Header Content -->
 
-<body>
-  <header>
-    <!-- Top Header Content -->
-    <div class="header-content">
-      <!-- Accessibility Skip Link -->
-      <a href="#main" class="skip">Skip to main content</a>
-      <img src="img/fender-logo-red.webp" alt="Fender logo in red" />
-      <!-- Main Nav -->
-      <nav aria-label="main">
-        <ul>
-          <li>
-            <a href="index.html" title="Fender Rewards Home Page">Home</a>
-          </li>
-          <li>
-            <a href="prompt.html" title="Project Prompt Page">Prompt</a>
-          </li>
-          <li><a href="notes.html" title="Project Notes Page">Notes</a></li>
-          <li>
-            <a href="https://github.com/justinTsugranes/project_fender-rewards" target="_blank" title="Visit the project repo on a new tab">Repo</a>
-          </li>
-          <li>
-            <a href="http://localhost:5000/api-docs" target="_blank" title="Visit the API documentation on a new tab">Docs</a>
-          </li>
-        </ul>
-      </nav>
-      <!-- /End Main Nav -->
-    </div>
-    <!-- /End Top Header Content -->
+      <!-- Hero -->
+      <div class="hero notes-hero">
+        <h1>Project Notes</h1>
+      </div>
+      <!-- /End Hero -->
+    </header>
 
-    <!-- Hero -->
-    <div class="hero notes-hero">
-      <h1>Project Notes</h1>
-    </div>
-    <!-- /End Hero -->
-  </header>
-
-  <main id="main" aria-labelledby="main-content">
-    <div id="notes-container">
-      <section>
-        <h1>Rewards Program Requirements:</h1>
-        <ul>
-          <li>
-            <strong>Integration:</strong>
-            <p>The rewards program should be integrated with both Fender Digital's e-commerce store and select dealer partners, allowing customers to earn and redeem rewards both online and in-store.</p>
-          </li>
-          <li>
-            <strong>Points Accumulation:</strong>
-            <p>Customers should be able to earn points not only through purchases but also by completing specific achievements, such as completing courses on Fender Play or using Fender Tune to tune their guitars.</p>
-          </li>
-          <li>
-            <strong>Points Expiry:</strong>
-            <p>The earned rewards points should have an expiration period, typically set to one year. After that period, the points should expire and no longer be redeemable.</p>
-          </li>
-          <li>
-            <strong>Partial Redemption:</strong>
-            <p>Customers should have the flexibility to choose how many points they want to redeem at a given time. They should not be required to redeem all their accumulated points in a single transaction.</p>
-          </li>
-        </ul>
-      </section>
-
-      <section>
-        <h1>Benefits of the Rewards Program:</h1>
-        <p>By offering rewards for purchases and achievements, Fender Rewards aims to achieve several objectives:</p>
-        <ul>
-          <li>
-            <strong>Customer Engagement:</strong>
-            <p>The rewards program motivates customers to actively participate in various activities, such as making purchases and utilizing Fender's digital platforms like Fender Play and Fender Tune. This increased engagement strengthens the bond between customers and the brand.</p>
-          </li>
-          <li>
-            <strong>Loyalty Building:</strong>
-            <p>By rewarding customers for their actions, Fender Rewards fosters loyalty and encourages repeat purchases. Customers feel valued and appreciated, leading to a higher likelihood of them choosing Fender for their future musical instrument needs.</p>
-          </li>
-          <li>
-            <strong>Incentivizing Desired Behaviors:</strong>
-            <p>The rewards program drives desired customer behaviors, such as completing courses on Fender Play or regularly using Fender Tune. It promotes skill development, product usage, and customer retention.</p>
-          </li>
-          <li>
-            <strong>Personalized Benefits:</strong>
-            <p>Customers can choose how they want to utilize their earned rewards points. They can redeem them for discounts on future purchases, free merchandise, or other exclusive offers tailored to their preferences, enhancing their overall shopping experience.</p>
-          </li>
-          <li>
-            <strong>Omni-channel Experience:</strong>
-            <p>By enabling rewards to be earned and redeemed both online and in-store, Fender aims to provide a seamless and consistent experience for customers across various touchpoints. This enhances the overall customer experience and strengthens the relationship between the brand and its customers.</p>
-          </li>
-          <li>
-            <strong>Increased Sales and Revenue:</strong>
-            <p>The rewards program serves as an additional incentive for customers to make purchases and engage with Fender's products and services. This can lead to increased sales and revenue for the company.</p>
-          </li>
-          <li>
-            <strong>Data Collection and Insights:</strong>
-            <p>The rewards program enables the collection of valuable customer data, including purchase behavior, preferences, and engagement patterns. This data can be analyzed to gain insights into customer preferences and behavior, which can inform future marketing strategies and product development initiatives.</p>
-          </li>
-        </ul>
-      </section>
-
-      <section>
-        <h1>Scope and Points of Integration:</h1>
-        <p>The scope of integration involves connecting various systems and platforms, including the e-commerce store, select dealer partners, Fender Play, Fender Tune, and the Fender IT Dealer Portal. The goal is to create a unified rewards program experience for customers across these different touchpoints, enabling seamless earning and redemption of rewards, synchronized points balances, and consistent user interfaces.</p>
-
-        <h2>E-commerce Store Integration through Salesforce Commerce Cloud (SFCC):</h2>
-        <ul>
-          <li>The rewards program should be seamlessly integrated into Fender Digital's e-commerce store.</li>
-          <li>Customers should be able to view their rewards points balance, redeem points, and track their progress toward earning rewards within the e-commerce store's user interface.</li>
-          <li>Integration points may include user authentication, user profile management, points balance display, rewards redemption options, and transaction history.</li>
-        </ul>
-
-        <h2>Fender IT Dealer Portal Integration:</h2>
-        <ul>
-          <li>The rewards program should also extend to select dealer partners, both in-store and online.</li>
-          <li>Integration should enable customers to earn and redeem rewards when making purchases through authorized dealer partners.</li>
-          <li>Integration with Fender's IT Dealer Portal should be established to ensure consistency and coherence in the rewards program.</li>
-          <li>Dealer partners should have access to the necessary tools and interfaces to manage and redeem rewards on behalf of customers.</li>
-          <li>Integration points may include establishing APIs or data-sharing mechanisms with dealer partners, ensuring consistent rewards calculation and redemption processes, and synchronizing customer points balances across channels.</li>
-        </ul>
-
-        <h2>Fender Play Integration:</h2>
-        <ul>
-          <li>Fender Play, Fender Digital's online learning platform, should be integrated into the rewards program.</li>
-          <li>Completion of specific courses on Fender Play should earn customers rewards points.</li>
-          <li>Integration points may include tracking course completion, awarding points based on completion milestones, and synchronizing points data with the rewards program.</li>
-        </ul>
-
-        <h2>Fender Tune Integration:</h2>
-        <ul>
-          <li>Fender Tune, Fender Digital's guitar tuning application, should be integrated into the rewards program.</li>
-          <li>Successfully using Fender Tune to tune guitars over a period of time should earn customers rewards points.</li>
-          <li>Integration points may include tracking tuning activity, awarding points based on usage milestones, and synchronizing points data with the rewards program.</li>
-        </ul>
-      </section>
-
-      <section>
-        <h1>Teams and Systems Involved:</h1>
-        <h2>Shop Team:</h2>
-        <ul>
-          <li>The Shop Team is responsible for the development and maintenance of Fender Digital's e-commerce store, where the rewards program will be integrated.</li>
-          <li>They play a key role in implementing the frontend and backend functionality required for the rewards program within the e-commerce store.</li>
-          <li>The Shop Team collaborates closely with other teams to ensure seamless integration and data flow.</li>
-        </ul>
-
-        <h2>Marketing Team:</h2>
-        <ul>
-          <li>The Marketing Team is involved in the planning and execution of the rewards program from a promotional and engagement perspective.</li>
-          <li>They determine the marketing and communication strategies for the rewards program, manage customer engagement initiatives, and analyze data to inform program improvements and updates.</li>
-        </ul>
-
-        <h2>Fender Play Team:</h2>
-        <ul>
-          <li>The Fender Play Team oversees the learning platform and is responsible for the integration of the rewards program with Fender Play.</li>
-          <li>They coordinate the tracking of course completion and the awarding of points based on those completions.</li>
-        </ul>
-
-        <h2>Dealer Network Team:</h2>
-        <ul>
-          <li>The Dealer Network Team works with authorized dealer partners and is responsible for the integration of the rewards program with dealer systems.</li>
-          <li>They ensure consistent rewards calculation, redemption processes, and points synchronization across all dealer partners.</li>
-        </ul>
-
-        <h2>Fender Tune Team:</h2>
-        <ul>
-          <li>The Fender Tune Team manages the tuning app and is responsible for the integration of the rewards program with Fender Tune.</li>
-          <li>They handle the tracking of tuning activity and the awarding of points based on usage milestones.</li>
-        </ul>
-
-        <h2>Data Analytics Team:</h2>
-        <ul>
-          <li>The Data Analytics Team plays a crucial role in collecting, analyzing, and interpreting data generated from the rewards program.</li>
-          <li>The insights derived from this data are invaluable for informing future marketing strategies, customer engagement initiatives, and product development.</li>
-        </ul>
-
-        <h2>IT/Technical Support Team:</h2>
-        <ul>
-          <li>The IT/Technical Support Team is responsible for providing technical support to all teams and resolving any issues that may arise during the development, implementation, and maintenance of the rewards program.</li>
-          <li>They also ensure that all systems and integrations function optimally and securely.</li>
-        </ul>
-      </section>
-
-      <section>
-        <h1>Algorithm for Redemption of Fender Rewards Points:</h1>
-        <p>Considering points expiry after a year and the ability for partial redemption, here is a proposed algorithm that takes into account edge cases and security concerns:</p>
-
-        <h2>Points Expiry:</h2>
-        <ul>
-          <li>At regular intervals (e.g., daily), the algorithm checks the points balance for each user and identifies any points that have expired based on the one-year validity period.</li>
-          <li>Expired points are automatically removed from the user's points balance.</li>
-        </ul>
-
-        <h2>Partial Redemption:</h2>
-        <ul>
-          <li>When a user initiates a redemption, they can specify the number of points they want to redeem.</li>
-          <li>The algorithm verifies that the requested redemption amount is within the available points balance for the user.</li>
-          <li>If the requested redemption amount is valid, the algorithm processes the redemption and deducts the redeemed points from the user's balance.</li>
-          <li>The remaining points remain intact and can be used for future redemptions.</li>
-        </ul>
-
-        <h2>Edge Cases:</h2>
-        <ul>
-          <li>Expired but Unredeemed Points: A user tries to redeem points that were earned more than a year ago and are now expired but were not previously redeemed.</li>
-          <li>Redeemed Points: A user tries to redeem points that have already been redeemed but are not yet expired.</li>
-          <li>Insufficient Points: A user tries to redeem more points than they have in their account.</li>
-          <li>Negative Points: A user somehow ends up with a negative points balance.</li>
-          <li>Expiring Points: The server and database are hosted in differing time zones causing sync issues when expiring points.</li>
-          <li>Concurrent Transactions: Multiple requests trying to redeem points for the same user at the same time (this could potentially lead to race conditions where more points are redeemed than the user actually has).</li>
-          <li>Data Consistency: The frontend and backend data are out of sync, perhaps due to a failure in updating one or the other.</li>
-          <li>Inactive User Accounts: A user who hasn't used their account for a long time may try to redeem points; you might want to consider if points expire due to inactivity.</li>
-          <li>Database Failures: The database is down or otherwise not responding, causing failures in updating the points balance.</li>
-          <li>User Identification: The system fails to correctly identify the user, or two users have the same identification information (like name or email).</li>
-          <li>Redeeming Points During Acquisition: A user tries to redeem points at the exact same time as they are earning new points.</li>
-        </ul>
-
-        <h2>Security Concerns:</h2>
-        <ul>
-          <li>User Authentication: Before allowing any redemption, the algorithm verifies the user's authentication to ensure the request is coming from a valid and authorized user.</li>
-          <li>Secure Communication: All interactions between the frontend, backend, and any involved systems should be encrypted using secure protocols (e.g., HTTPS) to protect sensitive user data.</li>
-          <li>Input Validation: The algorithm includes robust input validation to prevent malicious input and protect against security vulnerabilities like SQL injection or cross-site scripting (XSS) attacks.</li>
-        </ul>
-
-        <h2>Performance Considerations:</h2>
-        <ul>
-          <li>The algorithm should be designed for efficient performance, considering the potential scale of the rewards program and the need to handle multiple concurrent redemption requests.</li>
-          <li>Caching Mechanisms: Employing caching techniques to store and retrieve points balances can help optimize performance and reduce the load on the backend systems.</li>
-          <li>Database Indexing: Proper indexing of relevant database tables can improve query performance when retrieving and updating points balances.</li>
-        </ul>
-      </section>
-
-      <section>
-        <h2>Data Structure Schema</h2>
-        <img src="img/schema.webp" alt="an example of the schema">
-        <h2>Data Structure Example</h2>
-        <img src="img/json.webp" alt="a json representation of the schema">
-        <h2>Explanation of the Data Structure</h2>
-        <ul>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
-        <h2>Benefits of the Proposed Data Structure</h2>
-        <ul>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
-        <h2>Potential Complexties and Hurdles</h2>
-        <ul>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
-      </section>
-
-      <section>
-        <h2>API Design</h2>
-      <iframe style="border: 1px solid rgba(0, 0, 0, 0.1)" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FRHQGxNr90KpjI43Bukb9YV%2FAPI%3Ftype%3Dwhiteboard%26node-id%3D0%253A1%26t%3DoRBHJuILIh4vhUtw-1" allowfullscreen></iframe>
+    <main id="main" aria-labelledby="main-content">
+      <div id="notes-container">
+        <section>
+          <h1>Rewards Program Requirements:</h1>
+          <ul>
+            <li>
+              <strong>Integration:</strong>
+              <p>
+                The rewards program should be integrated with both Fender
+                Digital's e-commerce store and select dealer partners, allowing
+                customers to earn and redeem rewards both online and in-store.
+              </p>
+            </li>
+            <li>
+              <strong>Points Accumulation:</strong>
+              <p>
+                Customers should be able to earn points not only through
+                purchases but also by completing specific achievements, such as
+                completing courses on Fender Play or using Fender Tune to tune
+                their guitars.
+              </p>
+            </li>
+            <li>
+              <strong>Points Expiry:</strong>
+              <p>
+                The earned rewards points should have an expiration period,
+                typically set to one year. After that period, the points should
+                expire and no longer be redeemable.
+              </p>
+            </li>
+            <li>
+              <strong>Partial Redemption:</strong>
+              <p>
+                Customers should have the flexibility to choose how many points
+                they want to redeem at a given time. They should not be required
+                to redeem all their accumulated points in a single transaction.
+              </p>
+            </li>
+          </ul>
         </section>
-    </div>
 
-  </main>
+        <section>
+          <h1>Benefits of the Rewards Program:</h1>
+          <p>
+            By offering rewards for purchases and achievements, Fender Rewards
+            aims to achieve several objectives:
+          </p>
+          <ul>
+            <li>
+              <strong>Customer Engagement:</strong>
+              <p>
+                The rewards program motivates customers to actively participate
+                in various activities, such as making purchases and utilizing
+                Fender's digital platforms like Fender Play and Fender Tune.
+                This increased engagement strengthens the bond between customers
+                and the brand.
+              </p>
+            </li>
+            <li>
+              <strong>Loyalty Building:</strong>
+              <p>
+                By rewarding customers for their actions, Fender Rewards fosters
+                loyalty and encourages repeat purchases. Customers feel valued
+                and appreciated, leading to a higher likelihood of them choosing
+                Fender for their future musical instrument needs.
+              </p>
+            </li>
+            <li>
+              <strong>Incentivizing Desired Behaviors:</strong>
+              <p>
+                The rewards program drives desired customer behaviors, such as
+                completing courses on Fender Play or regularly using Fender
+                Tune. It promotes skill development, product usage, and customer
+                retention.
+              </p>
+            </li>
+            <li>
+              <strong>Personalized Benefits:</strong>
+              <p>
+                Customers can choose how they want to utilize their earned
+                rewards points. They can redeem them for discounts on future
+                purchases, free merchandise, or other exclusive offers tailored
+                to their preferences, enhancing their overall shopping
+                experience.
+              </p>
+            </li>
+            <li>
+              <strong>Omni-channel Experience:</strong>
+              <p>
+                By enabling rewards to be earned and redeemed both online and
+                in-store, Fender aims to provide a seamless and consistent
+                experience for customers across various touchpoints. This
+                enhances the overall customer experience and strengthens the
+                relationship between the brand and its customers.
+              </p>
+            </li>
+            <li>
+              <strong>Increased Sales and Revenue:</strong>
+              <p>
+                The rewards program serves as an additional incentive for
+                customers to make purchases and engage with Fender's products
+                and services. This can lead to increased sales and revenue for
+                the company.
+              </p>
+            </li>
+            <li>
+              <strong>Data Collection and Insights:</strong>
+              <p>
+                The rewards program enables the collection of valuable customer
+                data, including purchase behavior, preferences, and engagement
+                patterns. This data can be analyzed to gain insights into
+                customer preferences and behavior, which can inform future
+                marketing strategies and product development initiatives.
+              </p>
+            </li>
+          </ul>
+        </section>
 
-  <footer>
-    <img src="img/fender-logo-red.webp" alt="Fender logo in red" />
-  </footer>
+        <section>
+          <h1>Scope and Points of Integration:</h1>
+          <p>
+            The scope of integration involves connecting various systems and
+            platforms, including the e-commerce store, select dealer partners,
+            Fender Play, Fender Tune, and the Fender IT Dealer Portal. The goal
+            is to create a unified rewards program experience for customers
+            across these different touchpoints, enabling seamless earning and
+            redemption of rewards, synchronized points balances, and consistent
+            user interfaces.
+          </p>
 
-  <script src="js/client.js"></script>
-</body>
+          <h2>
+            E-commerce Store Integration through Salesforce Commerce Cloud
+            (SFCC):
+          </h2>
+          <ul>
+            <li>
+              The rewards program should be seamlessly integrated into Fender
+              Digital's e-commerce store.
+            </li>
+            <li>
+              Customers should be able to view their rewards points balance,
+              redeem points, and track their progress toward earning rewards
+              within the e-commerce store's user interface.
+            </li>
+            <li>
+              Integration points may include user authentication, user profile
+              management, points balance display, rewards redemption options,
+              and transaction history.
+            </li>
+          </ul>
 
+          <h2>Fender IT Dealer Portal Integration:</h2>
+          <ul>
+            <li>
+              The rewards program should also extend to select dealer partners,
+              both in-store and online.
+            </li>
+            <li>
+              Integration should enable customers to earn and redeem rewards
+              when making purchases through authorized dealer partners.
+            </li>
+            <li>
+              Integration with Fender's IT Dealer Portal should be established
+              to ensure consistency and coherence in the rewards program.
+            </li>
+            <li>
+              Dealer partners should have access to the necessary tools and
+              interfaces to manage and redeem rewards on behalf of customers.
+            </li>
+            <li>
+              Integration points may include establishing APIs or data-sharing
+              mechanisms with dealer partners, ensuring consistent rewards
+              calculation and redemption processes, and synchronizing customer
+              points balances across channels.
+            </li>
+          </ul>
+
+          <h2>Fender Play Integration:</h2>
+          <ul>
+            <li>
+              Fender Play, Fender Digital's online learning platform, should be
+              integrated into the rewards program.
+            </li>
+            <li>
+              Completion of specific courses on Fender Play should earn
+              customers rewards points.
+            </li>
+            <li>
+              Integration points may include tracking course completion,
+              awarding points based on completion milestones, and synchronizing
+              points data with the rewards program.
+            </li>
+          </ul>
+
+          <h2>Fender Tune Integration:</h2>
+          <ul>
+            <li>
+              Fender Tune, Fender Digital's guitar tuning application, should be
+              integrated into the rewards program.
+            </li>
+            <li>
+              Successfully using Fender Tune to tune guitars over a period of
+              time should earn customers rewards points.
+            </li>
+            <li>
+              Integration points may include tracking tuning activity, awarding
+              points based on usage milestones, and synchronizing points data
+              with the rewards program.
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h1>Teams and Systems Involved:</h1>
+          <h2>Shop Team:</h2>
+          <ul>
+            <li>
+              The Shop Team is responsible for the development and maintenance
+              of Fender Digital's e-commerce store, where the rewards program
+              will be integrated.
+            </li>
+            <li>
+              They play a key role in implementing the frontend and backend
+              functionality required for the rewards program within the
+              e-commerce store.
+            </li>
+            <li>
+              The Shop Team collaborates closely with other teams to ensure
+              seamless integration and data flow.
+            </li>
+          </ul>
+
+          <h2>Marketing Team:</h2>
+          <ul>
+            <li>
+              The Marketing Team is involved in the planning and execution of
+              the rewards program from a promotional and engagement perspective.
+            </li>
+            <li>
+              They determine the marketing and communication strategies for the
+              rewards program, manage customer engagement initiatives, and
+              analyze data to inform program improvements and updates.
+            </li>
+          </ul>
+
+          <h2>Fender Play Team:</h2>
+          <ul>
+            <li>
+              The Fender Play Team oversees the learning platform and is
+              responsible for the integration of the rewards program with Fender
+              Play.
+            </li>
+            <li>
+              They coordinate the tracking of course completion and the awarding
+              of points based on those completions.
+            </li>
+          </ul>
+
+          <h2>Dealer Network Team:</h2>
+          <ul>
+            <li>
+              The Dealer Network Team works with authorized dealer partners and
+              is responsible for the integration of the rewards program with
+              dealer systems.
+            </li>
+            <li>
+              They ensure consistent rewards calculation, redemption processes,
+              and points synchronization across all dealer partners.
+            </li>
+          </ul>
+
+          <h2>Fender Tune Team:</h2>
+          <ul>
+            <li>
+              The Fender Tune Team manages the tuning app and is responsible for
+              the integration of the rewards program with Fender Tune.
+            </li>
+            <li>
+              They handle the tracking of tuning activity and the awarding of
+              points based on usage milestones.
+            </li>
+          </ul>
+
+          <h2>Data Analytics Team:</h2>
+          <ul>
+            <li>
+              The Data Analytics Team plays a crucial role in collecting,
+              analyzing, and interpreting data generated from the rewards
+              program.
+            </li>
+            <li>
+              The insights derived from this data are invaluable for informing
+              future marketing strategies, customer engagement initiatives, and
+              product development.
+            </li>
+          </ul>
+
+          <h2>IT/Technical Support Team:</h2>
+          <ul>
+            <li>
+              The IT/Technical Support Team is responsible for providing
+              technical support to all teams and resolving any issues that may
+              arise during the development, implementation, and maintenance of
+              the rewards program.
+            </li>
+            <li>
+              They also ensure that all systems and integrations function
+              optimally and securely.
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h1>Algorithm for Redemption of Fender Rewards Points:</h1>
+          <p>
+            Considering points expiry after a year and the ability for partial
+            redemption, here is a proposed algorithm that takes into account
+            edge cases and security concerns:
+          </p>
+
+          <h2>Points Expiry:</h2>
+          <ul>
+            <li>
+              At regular intervals (e.g., daily), the algorithm checks the
+              points balance for each user and identifies any points that have
+              expired based on the one-year validity period.
+            </li>
+            <li>
+              Expired points are automatically removed from the user's points
+              balance.
+            </li>
+          </ul>
+
+          <h2>Partial Redemption:</h2>
+          <ul>
+            <li>
+              When a user initiates a redemption, they can specify the number of
+              points they want to redeem.
+            </li>
+            <li>
+              The algorithm verifies that the requested redemption amount is
+              within the available points balance for the user.
+            </li>
+            <li>
+              If the requested redemption amount is valid, the algorithm
+              processes the redemption and deducts the redeemed points from the
+              user's balance.
+            </li>
+            <li>
+              The remaining points remain intact and can be used for future
+              redemptions.
+            </li>
+          </ul>
+
+          <h2>Edge Cases:</h2>
+          <ul>
+            <li>
+              Expired but Unredeemed Points: A user tries to redeem points that
+              were earned more than a year ago and are now expired but were not
+              previously redeemed.
+            </li>
+            <li>
+              Redeemed Points: A user tries to redeem points that have already
+              been redeemed but are not yet expired.
+            </li>
+            <li>
+              Insufficient Points: A user tries to redeem more points than they
+              have in their account.
+            </li>
+            <li>
+              Negative Points: A user somehow ends up with a negative points
+              balance.
+            </li>
+            <li>
+              Expiring Points: The server and database are hosted in differing
+              time zones causing sync issues when expiring points.
+            </li>
+            <li>
+              Concurrent Transactions: Multiple requests trying to redeem points
+              for the same user at the same time (this could potentially lead to
+              race conditions where more points are redeemed than the user
+              actually has).
+            </li>
+            <li>
+              Data Consistency: The frontend and backend data are out of sync,
+              perhaps due to a failure in updating one or the other.
+            </li>
+            <li>
+              Inactive User Accounts: A user who hasn't used their account for a
+              long time may try to redeem points; you might want to consider if
+              points expire due to inactivity.
+            </li>
+            <li>
+              Database Failures: The database is down or otherwise not
+              responding, causing failures in updating the points balance.
+            </li>
+            <li>
+              User Identification: The system fails to correctly identify the
+              user, or two users have the same identification information (like
+              name or email).
+            </li>
+            <li>
+              Redeeming Points During Acquisition: A user tries to redeem points
+              at the exact same time as they are earning new points.
+            </li>
+          </ul>
+
+          <h2>Security Concerns:</h2>
+          <ul>
+            <li>
+              User Authentication: Before allowing any redemption, the algorithm
+              verifies the user's authentication to ensure the request is coming
+              from a valid and authorized user.
+            </li>
+            <li>
+              Secure Communication: All interactions between the frontend,
+              backend, and any involved systems should be encrypted using secure
+              protocols (e.g., HTTPS) to protect sensitive user data.
+            </li>
+            <li>
+              Input Validation: The algorithm includes robust input validation
+              to prevent malicious input and protect against security
+              vulnerabilities like SQL injection or cross-site scripting (XSS)
+              attacks.
+            </li>
+          </ul>
+
+          <h2>Performance Considerations:</h2>
+          <ul>
+            <li>
+              The algorithm should be designed for efficient performance,
+              considering the potential scale of the rewards program and the
+              need to handle multiple concurrent redemption requests.
+            </li>
+            <li>
+              Caching Mechanisms: Employing caching techniques to store and
+              retrieve points balances can help optimize performance and reduce
+              the load on the backend systems.
+            </li>
+            <li>
+              Database Indexing: Proper indexing of relevant database tables can
+              improve query performance when retrieving and updating points
+              balances.
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Data Structure Schema</h2>
+          <img src="img/schema.webp" alt="an example of the schema" />
+          <h2>Data Structure Example</h2>
+          <img src="img/json.webp" alt="a json representation of the schema" />
+          <h2>Explanation of the Data Structure</h2>
+          <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+          <h2>Benefits of the Proposed Data Structure</h2>
+          <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+          <h2>Potential Complexties and Hurdles</h2>
+          <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>API Design</h2>
+          <!-- Figma -->
+          <iframe
+            style="border: 1px solid rgba(0, 0, 0, 0.1)"
+            width="800"
+            height="450"
+            src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FRHQGxNr90KpjI43Bukb9YV%2FAPI%3Ftype%3Dwhiteboard%26node-id%3D0%253A1%26t%3DoRBHJuILIh4vhUtw-1"
+            allowfullscreen
+          ></iframe>
+
+          <!-- Postman -->
+          <h3>Run in Postman</h3>
+          <div
+            class="postman-run-button"
+            data-postman-action="collection/fork"
+            data-postman-visibility="private"
+            data-postman-var-1="23427966-13ff509a-063a-4390-90c4-ab0854e5450c"
+            data-postman-collection-url="entityId=23427966-13ff509a-063a-4390-90c4-ab0854e5450c&entityType=collection&workspaceId=70af37b1-1005-4346-8943-d89f653d6eb1"
+          ></div>
+          <script type="text/javascript">
+            ;(function (p, o, s, t, m, a, n) {
+              !p[s] &&
+                (p[s] = function () {
+                  ;(p[t] || (p[t] = [])).push(arguments)
+                })
+              !o.getElementById(s + t) &&
+                o
+                  .getElementsByTagName('head')[0]
+                  .appendChild(
+                    ((n = o.createElement('script')),
+                    (n.id = s + t),
+                    (n.async = 1),
+                    (n.src = m),
+                    n),
+                  )
+            })(
+              window,
+              document,
+              '_pm',
+              'PostmanRunObject',
+              'https://run.pstmn.io/button.js',
+            )
+          </script>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <img src="img/fender-logo-red.webp" alt="Fender logo in red" />
+    </footer>
+
+    <script src="js/client.js"></script>
+  </body>
 </html>

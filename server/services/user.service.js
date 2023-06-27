@@ -1,7 +1,8 @@
+// Import the UserModel from the models directory.
+const { UserModel } = require('../models/user.model')
+
 // Import the cron library for running scheduled tasks.
 const cron = require('node-cron')
-// Import the UserModel from the models directory.
-const { UserModel } = require('../models')
 
 // Exports createUser function. Create a new user with the provided user data.
 exports.createUser = async (userData) => {
@@ -20,10 +21,12 @@ exports.createUser = async (userData) => {
     // Return the newly created user object
     return newUser
   } catch (error) {
-    // If an error occurs, log it and rethrow the error.
-    console.log(`Error creating user: ${error.message}`)
-    // Throw an error with the message from the caught error
-    throw new Error(error.message)
+    if (error.code === 11000) {
+      throw new Error('User with the same ID or email already exists.')
+    } else {
+      console.log(`Error creating user: ${error.message}`)
+      throw new Error(error.message)
+    }
   }
 }
 
@@ -56,175 +59,237 @@ exports.getUserById = async (id) => {
   }
 }
 
-// Exports earnPoints function. Add points to a user's account.
+// Export the function 'earnPoints'
 exports.earnPoints = async (id, pointsData) => {
   try {
-    // Log the received user ID and points data.
+    // Log the inputs for debugging
     console.log('Received userId:', id, 'and pointsData:', pointsData)
 
-    // Find the user with the provided ID.
+    // Fetch user data from the database using the given id
     let user = await UserModel.findOne({ id })
 
-    // If the user is not found, log the message and return null.
+    // Check if a user is found, if not, return null
     if (!user) {
       console.log('User not found')
       return null
     }
 
-    // Initialize reward_points object if it does not exist. (if user was created before reward points feature was added)
-    if (!user.reward_points) {
-      user.reward_points = {
-        active_points: [],
-        redeemed_points: [],
-        expired_points: [],
+    // Create a new points object with the provided points data
+    const newPoints = {
+      transaction_id: pointsData.transaction_id,
+      original_points: pointsData.original_points,
+      remaining_points: pointsData.remaining_points,
+      assignment_date: pointsData.assignment_date,
+      expiry_date: pointsData.expiry_date,
+      source_platform: pointsData.source_platform,
+      redemptions: [], // Initialize an empty array for redemptions
+    }
+
+    // Add the new points object to the user's points array
+    user.reward_points.points.push(newPoints)
+
+    // Update the user's total points balance with the new points
+    user.points_balance += pointsData.remaining_points
+
+    // Log the user data before saving
+    console.log('User before save:', user)
+
+    // Save the updated user data in the database
+    user = await user.save()
+
+    // Log the user data after saving
+    console.log('User after save:', user)
+
+    // Log the earned points
+    console.log('Points earned:', pointsData)
+
+    // Return the updated user data
+    return user
+  } catch (error) {
+    // Catch any error that occurs during the function execution
+    // Log the error message
+    console.log(`Error earning points: ${error.message}`)
+
+    // Throw the error to be handled by the function caller
+    throw new Error(error.message)
+  }
+}
+
+// Export the function 'redeemPoints'
+exports.redeemPoints = async (id, pointsToRedeem) => {
+  try {
+    // Log the inputs for debugging
+    console.log('Received userId:', id, 'and pointsToRedeem:', pointsToRedeem)
+
+    // Fetch user data from the database using the given id
+    const user = await UserModel.findOne({ id })
+
+    // If no user found, return an error
+    if (!user) {
+      console.log('User not found')
+      throw new Error('User not found')
+    }
+
+    // Initialize a counter for total available points
+    let totalAvailablePoints = 0
+
+    // Sum up the remaining points from the user's reward points
+    for (let point of user.reward_points.points) {
+      totalAvailablePoints += point.remaining_points
+    }
+
+    // If points to be redeemed exceed total available points or if no points available, return an error
+    if (
+      pointsToRedeem.redeemed_points > totalAvailablePoints ||
+      totalAvailablePoints === 0
+    ) {
+      console.log('Not enough points to redeem')
+      console.log('Available points balance:', totalAvailablePoints)
+      throw new Error('Not enough points to redeem')
+    }
+
+    // Define a helper function to create a point redemption
+    const createPointRedemption = (point, redeemedPoints) => {
+      // Create a redemption object
+      const redemption = {
+        redemption_id: pointsToRedeem.redemption_id,
+        redeemed_points: redeemedPoints,
+        redemption_date: pointsToRedeem.redemption_date,
+      }
+
+      // Add redemption to point's redemptions
+      point.redemptions.push(redemption)
+
+      // Subtract redeemed points from the point's remaining points
+      point.remaining_points -= redeemedPoints
+
+      // If all points redeemed, mark point as redeemed
+      if (point.remaining_points === 0) {
+        point.status = 'redeemed'
       }
     }
 
-    // Initialize active_points array if it does not exist.
-    if (!user.reward_points.active_points) {
-      user.reward_points.active_points = []
+    // Initialize a variable to track remaining points to be redeemed
+    let remainingPointsToRedeem = pointsToRedeem.redeemed_points
+
+    // For each of the user's points
+    for (let point of user.reward_points.points) {
+      // If no remaining points to be redeemed, break the loop
+      if (remainingPointsToRedeem <= 0) break
+
+      // If point has no remaining points, continue to next point
+      if (point.remaining_points <= 0) continue
+
+      // Calculate points to be redeemed from point
+      let redeemedPoints = Math.min(
+        remainingPointsToRedeem,
+        point.remaining_points,
+      )
+      // Subtract redeemed points from remaining points to be redeemed
+      remainingPointsToRedeem -= redeemedPoints
+
+      // Call helper function to create a point redemption
+      createPointRedemption(point, redeemedPoints)
     }
 
-    // Add the points data to the active points array.
-    user.reward_points.active_points.push(pointsData)
+    // Subtract redeemed points from user's points balance
+    user.points_balance -=
+      pointsToRedeem.redeemed_points - remainingPointsToRedeem
 
-    // Increase the user's points balance by the number of points in the points data.
-    user.points_balance += pointsData.points
-
-    // Mark the reward_points field as modified - Mongoose does not detect changes in nested objects.
-    user.markModified('reward_points')
-
-    // Log the user before saving.
+    // Log the user data before saving
     console.log('User before save:', user)
 
-    // Save the user to the database.
-    user = await user.save()
-
-    // Log the user after saving and return it.
-    console.log('User after save:', user)
-    console.log('Points earned:', pointsData)
-    // Return the updated user object
-    return user
-  } catch (error) {
-    // If an error occurs, log it and rethrow the error.
-    console.log(`Error earning points: ${error.message}`)
-    // Throw an error with the message from the caught error
-    throw new Error(error.message)
-  }
-}
-
-// Exports redeemPoints function. Redeem points from a user's account.
-exports.redeemPoints = async (id, pointsData) => {
-  try {
-    // Log the received user ID and points data.
-    console.log('Received userId:', id, 'and pointsData:', pointsData)
-
-    // Find the user with the provided ID.
-    const user = await UserModel.findOne({ id })
-
-    // If the user is not found, log the message and return null.
-    if (!user) {
-      console.log('User not found')
-      return null
-    }
-
-    // Destructure active_points and redeemed_points from the user's reward_points.
-    const { active_points, redeemed_points } = user.reward_points
-
-    // Find the index of the active point with the provided transaction ID.
-    const index = active_points.findIndex(
-      (point) => point.transaction_id === pointsData.transaction_id,
-    )
-
-    // If the transaction ID is not found in the active points, log the message and return null.
-    if (index === -1) {
-      console.log('Invalid transaction ID')
-      return null
-    }
-
-    // Remove the point with the provided transaction ID from the active points.
-    const redeemedPoint = active_points.splice(index, 1)[0]
-
-    // Update the redeemed point with the redeemed date, points, and source platform from the points data.
-    redeemedPoint.redeemed_date = new Date()
-    redeemedPoint.points = pointsData.points
-    redeemedPoint.source_platform = pointsData.source_platform
-
-    // Add the redeemed point to the redeemed points.
-    redeemed_points.push(redeemedPoint)
-
-    // Decrease the user's points balance by the number of points in the points data.
-    user.points_balance -= pointsData.points
-
-    // Save the user data.
+    // Save the updated user data in the database
     await user.save()
 
-    // Log the redeemed point and return the user.
-    console.log('Points redeemed:', redeemedPoint)
-    // Return the updated user object
+    // Log the user data after saving
+    console.log('User after save:', user)
+
+    // Log the redeemed points
+    console.log(
+      'Points redeemed:',
+      pointsToRedeem.redeemed_points - remainingPointsToRedeem,
+    )
+
+    // Return the updated user data
     return user
   } catch (error) {
-    // If an error occurs, log it and rethrow the error.
+    // Catch any error that occurs during the function execution
+    // Log the error message
     console.log(`Error redeeming points: ${error.message}`)
-    // Throw an error with the message from the caught error
+
+    // Throw the error to be handled by the function caller
     throw new Error(error.message)
   }
 }
 
-// Defines an expirePoints function that runs through all users and expires points that are past their expiry date.
+// Define an asynchronous function 'expirePoints'
 const expirePoints = async () => {
   try {
-    // Retrieve all users.
+    // Fetch all user data from the database
     const users = await UserModel.find()
 
-    // Get the current date.
+    // Get the current date
     const currentDate = new Date()
 
-    // Iterate over all users.
+    // For each user
     for (const user of users) {
-      // Destructure active_points and expired_points from the user's reward_points.
-      const { active_points, expired_points } = user.reward_points
+      // Get the points array from the user's reward points
+      const { points } = user.reward_points
 
-      // Filter the active points to find any that are past their expiry date.
-      const expired = active_points.filter(
-        (point) => point.expiry_date <= currentDate,
-      )
+      // For each point
+      for (const point of points) {
+        // If the point's status is 'active' and the point's expiry date is on or before the current date
+        if (point.status === 'active' && point.expiry_date <= currentDate) {
+          // Mark the point as 'expired'
+          point.status = 'expired'
 
-      // Update the user's active points to remove any that are past their expiry date.
-      user.reward_points.active_points = active_points.filter(
-        (point) => point.expiry_date > currentDate,
-      )
+          // Subtract the point's value from the user's points balance
+          user.points_balance -= point.points
+        }
+      }
 
-      // Add the expired points to the user's expired points.
-      user.reward_points.expired_points.push(...expired)
-
-      // Save the user to the database.
+      // Save the updated user data in the database
       await user.save()
     }
 
-    // Log that points have been expired.
+    // Log a message indicating that the points have expired
     console.log('Points expired')
   } catch (error) {
-    // If an error occurs, log it and rethrow the error.
+    // Catch any error that occurs during the function execution
+    // Log the error message
     console.log(`Error expiring points: ${error.message}`)
-    // Throw an error with the message from the caught error
+
+    // Throw the error to be handled by the function caller
     throw new Error(error.message)
   }
 }
 
-// Schedule the expirePoints function to run every day at midnight.
-cron.schedule('0 0 * * *', async () => {
-  try {
-    // Log that the point expiration task is running.
-    console.log('Running point expiration task...')
+// Schedule the 'expirePoints' function to run every day at midnight, using a cron job.
+cron.schedule(
+  // The cron time string '0 0 * * *' represents every day at midnight
+  '0 0 * * *',
+  // Define an asynchronous callback function that will run at the scheduled time
+  async () => {
+    try {
+      // Log that the point expiration task is starting
+      console.log('Running point expiration task...')
 
-    // Run the expirePoints function.
-    await expirePoints()
+      // Run the 'expirePoints' function
+      await expirePoints()
 
-    // Log that the point expiration task has completed.
-    console.log('Point expiration task completed.')
-  } catch (error) {
-    // If an error occurs, log it.
-    console.log(`Error running point expiration task: ${error.message}`)
-  }
-})
+      // Log that the point expiration task has completed
+      console.log('Point expiration task completed.')
+    } catch (error) {
+      // Catch any error that occurs during the function execution
+      // Log the error message
+      console.log(`Error running point expiration task: ${error.message}`)
+    }
+  },
+  // No callback for on complete
+  null,
+  // Start the job right now
+  true,
+  // Timezone, 'America/Los_Angeles' is the timezone in which the job will run
+  'America/Los_Angeles',
+)
