@@ -11,6 +11,10 @@
 # Ignore log files
 /logs
 
+# IDE/Editor specific files
+.vscode/
+*.code-workspace
+
 # Ignore macOS specific files
 .DS_Store
 
