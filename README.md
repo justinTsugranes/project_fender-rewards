@@ -157,53 +157,57 @@ _For more examples, please refer to the [Documentation][repo-url]_
 ```md
 /root
 ├── client
-│ ├── css
-│ │ └── styles.css
-│ ├── img
-│ ├── js
-│ │ └── client.js
-│ ├── index.html
-│ ├── notes.html
-│ └── prompt.html
-├── tests
-│ ├── unit
-│ │ ├── user.controller.test.js
-│ │ ├── user.model.test.js
-│ │ ├── user.routes.test.js
-│ │ └── user.service.test.js
-│ ├── e2e
-│ │ └── e2e.test.js
+│   ├── public
+│   │   ├── css
+│   │   │   └── styles.css
+│   │   ├── img
+│   │   ├── js
+│   │   │   └── client.js
+│   │   ├── index.html
+│   │   ├── notes.html
+│   │   └── prompt.html
+│   ├── .gitignore
+│   └── README.md
 ├── server
-│ ├── config
-│ │ ├── .env
-│ │ ├── .env.production
-│ │ └── dbConfig.js
-│ ├── controllers
-│ │ ├── index.js
-│ │ └── user.controller.js
-│ ├── models
-│ │ ├── index.js
-│ │ └── user.model.js
-│ ├── routes
-│ │ ├── index.js
-│ │ └── user.routes.js
-│ ├── services
-│ │ ├── index.js
-│ │ └── user.service.js
-│ ├── swagger
-│ │ ├── swagger.css
-│ │ └── swaggerDef.js
-│ │ └── swaggerOptions.js
-│ ├── index.js
-│ ├── .gitignore
-│ └── package.json
+│   ├── config
+│   │   ├── .env
+│   │   ├── .env.production
+│   │   └── dbConfig.js
+│   ├── controllers
+│   │   ├── index.js
+│   │   └── user.controller.js
+│   ├── models
+│   │   ├── index.js
+│   │   └── user.model.js
+│   ├── routes
+│   │   ├── index.js
+│   │   └── user.routes.js
+│   ├── services
+│   │   ├── index.js
+│   │   └── user.service.js
+│   ├── swagger
+│   │   ├── swagger.css
+│   │   ├── swaggerDef.js
+│   │   └── swaggerOptions.js
+│   ├── index.js
+│   ├── .gitignore
+│   └── package.json
+├── tests
+│   ├── unit
+│   │   ├── user.controller.test.js
+│   │   ├── user.model.test.js
+│   │   ├── user.routes.test.js
+│   │   └── user.service.test.js
+│   └── e2e
+│       └── e2e.test.js
 ├── .gitignore
-├── package-lock.json
-├── package.json
 ├── cypress.config.js
 ├── jest.config.js
 ├── procfile
-└── node_modules
+├── package-lock.json
+├── package.json
+├── node_modules
+└── README.md
 ```
 
 ## Features
