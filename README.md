@@ -36,7 +36,6 @@ The Fender Rewards Program is a simple full-stack application built using JavaSc
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
   </ol>
@@ -191,9 +190,12 @@ _For more examples, please refer to the [Documentation][repo-url]_
 │   │   ├── swagger.css
 │   │   ├── swaggerDef.js
 │   │   └── swaggerOptions.js
-│   ├── index.js
 │   ├── .gitignore
-│   └── package.json
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── Procfile
+│   ├── README.md
+│   └── server.js
 ├── tests
 │   ├── unit
 │   │   ├── user.controller.test.js
@@ -205,7 +207,6 @@ _For more examples, please refer to the [Documentation][repo-url]_
 ├── .gitignore
 ├── cypress.config.js
 ├── jest.config.js
-├── procfile
 ├── package-lock.json
 ├── package.json
 ├── node_modules
@@ -227,15 +228,6 @@ _For more examples, please refer to the [Documentation][repo-url]_
 3. Hosted on Heroku
 4. Connected to MongoDB Atlas Backend
 5. Swagger documentation
-
-<!-- TODO: UPDATE ROADMAP -->
-
-<!-- ## Roadmap
-
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
-  - [ ] Nested Feature -->
 
 See the [open issues][issues-url] for a full list of proposed features (and known issues).
 
