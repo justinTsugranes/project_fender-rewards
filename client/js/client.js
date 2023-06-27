@@ -5,15 +5,12 @@ const currentPoints = document.getElementById('current-points')
 // GET USER
 const userIdInput = document.getElementById('user-id-input')
 const getUserBtn = document.getElementById('get-user-btn')
-const userMessage = document.getElementById('user-message')
 // EARN POINTS
 const earnPointsInput = document.getElementById('earn-points-input')
 const earnPointsBtn = document.getElementById('earn-points-btn')
-const earnPointsMessage = document.getElementById('earn-points-message')
 // REDEEM POINTS
 const redeemPointsInput = document.getElementById('redeem-points-input')
 const redeemPointsBtn = document.getElementById('redeem-points-btn')
-const redeemPointsMessage = document.getElementById('redeem-points-message')
 // ERROR MESSAGE
 const errorMessage = document.getElementById('error-message')
 
@@ -34,6 +31,11 @@ function clearError() {
 
 // Variable to store the current User ID
 let currentUserId = null
+
+// Generate a timestamp-based transaction ID
+function generateTransactionId() {
+  return Date.now().toString()
+}
 
 // Fetch a single user's data based on their ID
 async function getUser(id) {
@@ -89,7 +91,16 @@ async function earnPoints(id, points) {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ points: Number(points) }), // Convert points to a number and send it as JSON in the request body
+      body: JSON.stringify({
+        transaction_id: generateTransactionId(), // Use the generated transaction ID
+        original_points: Number(points), // Use original_points instead of points
+        remaining_points: Number(points), // Use remaining_points instead of points
+        assignment_date: new Date().toISOString(), // Use the current date as the assignment_date
+        expiry_date: new Date(
+          Date.now() + 365 * 24 * 60 * 60 * 1000,
+        ).toISOString(), // Set expiry_date to one year from now
+        source_platform: 'Web', // Set the source_platform to 'Web'
+      }),
     })
 
     const result = await response.json() // Parse the response body as JSON
@@ -134,7 +145,11 @@ async function redeemPoints(id, points) {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ points: Number(points) }), // Convert points to a number and send it as JSON in the request body
+      body: JSON.stringify({
+        redemption_id: generateTransactionId(), // Use the generated transaction ID
+        redeemed_points: Number(points), // Use redeemed_points instead of points
+        redemption_date: new Date().toISOString(), // Use the current date as the redemption_date
+      }),
     })
 
     const result = await response.json() // Parse the response body as JSON
@@ -142,7 +157,9 @@ async function redeemPoints(id, points) {
     // Check if the response is OK
     if (response.ok) {
       clearError() // Clear any previous error messages
+
       console.log(result) // Log the result object to the console
+
       currentPoints.textContent = result.points_balance // Update the points display with the new points balance
       redeemPointsInput.value = '' // Clear the input field
     } else {
@@ -150,7 +167,14 @@ async function redeemPoints(id, points) {
     }
   } catch (error) {
     console.error('redeemPoints Error:', error) // Log the error to the console
-    showError(error.message) // Display the error message to the user
+    console.log('Error Message:', error.message) // Log the error message to the console
+
+    if (error.message.includes('Not enough points to redeem')) {
+      showError('Insufficient points to redeem') // Display a more user-friendly error message
+    } else {
+      showError(error.message) // Display the original error message to the user
+    }
+
     redeemPointsInput.value = '' // Clear the input field
   }
 }

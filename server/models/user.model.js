@@ -1,41 +1,35 @@
 const mongoose = require('mongoose')
 
-const redeemedPointsSchema = new mongoose.Schema({
-  transaction_id: { type: String, required: true }, // transaction id
-  points: { type: Number, required: true }, // points redeemed
-  redeemed_date: { type: Date, required: true }, // date redeemed
-  source_platform: { type: String, required: true }, // source of points
+const redemptionSchema = new mongoose.Schema({
+  redemption_id: { type: String, required: true }, // redemption id
+  redeemed_points: { type: Number, required: true }, // points redeemed
+  redemption_date: { type: Date, required: true }, // date of redemption
+  // redemption_source: { type: String, required: true }, // source of redemption
 })
 
-const expiredPointsSchema = new mongoose.Schema({
+const pointsSchema = new mongoose.Schema({
   transaction_id: { type: String, required: true }, // transaction id
-  points: { type: Number, required: true }, // points expired
-  expired_date: { type: Date, required: true }, // date expired
+  original_points: { type: Number, required: true }, // original points assigned in this transaction
+  remaining_points: { type: Number, required: true }, // remaining points after redemptions
+  assignment_date: { type: Date, required: true }, // date points were assigned
+  expiry_date: { type: Date, required: true }, // date of expiry
+  // points_status: { type: String, required: true }, // status of points
   source_platform: { type: String, required: true }, // source of points
-})
-
-const activePointsSchema = new mongoose.Schema({
-  transaction_id: { type: String, required: true }, // transaction id
-  points: { type: Number, required: true }, // points acquired
-  acquired_date: { type: Date, required: true }, // date acquired
-  expiry_date: { type: Date, required: true }, // date expired
-  source_platform: { type: String, required: true }, // source of points
+  redemptions: { type: [redemptionSchema], default: [] }, // redemptions of points
 })
 
 const rewardPointSchema = new mongoose.Schema({
-  active_points: { type: [activePointsSchema], default: [] }, // active points records
-  redeemed_points: { type: [redeemedPointsSchema], default: [] }, // redeemed points records
-  expired_points: { type: [expiredPointsSchema], default: [] }, // expired points records
+  points: { type: [pointsSchema], default: [] }, // points records
 })
 
 const userSchema = new mongoose.Schema({
-  id: { type: String, required: true }, // user id
+  id: { type: String, required: true, unique: true }, // user id (unique)
   name: { type: String, required: true }, // user name
-  email: { type: String, required: true, unique: true }, // user email
+  email: { type: String, required: true, unique: true }, // user email (unique)
   points_balance: { type: Number, default: 0, required: false }, // points balance
   reward_points: {
     type: rewardPointSchema,
-    default: { active_points: [], redeemed_points: [], expired_points: [] },
+    default: { points: [] },
   },
 })
 

@@ -4,6 +4,7 @@ const mongoose = require('mongoose') // Import the mongoose module
 const swaggerJsDoc = require('swagger-jsdoc') // Import the swagger-jsdoc module
 const swaggerUi = require('swagger-ui-express') // Import the swagger-ui-express module
 const fs = require('fs') // Import the fs module
+const swaggerOptions = require('./swaggerOptions') // Import Swagger options
 const customCss = fs.readFileSync(process.cwd() + '/swagger.css', 'utf8') // Read the swagger.css file
 
 // Import the dbConfig file
@@ -12,25 +13,6 @@ const dbConfig = require('./config/dbConfig') // Import the dbConfig file
 
 // Create a new Express application instance
 const app = express()
-
-// Swagger options
-const swaggerOptions = {
-  definition: {
-    openapi: '3.0.0',
-    info: {
-      title: 'Fender Rewards API',
-      version: '1.0.0',
-      description:
-        'An example express API for implementing a Fender Rewards program',
-    },
-    servers: [
-      {
-        url: 'http://localhost:5000',
-      },
-    ],
-  },
-  apis: ['./routes/*.js'], // path to the API docs
-}
 
 // Middleware
 app.use(cors()) // Enable all CORS requests
