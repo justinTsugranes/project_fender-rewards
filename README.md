@@ -87,6 +87,7 @@ _I'd love to hear any feedback or just thoughts. Feel free to reach out at my co
 <!-- [bcrypt] -->
 <!-- [nanoid -->
 <!-- [uuid] -->
+
 [dotenv](https://www.npmjs.com/package/dotenv)
 
 #### Testing
@@ -125,21 +126,21 @@ Make sure you have the following installed on your machine:
    git clone https://github.com/justintsugranes/project_fender-rewards.git
    ```
 
-3. Install NPM packages
+2. Install NPM packages
 
    ```sh
    npm i
    ```
 
-4. Create a .env in `/server/config/`
+3. Create a .env in `/server/config/`
 
-5. Create a your MONGODB_URI
+4. Create a your MONGODB_URI
 
    ```sh
    MONGODB_URI = "ENTER YOUR URI"
    ```
 
-6. cd into root directory
+5. cd into root directory
 
    ```sh
    npm start
@@ -156,43 +157,46 @@ _For more examples, please refer to the [Documentation][repo-url]_
 ```md
 /root
 ├── client
-│   ├── css
-│   │   └── styles.css
-│   ├── img
-│   ├── js
-│   │   └── client.js
-│   ├── index.html
-│   ├── notes.html
-│   └── prompt.html
+│ ├── css
+│ │ └── styles.css
+│ ├── img
+│ ├── js
+│ │ └── client.js
+│ ├── index.html
+│ ├── notes.html
+│ └── prompt.html
 ├── tests
-│   ├── unit
-│   │   ├── user.controller.test.js
-│   │   ├── user.model.test.js
-│   │   ├── user.routes.test.js
-│   │   └── user.service.test.js
-│   └── e2e
-│       └── e2e.js
+│ ├── unit
+│ │ ├── user.controller.test.js
+│ │ ├── user.model.test.js
+│ │ ├── user.routes.test.js
+│ │ └── user.service.test.js
+│ ├── e2e
+│ │ └── e2e.test.js
 ├── server
-│   ├── config
-│   │   ├── .env
-│   │   ├── .env.production
-│   │   └── dbConfig.js
-│   ├── controllers
-│   │   ├── index.js
-│   │   └── user.controller.js
-│   ├── models
-│   │   ├── index.js
-│   │   └── user.model.js
-│   ├── routes
-│   │   ├── index.js
-│   │   └── user.routes.js
-│   ├── services
-│   │   ├── index.js
-│   │   └── user.service.js
-│   ├── index.js
-│   ├── .gitignore
-│   ├── package.json
-│   └── swagger.css
+│ ├── config
+│ │ ├── .env
+│ │ ├── .env.production
+│ │ └── dbConfig.js
+│ ├── controllers
+│ │ ├── index.js
+│ │ └── user.controller.js
+│ ├── models
+│ │ ├── index.js
+│ │ └── user.model.js
+│ ├── routes
+│ │ ├── index.js
+│ │ └── user.routes.js
+│ ├── services
+│ │ ├── index.js
+│ │ └── user.service.js
+│ ├── swagger
+│ │ ├── swagger.css
+│ │ └── swaggerDef.js
+│ │ └── swaggerOptions.js
+│ ├── index.js
+│ ├── .gitignore
+│ └── package.json
 ├── .gitignore
 ├── package-lock.json
 ├── package.json
@@ -298,6 +302,7 @@ Give a ⭐️ if you like this project and if you like my work, maybe you would 
 
 [mongodb]: https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white
 [mongodb-url]: https://www.mongodb.com/home
+
 <!-- [mongoose]: https://mongoosejs.com/docs/ -->
 
 <!-- AUTH / SECURITY-->

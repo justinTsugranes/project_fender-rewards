@@ -97,4 +97,6 @@ const swaggerDefinitions = {
   },
 }
 
-module.exports = swaggerDefinitions
+module.exports = {
+  swaggerDefinitions,
+}

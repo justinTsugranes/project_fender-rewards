@@ -3,9 +3,12 @@ const cors = require('cors') // Import the cors module
 const mongoose = require('mongoose') // Import the mongoose module
 const swaggerJsDoc = require('swagger-jsdoc') // Import the swagger-jsdoc module
 const swaggerUi = require('swagger-ui-express') // Import the swagger-ui-express module
+const swaggerOptions = require('./swagger/swaggerOptions') // Import Swagger options
 const fs = require('fs') // Import the fs module
-const swaggerOptions = require('./swaggerOptions') // Import Swagger options
-const customCss = fs.readFileSync(process.cwd() + '/swagger.css', 'utf8') // Read the swagger.css file
+const customCss = fs.readFileSync(
+  process.cwd() + '/swagger/swagger.css',
+  'utf8',
+) // Read the swagger.css file
 
 // Import the dbConfig file
 require('dotenv').config({ path: './config/.env' }) // Load environment variables from the .env file
