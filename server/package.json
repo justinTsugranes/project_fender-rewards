@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "start": "node index.js",
+    "start:nodemon": "nodemon index.js"
   },
   "keywords": [],
   "author": "justinTsugranes",
@@ -19,7 +19,8 @@
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^4.6.3"
   },
-  "devDependencies": {
-    "nodemon": "^2.0.22"
+  "devDependencies": {},
+  "engines": {
+    "node": ">=14.0.0"
   }
 }
