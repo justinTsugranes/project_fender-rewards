@@ -167,6 +167,8 @@ _For more examples, please refer to the [Documentation][repo-url]_
 │   │   ├── notes.html
 │   │   └── prompt.html
 │   ├── .gitignore
+│   ├── package-lock.json
+│   ├── package.json
 │   └── README.md
 ├── server
 │   ├── config
