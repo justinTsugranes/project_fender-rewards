@@ -9,10 +9,6 @@ dist/
 # Environment variables
 .env
 
-# IDE/Editor specific files
-.vscode/
-*.code-workspace
-
 # macOS specific files
 .DS_Store
 
