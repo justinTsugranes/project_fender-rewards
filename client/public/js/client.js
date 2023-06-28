@@ -15,8 +15,11 @@ const redeemPointsBtn = document.getElementById('redeem-points-btn')
 const errorMessage = document.getElementById('error-message')
 
 // URL
-const baseUrl = 'http://localhost:5000'
-// const baseUrl = 'https://fender-rewards.netlify.app'
+// const baseUrl = 'http://localhost:5000'
+const baseUrl = 'https://fender-rewards.netlify.app'
+
+// Variable to store the current User ID
+let currentUserId = null
 
 // Helper function to display error messages
 function showError(message) {
@@ -29,9 +32,6 @@ function clearError() {
   errorMessage.style.display = 'none'
   errorMessage.textContent = ''
 }
-
-// Variable to store the current User ID
-let currentUserId = null
 
 // Generate a timestamp-based transaction ID
 function generateTransactionId() {
