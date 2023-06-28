@@ -141,7 +141,7 @@ exports.redeemPoints = async (id, pointsToRedeem) => {
       totalAvailablePoints += point.remaining_points
     }
 
-    // If points to be redeemed exceed total available points or if no points available, return an error
+    // If points to be redeemed exceeds total available points or if no points available, return an error
     if (
       pointsToRedeem.redeemed_points > totalAvailablePoints ||
       totalAvailablePoints === 0
@@ -160,7 +160,7 @@ exports.redeemPoints = async (id, pointsToRedeem) => {
         redemption_date: pointsToRedeem.redemption_date,
       }
 
-      // Add redemption to point's redemptions
+      // Add redemption to point's redemptions array
       point.redemptions.push(redemption)
 
       // Subtract redeemed points from the point's remaining points

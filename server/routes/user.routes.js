@@ -63,7 +63,7 @@ router.post('/create', UserController.createUser)
  */
 router.post('/:id/earn-points', UserController.earnPoints)
 
-router.put('/expire-points', UserController.expirePoints)
+// router.put('/expire-points', UserController.expirePoints)
 
 /**
  * @swagger
