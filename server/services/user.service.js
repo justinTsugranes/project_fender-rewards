@@ -1,7 +1,7 @@
 // Import the UserModel from the models directory.
 const { UserModel } = require('../models/user.model')
 
-// Import the cron library for running scheduled tasks.
+// Import cron for running expirePoints.
 const cron = require('node-cron')
 
 // Exports createUser function. Create a new user with the provided user data.
@@ -18,10 +18,12 @@ exports.createUser = async (userData) => {
 
     // Log the newly created user and return it.
     console.log('User created:', newUser)
+
     // Return the newly created user object
     return newUser
   } catch (error) {
     if (error.code === 11000) {
+      // If the error code is 11000, log the message and throw a new error.
       throw new Error('User with the same ID or email already exists.')
     } else {
       console.log(`Error creating user: ${error.message}`)
@@ -42,8 +44,6 @@ exports.getUserById = async (id) => {
     // If the user is not found, log the message and return null.
     if (!user) {
       console.log(`User not found`)
-      // Throw an error if no user is found with the provided id
-      // throw new Error('User not found')
       return null
     }
 

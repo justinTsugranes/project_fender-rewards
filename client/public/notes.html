@@ -1,597 +1,725 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fender Rewards | Notes</title>
+    <meta name="description" content="The Fender rewards program" />
+    <meta name="author" content="Insert site name" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fender Rewards | Notes</title>
-  <meta name="description" content="The Fender rewards program" />
-  <meta name="author" content="Insert site name" />
-  <link rel="stylesheet" href="css/styles.css" />
-</head>
+  <body>
+    <header>
+      <!-- Top Header Content -->
+      <div class="header-content">
+        <!-- Accessibility Skip Link -->
+        <a href="#main" class="skip">Skip to main content</a>
+        <img src="img/fender-logo-red.webp" alt="Fender logo in red" />
+        <!-- Main Nav -->
+        <nav aria-label="main">
+          <ul>
+            <li>
+              <a href="index.html" title="Fender Rewards Home Page">Home</a>
+            </li>
+            <li>
+              <a href="prompt.html" title="Project Prompt Page">Prompt</a>
+            </li>
+            <li><a href="notes.html" title="Project Notes Page">Notes</a></li>
+            <li>
+              <a
+                href="https://github.com/justinTsugranes/project_fender-rewards"
+                target="_blank"
+                title="Visit the project repo on a new tab"
+                >Repo</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://fender-rewards.netlify.app/api-docs"
+                target="_blank"
+                title="Visit the API documentation on a new tab"
+                >Docs</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <!-- /End Main Nav -->
+      </div>
+      <!-- /End Top Header Content -->
 
-<body>
-  <header>
-    <!-- Top Header Content -->
-    <div class="header-content">
-      <!-- Accessibility Skip Link -->
-      <a href="#main" class="skip">Skip to main content</a>
-      <img src="img/fender-logo-red.webp" alt="Fender logo in red" />
-      <!-- Main Nav -->
-      <nav aria-label="main">
-        <ul>
-          <li>
-            <a href="index.html" title="Fender Rewards Home Page">Home</a>
-          </li>
-          <li>
-            <a href="prompt.html" title="Project Prompt Page">Prompt</a>
-          </li>
-          <li><a href="notes.html" title="Project Notes Page">Notes</a></li>
-          <li>
-            <a href="https://github.com/justinTsugranes/project_fender-rewards" target="_blank" title="Visit the project repo on a new tab">Repo</a>
-          </li>
-          <li>
-            <a href="https://fender-rewards.netlify.app/api-docs" target="_blank" title="Visit the API documentation on a new tab">Docs</a>
-          </li>
-        </ul>
-      </nav>
-      <!-- /End Main Nav -->
-    </div>
-    <!-- /End Top Header Content -->
+      <!-- Hero -->
+      <div class="hero notes-hero">
+        <h1>Project Notes</h1>
+        <h2>Scope, Integration, Data Structure, API Design</h2>
+      </div>
+      <!-- /End Hero -->
+    </header>
 
-    <!-- Hero -->
-    <div class="hero notes-hero">
-      <h1>Project Notes</h1>
-      <h2>Scope, Integration, Data Structure, API Design</h2>
-    </div>
-    <!-- /End Hero -->
-  </header>
+    <main id="main" aria-labelledby="main-content">
+      <div id="notes-container">
+        <section>
+          <h3>Rewards Program Requirements:</h3>
+          <ul>
+            <li>
+              <strong>Integration:</strong>
+              <p>
+                The rewards program should be integrated with both Fender
+                Digital's e-commerce store and select dealer partners, allowing
+                customers to earn and redeem rewards both online and in-store.
+              </p>
+            </li>
+            <li>
+              <strong>Points Accumulation:</strong>
+              <p>
+                Customers should be able to earn points not only through
+                purchases but also by completing specific achievements, such as
+                completing courses on Fender Play or using Fender Tune to tune
+                their guitars.
+              </p>
+            </li>
+            <li>
+              <strong>Points Expiry:</strong>
+              <p>
+                The earned rewards points should have an expiration period,
+                typically set to one year. After that period, the points should
+                expire and no longer be redeemable.
+              </p>
+            </li>
+            <li>
+              <strong>Partial Redemption:</strong>
+              <p>
+                Customers should have the flexibility to choose how many points
+                they want to redeem at a given time. They should not be required
+                to redeem all their accumulated points in a single transaction.
+              </p>
+            </li>
+          </ul>
+        </section>
 
-  <main id="main" aria-labelledby="main-content">
-    <div id="notes-container">
-      <section>
-        <h3>Rewards Program Requirements:</h3>
-        <ul>
-          <li>
-            <strong>Integration:</strong>
-            <p>
-              The rewards program should be integrated with both Fender
-              Digital's e-commerce store and select dealer partners, allowing
-              customers to earn and redeem rewards both online and in-store.
-            </p>
-          </li>
-          <li>
-            <strong>Points Accumulation:</strong>
-            <p>
-              Customers should be able to earn points not only through
-              purchases but also by completing specific achievements, such as
-              completing courses on Fender Play or using Fender Tune to tune
-              their guitars.
-            </p>
-          </li>
-          <li>
-            <strong>Points Expiry:</strong>
-            <p>
-              The earned rewards points should have an expiration period,
-              typically set to one year. After that period, the points should
-              expire and no longer be redeemable.
-            </p>
-          </li>
-          <li>
-            <strong>Partial Redemption:</strong>
-            <p>
-              Customers should have the flexibility to choose how many points
-              they want to redeem at a given time. They should not be required
-              to redeem all their accumulated points in a single transaction.
-            </p>
-          </li>
-        </ul>
-      </section>
+        <section>
+          <h3>Benefits of the Rewards Program:</h3>
+          <p>
+            By offering rewards for purchases and achievements, Fender Rewards
+            aims to achieve several objectives:
+          </p>
+          <ul>
+            <li>
+              <strong>Customer Engagement:</strong>
+              <p>
+                The rewards program motivates customers to actively participate
+                in various activities, such as making purchases and utilizing
+                Fender's digital platforms like Fender Play and Fender Tune.
+                This increased engagement strengthens the bond between customers
+                and the brand.
+              </p>
+            </li>
+            <li>
+              <strong>Loyalty Building:</strong>
+              <p>
+                By rewarding customers for their actions, Fender Rewards fosters
+                loyalty and encourages repeat purchases. Customers feel valued
+                and appreciated, leading to a higher likelihood of them choosing
+                Fender for their future musical instrument needs.
+              </p>
+            </li>
+            <li>
+              <strong>Incentivizing Desired Behaviors:</strong>
+              <p>
+                The rewards program drives desired customer behaviors, such as
+                completing courses on Fender Play or regularly using Fender
+                Tune. It promotes skill development, product usage, and customer
+                retention.
+              </p>
+            </li>
+            <li>
+              <strong>Personalized Benefits:</strong>
+              <p>
+                Customers can choose how they want to utilize their earned
+                rewards points. They can redeem them for discounts on future
+                purchases, free merchandise, or other exclusive offers tailored
+                to their preferences, enhancing their overall shopping
+                experience.
+              </p>
+            </li>
+            <li>
+              <strong>Omni-channel Experience:</strong>
+              <p>
+                By enabling rewards to be earned and redeemed both online and
+                in-store, Fender aims to provide a seamless and consistent
+                experience for customers across various touchpoints. This
+                enhances the overall customer experience and strengthens the
+                relationship between the brand and its customers.
+              </p>
+            </li>
+            <li>
+              <strong>Increased Sales and Revenue:</strong>
+              <p>
+                The rewards program serves as an additional incentive for
+                customers to make purchases and engage with Fender's products
+                and services. This can lead to increased sales and revenue for
+                the company.
+              </p>
+            </li>
+            <li>
+              <strong>Data Collection and Insights:</strong>
+              <p>
+                The rewards program enables the collection of valuable customer
+                data, including purchase behavior, preferences, and engagement
+                patterns. This data can be analyzed to gain insights into
+                customer preferences and behavior, which can inform future
+                marketing strategies and product development initiatives.
+              </p>
+            </li>
+          </ul>
+        </section>
 
-      <section>
-        <h3>Benefits of the Rewards Program:</h3>
-        <p>
-          By offering rewards for purchases and achievements, Fender Rewards
-          aims to achieve several objectives:
-        </p>
-        <ul>
-          <li>
-            <strong>Customer Engagement:</strong>
-            <p>
-              The rewards program motivates customers to actively participate
-              in various activities, such as making purchases and utilizing
-              Fender's digital platforms like Fender Play and Fender Tune.
-              This increased engagement strengthens the bond between customers
-              and the brand.
-            </p>
-          </li>
-          <li>
-            <strong>Loyalty Building:</strong>
-            <p>
-              By rewarding customers for their actions, Fender Rewards fosters
-              loyalty and encourages repeat purchases. Customers feel valued
-              and appreciated, leading to a higher likelihood of them choosing
-              Fender for their future musical instrument needs.
-            </p>
-          </li>
-          <li>
-            <strong>Incentivizing Desired Behaviors:</strong>
-            <p>
-              The rewards program drives desired customer behaviors, such as
-              completing courses on Fender Play or regularly using Fender
-              Tune. It promotes skill development, product usage, and customer
-              retention.
-            </p>
-          </li>
-          <li>
-            <strong>Personalized Benefits:</strong>
-            <p>
-              Customers can choose how they want to utilize their earned
-              rewards points. They can redeem them for discounts on future
-              purchases, free merchandise, or other exclusive offers tailored
-              to their preferences, enhancing their overall shopping
-              experience.
-            </p>
-          </li>
-          <li>
-            <strong>Omni-channel Experience:</strong>
-            <p>
-              By enabling rewards to be earned and redeemed both online and
-              in-store, Fender aims to provide a seamless and consistent
-              experience for customers across various touchpoints. This
-              enhances the overall customer experience and strengthens the
-              relationship between the brand and its customers.
-            </p>
-          </li>
-          <li>
-            <strong>Increased Sales and Revenue:</strong>
-            <p>
-              The rewards program serves as an additional incentive for
-              customers to make purchases and engage with Fender's products
-              and services. This can lead to increased sales and revenue for
-              the company.
-            </p>
-          </li>
-          <li>
-            <strong>Data Collection and Insights:</strong>
-            <p>
-              The rewards program enables the collection of valuable customer
-              data, including purchase behavior, preferences, and engagement
-              patterns. This data can be analyzed to gain insights into
-              customer preferences and behavior, which can inform future
-              marketing strategies and product development initiatives.
-            </p>
-          </li>
-        </ul>
-      </section>
+        <section>
+          <h3>Scope and Points of Integration:</h3>
+          <p>
+            The scope of integration involves connecting various systems and
+            platforms, including the e-commerce store, select dealer partners,
+            Fender Play, Fender Tune, and the Fender IT Dealer Portal. The goal
+            is to create a unified rewards program experience for customers
+            across these different touchpoints, enabling seamless earning and
+            redemption of rewards, synchronized points balances, and consistent
+            user interfaces.
+          </p>
 
-      <section>
-        <hh3>Scope and Points of Integration:</hh3>
-        <p>
-          The scope of integration involves connecting various systems and
-          platforms, including the e-commerce store, select dealer partners,
-          Fender Play, Fender Tune, and the Fender IT Dealer Portal. The goal
-          is to create a unified rewards program experience for customers
-          across these different touchpoints, enabling seamless earning and
-          redemption of rewards, synchronized points balances, and consistent
-          user interfaces.
-        </p>
+          <h4>
+            E-commerce Store Integration through Salesforce Commerce Cloud
+            (SFCC):
+          </h4>
+          <ul>
+            <li>
+              The rewards program should be seamlessly integrated into Fender
+              Digital's e-commerce store.
+            </li>
+            <li>
+              Customers should be able to view their rewards points balance,
+              redeem points, and track their progress toward earning rewards
+              within the e-commerce store's user interface.
+            </li>
+            <li>
+              Integration points may include user authentication, user profile
+              management, points balance display, rewards redemption options,
+              and transaction history.
+            </li>
+          </ul>
 
-        <h4>
-          E-commerce Store Integration through Salesforce Commerce Cloud
-          (SFCC):
-        </h4>
-        <ul>
-          <li>
-            The rewards program should be seamlessly integrated into Fender
-            Digital's e-commerce store.
-          </li>
-          <li>
-            Customers should be able to view their rewards points balance,
-            redeem points, and track their progress toward earning rewards
-            within the e-commerce store's user interface.
-          </li>
-          <li>
-            Integration points may include user authentication, user profile
-            management, points balance display, rewards redemption options,
-            and transaction history.
-          </li>
-        </ul>
+          <h4>Fender IT Dealer Portal Integration:</h4>
+          <ul>
+            <li>
+              The rewards program should also extend to select dealer partners,
+              both in-store and online.
+            </li>
+            <li>
+              Integration should enable customers to earn and redeem rewards
+              when making purchases through authorized dealer partners.
+            </li>
+            <li>
+              Integration with Fender's IT Dealer Portal should be established
+              to ensure consistency and coherence in the rewards program.
+            </li>
+            <li>
+              Dealer partners should have access to the necessary tools and
+              interfaces to manage and redeem rewards on behalf of customers.
+            </li>
+            <li>
+              Integration points may include establishing APIs or data-sharing
+              mechanisms with dealer partners, ensuring consistent rewards
+              calculation and redemption processes, and synchronizing customer
+              points balances across channels.
+            </li>
+          </ul>
 
-        <h4>Fender IT Dealer Portal Integration:</h4>
-        <ul>
-          <li>
-            The rewards program should also extend to select dealer partners,
-            both in-store and online.
-          </li>
-          <li>
-            Integration should enable customers to earn and redeem rewards
-            when making purchases through authorized dealer partners.
-          </li>
-          <li>
-            Integration with Fender's IT Dealer Portal should be established
-            to ensure consistency and coherence in the rewards program.
-          </li>
-          <li>
-            Dealer partners should have access to the necessary tools and
-            interfaces to manage and redeem rewards on behalf of customers.
-          </li>
-          <li>
-            Integration points may include establishing APIs or data-sharing
-            mechanisms with dealer partners, ensuring consistent rewards
-            calculation and redemption processes, and synchronizing customer
-            points balances across channels.
-          </li>
-        </ul>
+          <h4>Fender Play Integration:</h4>
+          <ul>
+            <li>
+              Fender Play, Fender Digital's online learning platform, should be
+              integrated into the rewards program.
+            </li>
+            <li>
+              Completion of specific courses on Fender Play should earn
+              customers rewards points.
+            </li>
+            <li>
+              Integration points may include tracking course completion,
+              awarding points based on completion milestones, and synchronizing
+              points data with the rewards program.
+            </li>
+          </ul>
 
-        <h4>Fender Play Integration:</h4>
-        <ul>
-          <li>
-            Fender Play, Fender Digital's online learning platform, should be
-            integrated into the rewards program.
-          </li>
-          <li>
-            Completion of specific courses on Fender Play should earn
-            customers rewards points.
-          </li>
-          <li>
-            Integration points may include tracking course completion,
-            awarding points based on completion milestones, and synchronizing
-            points data with the rewards program.
-          </li>
-        </ul>
+          <h4>Fender Tune Integration:</h4>
+          <ul>
+            <li>
+              Fender Tune, Fender Digital's guitar tuning application, should be
+              integrated into the rewards program.
+            </li>
+            <li>
+              Successfully using Fender Tune to tune guitars over a period of
+              time should earn customers rewards points.
+            </li>
+            <li>
+              Integration points may include tracking tuning activity, awarding
+              points based on usage milestones, and synchronizing points data
+              with the rewards program.
+            </li>
+          </ul>
+        </section>
 
-        <h4>Fender Tune Integration:</h4>
-        <ul>
-          <li>
-            Fender Tune, Fender Digital's guitar tuning application, should be
-            integrated into the rewards program.
-          </li>
-          <li>
-            Successfully using Fender Tune to tune guitars over a period of
-            time should earn customers rewards points.
-          </li>
-          <li>
-            Integration points may include tracking tuning activity, awarding
-            points based on usage milestones, and synchronizing points data
-            with the rewards program.
-          </li>
-        </ul>
-      </section>
+        <section>
+          <h3>Teams and Systems Involved:</h3>
+          <h4>Shop Team:</h4>
+          <ul>
+            <li>
+              The Shop Team is responsible for the development and maintenance
+              of Fender Digital's e-commerce store, where the rewards program
+              will be integrated.
+            </li>
+            <li>
+              They play a key role in implementing the frontend and backend
+              functionality required for the rewards program within the
+              e-commerce store.
+            </li>
+            <li>
+              The Shop Team collaborates closely with other teams to ensure
+              seamless integration and data flow.
+            </li>
+          </ul>
 
-      <section>
-        <h3>Teams and Systems Involved:</h3>
-        <h4>Shop Team:</h4>
-        <ul>
-          <li>
-            The Shop Team is responsible for the development and maintenance
-            of Fender Digital's e-commerce store, where the rewards program
-            will be integrated.
-          </li>
-          <li>
-            They play a key role in implementing the frontend and backend
-            functionality required for the rewards program within the
-            e-commerce store.
-          </li>
-          <li>
-            The Shop Team collaborates closely with other teams to ensure
-            seamless integration and data flow.
-          </li>
-        </ul>
+          <h4>Marketing Team:</h4>
+          <ul>
+            <li>
+              The Marketing Team is involved in the planning and execution of
+              the rewards program from a promotional and engagement perspective.
+            </li>
+            <li>
+              They determine the marketing and communication strategies for the
+              rewards program, manage customer engagement initiatives, and
+              analyze data to inform program improvements and updates.
+            </li>
+          </ul>
 
-        <h4>Marketing Team:</h4>
-        <ul>
-          <li>
-            The Marketing Team is involved in the planning and execution of
-            the rewards program from a promotional and engagement perspective.
-          </li>
-          <li>
-            They determine the marketing and communication strategies for the
-            rewards program, manage customer engagement initiatives, and
-            analyze data to inform program improvements and updates.
-          </li>
-        </ul>
+          <h4>Fender Play Team:</h4>
+          <ul>
+            <li>
+              The Fender Play Team oversees the learning platform and is
+              responsible for the integration of the rewards program with Fender
+              Play.
+            </li>
+            <li>
+              They coordinate the tracking of course completion and the awarding
+              of points based on those completions.
+            </li>
+          </ul>
 
-        <h4>Fender Play Team:</h4>
-        <ul>
-          <li>
-            The Fender Play Team oversees the learning platform and is
-            responsible for the integration of the rewards program with Fender
-            Play.
-          </li>
-          <li>
-            They coordinate the tracking of course completion and the awarding
-            of points based on those completions.
-          </li>
-        </ul>
+          <h4>Fender Tune Team:</h4>
+          <ul>
+            <li>
+              The Fender Tune Team manages the tuning app and is responsible for
+              the integration of the rewards program with Fender Tune.
+            </li>
+            <li>
+              They handle the tracking of tuning activity and the awarding of
+              points based on usage milestones.
+            </li>
+          </ul>
 
-        <h2>Dealer Network Team:</h2>
-        <ul>
-          <li>
-            The Dealer Network Team works with authorized dealer partners and
-            is responsible for the integration of the rewards program with
-            dealer systems.
-          </li>
-          <li>
-            They ensure consistent rewards calculation, redemption processes,
-            and points synchronization across all dealer partners.
-          </li>
-        </ul>
+          <h4>Dealer Network Team:</h4>
+          <ul>
+            <li>
+              The Dealer Network Team works with authorized dealer partners and
+              is responsible for the integration of the rewards program with
+              dealer systems.
+            </li>
+            <li>
+              They ensure consistent rewards calculation, redemption processes,
+              and points synchronization across all dealer partners.
+            </li>
+          </ul>
 
-        <h4>Fender Tune Team:</h4>
-        <ul>
-          <li>
-            The Fender Tune Team manages the tuning app and is responsible for
-            the integration of the rewards program with Fender Tune.
-          </li>
-          <li>
-            They handle the tracking of tuning activity and the awarding of
-            points based on usage milestones.
-          </li>
-        </ul>
+          <h4>Data Analytics Team:</h4>
+          <ul>
+            <li>
+              The Data Analytics Team plays a crucial role in collecting,
+              analyzing, and interpreting data generated from the rewards
+              program.
+            </li>
+            <li>
+              The insights derived from this data are invaluable for informing
+              future marketing strategies, customer engagement initiatives, and
+              product development.
+            </li>
+          </ul>
 
-        <h4>Data Analytics Team:</h4>
-        <ul>
-          <li>
-            The Data Analytics Team plays a crucial role in collecting,
-            analyzing, and interpreting data generated from the rewards
-            program.
-          </li>
-          <li>
-            The insights derived from this data are invaluable for informing
-            future marketing strategies, customer engagement initiatives, and
-            product development.
-          </li>
-        </ul>
+          <h4>IT/Technical Support Team:</h4>
+          <ul>
+            <li>
+              The IT/Technical Support Team is responsible for providing
+              technical support to all teams and resolving any issues that may
+              arise during the development, implementation, and maintenance of
+              the rewards program.
+            </li>
+            <li>
+              They also ensure that all systems and integrations function
+              optimally and securely.
+            </li>
+          </ul>
+        </section>
 
-        <h4>IT/Technical Support Team:</h4>
-        <ul>
-          <li>
-            The IT/Technical Support Team is responsible for providing
-            technical support to all teams and resolving any issues that may
-            arise during the development, implementation, and maintenance of
-            the rewards program.
-          </li>
-          <li>
-            They also ensure that all systems and integrations function
-            optimally and securely.
-          </li>
-        </ul>
-      </section>
+        <section>
+          <h3>Criteria, Edge Cases and Security Concerns</h3>
 
-      <section>
-        <h3>Algorithm for Redemption of Fender Rewards Points:</h3>
-        <p>
-          Considering points expiry after a year and the ability for partial
-          redemption, here is a proposed algorithm that takes into account
-          edge cases and security concerns:
-        </p>
+          <h4>Points Expiry:</h4>
+          <ul>
+            <li>
+              At regular intervals (e.g., daily), the algorithm checks the
+              points balance for each user and identifies any points that have
+              expired based on the one-year validity period.
+            </li>
+            <li>
+              Expired points are automatically removed from the user's points
+              balance.
+            </li>
+          </ul>
 
-        <h4>Points Expiry:</h4>
-        <ul>
-          <li>
-            At regular intervals (e.g., daily), the algorithm checks the
-            points balance for each user and identifies any points that have
-            expired based on the one-year validity period.
-          </li>
-          <li>
-            Expired points are automatically removed from the user's points
-            balance.
-          </li>
-        </ul>
+          <h4>Partial Redemption:</h4>
+          <ul>
+            <li>
+              When a user initiates a redemption, they can specify the number of
+              points they want to redeem.
+            </li>
+            <li>
+              The algorithm verifies that the requested redemption amount is
+              within the available points balance for the user.
+            </li>
+            <li>
+              If the requested redemption amount is valid, the algorithm
+              processes the redemption and deducts the redeemed points from the
+              user's balance.
+            </li>
+            <li>
+              The remaining points remain intact and can be used for future
+              redemptions.
+            </li>
+          </ul>
 
-        <h4>Partial Redemption:</h4>
-        <ul>
-          <li>
-            When a user initiates a redemption, they can specify the number of
-            points they want to redeem.
-          </li>
-          <li>
-            The algorithm verifies that the requested redemption amount is
-            within the available points balance for the user.
-          </li>
-          <li>
-            If the requested redemption amount is valid, the algorithm
-            processes the redemption and deducts the redeemed points from the
-            user's balance.
-          </li>
-          <li>
-            The remaining points remain intact and can be used for future
-            redemptions.
-          </li>
-        </ul>
+          <h4>Edge Cases:</h4>
+          <ul>
+            <li>
+              Expired but Unredeemed Points: A user tries to redeem points that
+              were earned more than a year ago and are now expired but were not
+              previously redeemed.
+            </li>
+            <li>
+              Redeemed Points: A user tries to redeem points that have already
+              been redeemed but are not yet expired.
+            </li>
+            <li>
+              Insufficient Points: A user tries to redeem more points than they
+              have in their account.
+            </li>
+            <li>
+              Negative Points: A user somehow ends up with a negative points
+              balance.
+            </li>
+            <li>
+              Expiring Points: The server and database are hosted in differing
+              time zones causing sync issues when expiring points.
+            </li>
+            <li>
+              Concurrent Transactions: Multiple requests trying to redeem points
+              for the same user at the same time (this could potentially lead to
+              race conditions where more points are redeemed than the user
+              actually has).
+            </li>
+            <li>
+              Data Consistency: The frontend and backend data are out of sync,
+              perhaps due to a failure in updating one or the other.
+            </li>
+            <li>
+              Inactive User Accounts: A user who hasn't used their account for a
+              long time may try to redeem points; you might want to consider if
+              points expire due to inactivity.
+            </li>
+            <li>
+              Database Failures: The database is down or otherwise not
+              responding, causing failures in updating the points balance.
+            </li>
+            <li>
+              User Identification: The system fails to correctly identify the
+              user, or two users have the same identification information (like
+              name or email).
+            </li>
+            <li>
+              Redeeming Points During Acquisition: A user tries to redeem points
+              at the exact same time as they are earning new points.
+            </li>
+          </ul>
 
-        <h4>Edge Cases:</h4>
-        <ul>
-          <li>
-            Expired but Unredeemed Points: A user tries to redeem points that
-            were earned more than a year ago and are now expired but were not
-            previously redeemed.
-          </li>
-          <li>
-            Redeemed Points: A user tries to redeem points that have already
-            been redeemed but are not yet expired.
-          </li>
-          <li>
-            Insufficient Points: A user tries to redeem more points than they
-            have in their account.
-          </li>
-          <li>
-            Negative Points: A user somehow ends up with a negative points
-            balance.
-          </li>
-          <li>
-            Expiring Points: The server and database are hosted in differing
-            time zones causing sync issues when expiring points.
-          </li>
-          <li>
-            Concurrent Transactions: Multiple requests trying to redeem points
-            for the same user at the same time (this could potentially lead to
-            race conditions where more points are redeemed than the user
-            actually has).
-          </li>
-          <li>
-            Data Consistency: The frontend and backend data are out of sync,
-            perhaps due to a failure in updating one or the other.
-          </li>
-          <li>
-            Inactive User Accounts: A user who hasn't used their account for a
-            long time may try to redeem points; you might want to consider if
-            points expire due to inactivity.
-          </li>
-          <li>
-            Database Failures: The database is down or otherwise not
-            responding, causing failures in updating the points balance.
-          </li>
-          <li>
-            User Identification: The system fails to correctly identify the
-            user, or two users have the same identification information (like
-            name or email).
-          </li>
-          <li>
-            Redeeming Points During Acquisition: A user tries to redeem points
-            at the exact same time as they are earning new points.
-          </li>
-        </ul>
+          <h4>Security Concerns:</h4>
+          <ul>
+            <li>
+              User Authentication: Before allowing any redemption, the algorithm
+              verifies the user's authentication to ensure the request is coming
+              from a valid and authorized user.
+            </li>
+            <li>
+              Secure Communication: All interactions between the frontend,
+              backend, and any involved systems should be encrypted using secure
+              protocols (e.g., HTTPS) to protect sensitive user data.
+            </li>
+            <li>
+              Input Validation: The algorithm includes robust input validation
+              to prevent malicious input and protect against security
+              vulnerabilities like SQL injection or cross-site scripting (XSS)
+              attacks.
+            </li>
+          </ul>
 
-        <h4>Security Concerns:</h4>
-        <ul>
-          <li>
-            User Authentication: Before allowing any redemption, the algorithm
-            verifies the user's authentication to ensure the request is coming
-            from a valid and authorized user.
-          </li>
-          <li>
-            Secure Communication: All interactions between the frontend,
-            backend, and any involved systems should be encrypted using secure
-            protocols (e.g., HTTPS) to protect sensitive user data.
-          </li>
-          <li>
-            Input Validation: The algorithm includes robust input validation
-            to prevent malicious input and protect against security
-            vulnerabilities like SQL injection or cross-site scripting (XSS)
-            attacks.
-          </li>
-        </ul>
+          <h4>Performance Considerations:</h4>
+          <ul>
+            <li>
+              The algorithm should be designed for efficient performance,
+              considering the potential scale of the rewards program and the
+              need to handle multiple concurrent redemption requests.
+            </li>
+            <li>
+              Caching Mechanisms: Employing caching techniques to store and
+              retrieve points balances can help optimize performance and reduce
+              the load on the backend systems.
+            </li>
+            <li>
+              Database Indexing: Proper indexing of relevant database tables can
+              improve query performance when retrieving and updating points
+              balances.
+            </li>
+          </ul>
+        </section>
 
-        <h4>Performance Considerations:</h4>
-        <ul>
-          <li>
-            The algorithm should be designed for efficient performance,
-            considering the potential scale of the rewards program and the
-            need to handle multiple concurrent redemption requests.
-          </li>
-          <li>
-            Caching Mechanisms: Employing caching techniques to store and
-            retrieve points balances can help optimize performance and reduce
-            the load on the backend systems.
-          </li>
-          <li>
-            Database Indexing: Proper indexing of relevant database tables can
-            improve query performance when retrieving and updating points
-            balances.
-          </li>
-        </ul>
-      </section>
+        <section>
+          <h3>The Data Structure</h3>
 
-      <section>
-        <h3>The Data Structure</h3>
-        
-        <h4>Data Structure Schema</h4>
-        <img src="img/schema.webp" alt="an example of the schema" />
-        
-        <h4>Data Structure Example</h4>
-        <img src="img/json.webp" alt="a json representation of the schema" />
-        
-        <h4>Explanation of the Data Structure</h4>
-        <p><strong>redemptionSchema:</strong> This schema represents the redemption transactions made by a user.</p>
-        <ul>
-          <li><strong>redemption_id:</strong> The unique identifier for the redemption.</li>
-          <li><strong>redeemed_points:</strong> The number of points redeemed in the transaction.</li>
-          <li><strong>redemption_date:</strong> The date when the redemption was made.</li>
-        </ul>
+          <h4>Data Structure Schema</h4>
+          <img src="img/schema.webp" alt="an example of the schema" />
 
-        <p><strong>pointsSchema:</strong> This schema represents the assignment and redemption of points to/from a user.</p>
-        <ul>
-          <li><strong>transaction_id:</strong> The unique identifier for the transaction.</li>
-          <li><strong>original_points:</strong> The original amount of points assigned in this transaction.</li>
-          <li><strong>remaining_points:</strong> The remaining points after any possible redemptions.</li>
-          <li><strong>assignment_date:</strong> The date when the points were assigned.</li>
-          <li><strong>expiry_date:</strong> The date when the points are set to expire.</li>
-          <li><strong>source_platform:</strong> The platform from which the points originated.</li>
-          <li><strong>redemptions:</strong> An array of redemption records (based on redemptionSchema), capturing the details of any points redeemed.</li>
-        </ul>
+          <h4>Data Structure Example</h4>
+          <img src="img/json.webp" alt="a json representation of the schema" />
 
-        <p><strong>rewardPointSchema:</strong> This schema represents a user's reward points records.</p>
-        <ul>
-          <li><strong>points:</strong> An array of points records, each record based on pointsSchema, holding details about point assignments and redemptions.</li>
-        </ul>
+          <h4>Explanation of the Data Structure</h4>
+          <p>
+            <strong>redemptionSchema:</strong> This schema represents the
+            redemption transactions made by a user.
+          </p>
+          <ul>
+            <li>
+              <strong>redemption_id:</strong> The unique identifier for the
+              redemption.
+            </li>
+            <li>
+              <strong>redeemed_points:</strong> The number of points redeemed in
+              the transaction.
+            </li>
+            <li>
+              <strong>redemption_date:</strong> The date when the redemption was
+              made.
+            </li>
+          </ul>
 
-        <p><strong>userSchema:</strong> This is the main schema representing a user in the application.</p>
-        <ul>
-          <li><strong>id:</strong> The unique identifier for a user.</li>
-          <li><strong>name:</strong> The name of the user.</li>
-          <li><strong>email:</strong> The email of the user. It is unique for every user.</li>
-          <li><strong>points_balance:</strong> The total balance of the user's reward points. This defaults to 0 and is not required upon creation.</li>
-          <li><strong>reward_points:</strong> An instance of rewardPointSchema, representing the user's reward points history.</li>
-        </ul>
+          <p>
+            <strong>pointsSchema:</strong> This schema represents the assignment
+            and redemption of points to/from a user.
+          </p>
+          <ul>
+            <li>
+              <strong>transaction_id:</strong> The unique identifier for the
+              transaction.
+            </li>
+            <li>
+              <strong>original_points:</strong> The original amount of points
+              assigned in this transaction.
+            </li>
+            <li>
+              <strong>remaining_points:</strong> The remaining points after any
+              possible redemptions.
+            </li>
+            <li>
+              <strong>assignment_date:</strong> The date when the points were
+              assigned.
+            </li>
+            <li>
+              <strong>expiry_date:</strong> The date when the points are set to
+              expire.
+            </li>
+            <li>
+              <strong>status:</strong> The current status of the point object
+              (`active`, `expired`, or `redeemed`).
+            </li>
+            <li>
+              <strong>source_platform:</strong> The platform from which the
+              points originated.
+            </li>
+            <li>
+              <strong>redemptions:</strong> An array of redemption records
+              (based on redemptionSchema), capturing the details of any points
+              redeemed.
+            </li>
+          </ul>
 
-        <h4>Benefits of the Proposed Data Structure</h4>
-        <ul>
-          <li>
-            <strong>Normalization:</strong> The structure of the schema is highly normalized. This means that the data is divided into distinct schemas (like redemptionSchema, pointsSchema, etc.), each responsible for a specific aspect of the data. This makes the data structure more understandable and easy to maintain.
-          </li>
-          <li>
-            <strong>Scalability:</strong> Each of the schemas represents a specific aspect of the user's data, making it easier to extend and modify the data structure as the application grows. For example, if there are new properties or new kinds of transactions to track in the future, it's straightforward to extend the respective schema.
-          </li>
-          <li>
-            <strong>Avoidance of Data Redundancy:</strong> The use of subdocuments (like the points array within the rewardPointSchema) reduces data redundancy and promotes data integrity. Any change to a particular point or redemption does not need to be reflected in multiple places; it only needs to be updated within its specific document.
-          </li>
-          <li>
-            <strong>Traceability:</strong> The use of the pointsSchema and redemptionSchema allows us to keep track of every points transaction that a user makes, including points assignment, redemption, remaining points, and expiration. This ensures full traceability of the points lifecycle, which is critical for a reward points system.
-          </li>
-          <li>
-            <strong>Efficiency:</strong> Querying the user data will also bring all the related points and redemption data, minimizing the need for additional database queries. This can significantly improve the efficiency of data retrieval in the application.
-          </li>
-          <li>
-            <strong>User Experience:</strong> This data structure allows for rich, user-specific insights, such as individual points balances, transaction histories, and redemptions. It allows the application to provide a personalized user experience, which is crucial in today's user-centric digital products.
-          </li>
-          <li>
-            <strong>Data Integrity:</strong> With the use of <code>required: true</code> in several fields in the schemas, this structure ensures essential data is always present for each user, points transaction, and redemption, ensuring data consistency and integrity.
-          </li>
-        </ul>
+          <p>
+            <strong>rewardPointSchema:</strong> This schema represents a user's
+            reward points records.
+          </p>
+          <ul>
+            <li>
+              <strong>points:</strong> An array of points records, each record
+              based on pointsSchema, holding details about point assignments and
+              redemptions.
+            </li>
+          </ul>
 
-        <h4>Potential Complexties and Hurdles</h4>
-        <ul>
-          <li>
-            <strong>Nested Data Complexity:</strong> The deeply nested structure of the data (the redemptionSchema nested within the pointsSchema, which is nested within the rewardPointSchema, which is nested within the userSchema) might make it more complex to query, especially when trying to extract or update specific redemption or points data.
-          </li>
-          <li>
-            <strong>Performance:</strong> While subdocuments can be efficient for read operations, they may cause performance issues when you have complex update operations, or if the number of subdocuments grows significantly. Each document in MongoDB has a size limit (currently 16MB as of MongoDB 4.0), which includes subdocuments. If there are a lot of transactions and redemptions for a user, this could potentially become a problem.
-          </li>
-          <li>
-            <strong>Data Aggregation:</strong> If there's a need for system-wide analytics (for example, calculating the total points redeemed across all users), it might be more challenging and resource-intensive as the data is nested within each individual user's document.
-          </li>
-          <li>
-            <strong>Concurrency Issues:</strong> MongoDB allows atomic operations at the document level. If multiple processes are trying to update different parts of a user's points or redemptions, there could potentially be concurrency issues.
-          </li>
-          <li>
-            <strong>Data Duplication:</strong> While the proposed schema helps to avoid data redundancy, there could still be some level of data duplication. For example, the points_balance in the userSchema needs to be kept in sync with the sum of remaining_points in all the points transactions. This can be challenging to maintain over time.
-          </li>
-          <li>
-            <strong>Schema Rigidity:</strong> Despite MongoDB being a NoSQL database which allows for flexible schema design, this proposed data structure enforces a rigid schema using mongoose. If business requirements change frequently, updating the rigid schema could be a hurdle.
-          </li>
-        </ul>
-      </section>
+          <p>
+            <strong>userSchema:</strong> This is the main schema representing a
+            user in the application.
+          </p>
+          <ul>
+            <li><strong>id:</strong> The unique identifier for a user.</li>
+            <li><strong>name:</strong> The name of the user.</li>
+            <li>
+              <strong>email:</strong> The email of the user. It is unique for
+              every user.
+            </li>
+            <li>
+              <strong>points_balance:</strong> The total balance of the user's
+              reward points. This defaults to 0 and is not required upon
+              creation.
+            </li>
+            <li>
+              <strong>reward_points:</strong> An instance of rewardPointSchema,
+              representing the user's reward points history.
+            </li>
+          </ul>
 
-      <section>
-        <h3>API Design</h3>
-        <!-- Figma -->
-        <iframe style="border: 1px solid rgba(0, 0, 0, 0.1)" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FRHQGxNr90KpjI43Bukb9YV%2FAPI%3Ftype%3Dwhiteboard%26node-id%3D0%253A1%26t%3DoRBHJuILIh4vhUtw-1" allowfullscreen></iframe>
+          <h4>Benefits of the Proposed Data Structure</h4>
+          <ul>
+            <li>
+              <strong>Normalization:</strong> The structure of the schema is
+              highly normalized. This means that the data is divided into
+              distinct schemas (like redemptionSchema, pointsSchema, etc.), each
+              responsible for a specific aspect of the data. This makes the data
+              structure more understandable and easy to maintain.
+            </li>
+            <li>
+              <strong>Scalability:</strong> Each of the schemas represents a
+              specific aspect of the user's data, making it easier to extend and
+              modify the data structure as the application grows. For example,
+              if there are new properties or new kinds of transactions to track
+              in the future, it's straightforward to extend the respective
+              schema.
+            </li>
+            <li>
+              <strong>Avoidance of Data Redundancy:</strong> The use of
+              subdocuments (like the points array within the rewardPointSchema)
+              reduces data redundancy and promotes data integrity. Any change to
+              a particular point or redemption does not need to be reflected in
+              multiple places; it only needs to be updated within its specific
+              document.
+            </li>
+            <li>
+              <strong>Traceability:</strong> The use of the pointsSchema and
+              redemptionSchema allows us to keep track of every points
+              transaction that a user makes, including points assignment,
+              redemption, remaining points, and expiration. This ensures full
+              traceability of the points lifecycle, which is critical for a
+              reward points system.
+            </li>
+            <li>
+              <strong>Efficiency:</strong> Querying the user data will also
+              bring all the related points and redemption data, minimizing the
+              need for additional database queries. This can significantly
+              improve the efficiency of data retrieval in the application.
+            </li>
+            <li>
+              <strong>User Experience:</strong> This data structure allows for
+              rich, user-specific insights, such as individual points balances,
+              transaction histories, and redemptions. It allows the application
+              to provide a personalized user experience, which is crucial in
+              today's user-centric digital products.
+            </li>
+            <li>
+              <strong>Data Integrity:</strong> With the use of
+              <code>required: true</code> in several fields in the schemas, this
+              structure ensures essential data is always present for each user,
+              points transaction, and redemption, ensuring data consistency and
+              integrity.
+            </li>
+          </ul>
 
-        <!-- Postman -->
-        <h4>Run in Postman</h4>
+          <h4>Potential Complexties and Hurdles</h4>
+          <ul>
+            <li>
+              <strong>Nested Data Complexity:</strong> The deeply nested
+              structure of the data (the redemptionSchema nested within the
+              pointsSchema, which is nested within the rewardPointSchema, which
+              is nested within the userSchema) might make it more complex to
+              query, especially when trying to extract or update specific
+              redemption or points data.
+            </li>
+            <li>
+              <strong>Performance:</strong> While subdocuments can be efficient
+              for read operations, they may cause performance issues when you
+              have complex update operations, or if the number of subdocuments
+              grows significantly. Each document in MongoDB has a size limit
+              (currently 16MB as of MongoDB 4.0), which includes subdocuments.
+              If there are a lot of transactions and redemptions for a user,
+              this could potentially become a problem.
+            </li>
+            <li>
+              <strong>Data Aggregation:</strong> If there's a need for
+              system-wide analytics (for example, calculating the total points
+              redeemed across all users), it might be more challenging and
+              resource-intensive as the data is nested within each individual
+              user's document.
+            </li>
+            <li>
+              <strong>Concurrency Issues:</strong> MongoDB allows atomic
+              operations at the document level. If multiple processes are trying
+              to update different parts of a user's points or redemptions, there
+              could potentially be concurrency issues.
+            </li>
+            <li>
+              <strong>Data Duplication:</strong> While the proposed schema helps
+              to avoid data redundancy, there could still be some level of data
+              duplication. For example, the points_balance in the userSchema
+              needs to be kept in sync with the sum of remaining_points in all
+              the points transactions. This can be challenging to maintain over
+              time.
+            </li>
+            <li>
+              <strong>Schema Rigidity:</strong> Despite MongoDB being a NoSQL
+              database which allows for flexible schema design, this proposed
+              data structure enforces a rigid schema using mongoose. If business
+              requirements change frequently, updating the rigid schema could be
+              a hurdle.
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>API Design</h3>
+          <!-- Figma -->
+          <iframe
+            style="border: 1px solid rgba(0, 0, 0, 0.1)"
+            width="800"
+            height="450"
+            src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FRHQGxNr90KpjI43Bukb9YV%2FAPI%3Ftype%3Dwhiteboard%26node-id%3D0%253A1%26t%3DoRBHJuILIh4vhUtw-1"
+            allowfullscreen
+          ></iframe>
+
+          <!-- Postman -->
+          <h4>Run in Postman</h4>
           <div
             class="postman-run-button"
             data-postman-action="collection/fork"
@@ -626,14 +754,13 @@
         </section>
 
         <section>
-          <h3>Algorithms</h3>
-  
+          <h3>Algorithm for Redemption of Fender Rewards Points</h3>
+
           <h4>createUser()</h4>
           <h4>getUserById()</h4>
           <h4>earnPoints()</h4>
           <h4>redeemPoints()</h4>
           <h4>expirePoints()</h4>
-  
         </section>
       </div>
     </main>
