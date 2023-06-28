@@ -5,7 +5,6 @@ const mockUser = {
   id: '1',
   name: 'John Doe',
   email: 'johndoe@example.com',
-  points_balance: 0,
 }
 
 const mockUsers = [
