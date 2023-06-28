@@ -6,7 +6,7 @@
 
 ### earnPoints()
 
-The function is async, which means it returns a Promise. It takes two parameters: id (the user's ID) and pointsData (an object containing information about the points to be added).
+Async function. It takes two parameters: id (the user's ID) and pointsData (an object containing information about the points to be added).
 
 Start a try block to catch any potential errors that may occur during the function execution.
 
