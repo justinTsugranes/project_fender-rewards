@@ -35,14 +35,14 @@
                 >Repo</a
               >
             </li>
-            <li>
+            <!-- <li>
               <a
                 href="https://fender-rewards.netlify.app/api-docs"
                 target="_blank"
                 title="Visit the API documentation on a new tab"
                 >Docs</a
               >
-            </li>
+            </li> -->
           </ul>
         </nav>
         <!-- /End Main Nav -->
@@ -59,30 +59,89 @@
 
     <main id="main" aria-labelledby="main-content">
       <div id="prompt-container">
+        <h3>Introduction</h3>
+        <p>
+          Welcome to Fender Digital! As part of the hiring process, we create a
+          hypothetical scenario that each of our interviewers will periodically
+          refer back to over the course of the day. We use this scenario to help
+          gauge your ability to interpret information, make timely decisions,
+          communicate with peers, and apply your expertise in your day-to-day
+          life here at Fender.
+        </p>
+        <p>
+          If you have any questions at all, please ask! It’s important to
+          remember that there are no “right” answers to this scenario; this is
+          merely getting a feel for how you would tackle the role.
+        </p>
 
-      <h3>Introduction</h3>
-      <p>Welcome to Fender Digital! As part of the hiring process, we create a hypothetical scenario that each of our interviewers will periodically refer back to over the course of the day. We use this scenario to help gauge your ability to interpret information, make timely decisions, communicate with peers, and apply your expertise in your day-to-day life here at Fender.</p>
-      <p>If you have any questions at all, please ask! It’s important to remember that there are no “right” answers to this scenario; this is merely getting a feel for how you would tackle the role.</p>
-    
-      <h3>Scenario Background</h3>
-      <p>As part of our push to better capture a complete view of our customers online and offline (what we call LTV++), we have decided to launch a rewards program that can be used in our ecommerce store, or can also be used at select dealer partners both in-store and online. Fender Rewards will be awarded not just for purchases, but also for completing certain achievements; for example, going through the first few courses of Fender Play will get you enough points to get a free set of strings, or successfully tuning your guitar with Fender Tune over the course of a few days will get you enough points to redeem for a 10% discount off your next order online or in-store, etc.</p>
-      <p>The executive decision has been made to run this loyalty program through commerce cloud (Shop team). There will be integrations across properties within Fender Digital (for example, Fender Play, or Fender Tune) and also within Fender IT (for example, our dealer portal). As you would expect, this will be a highly visible industry-defining program, and as such we have teams from marketing, shop, IT, digital, social, etc., all working on this huge project.</p>
-    
-      <h3>Shop Planning/Brainstorming</h3>
-      <p>Product has come up with the feature that — similar to Starbucks stars — Fender Rewards points should expire after a year of when they were acquired, and when someone redeems their points they don’t have to redeem all of them. Let’s design an algorithm for the redemption of points — this can be pseudocode, database layout, whatever you feel is applicable. What does the data structure for a user’s points look like? As you can imagine, this is very hard engineering with a large amount of complexity. Can, and how, do we push back on product, and what should we offer as an easier, faster solution?</p>
-    
-      <h3>Shop Engineering</h3>
-      <p>Your engineering task is to design and implement a small full stack application to manage a simplified version of the Fender Rewards program. You may write pseudocode or provide a working demo in Node.js, in a backend framework such as express, and you only need to use Javascript or jQuery for your frontend work.</p>
-      <p>You should have a <code>server.js</code> file for your backend work (in Node.js), and a <code>client.js</code> file for your frontend work (in Javascript or jQuery). These are the only two files required.</p>
-      <p>Please be prepared to walk us through your solution, and explain your thinking and reasoning for your solution. We will also walk through the other parts to this scenario, including testing and QA, after the coding challenge.</p>
-    
-      <h3>Coding Challenge</h3>
-      <p><strong>Note*</strong> For security and privacy reasons, a user's name or email cannot be sent in any POST request to the backend. All requests to update or change any backend data must be POST requests, and all requests must follow REST standards.</p>
-    
-      <h4>Frontend</h4>
-    
-      <p>Data for Frontend Only:</p>
-      <pre><code>const users = [
+        <h3>Scenario Background</h3>
+        <p>
+          As part of our push to better capture a complete view of our customers
+          online and offline (what we call LTV++), we have decided to launch a
+          rewards program that can be used in our ecommerce store, or can also
+          be used at select dealer partners both in-store and online. Fender
+          Rewards will be awarded not just for purchases, but also for
+          completing certain achievements; for example, going through the first
+          few courses of Fender Play will get you enough points to get a free
+          set of strings, or successfully tuning your guitar with Fender Tune
+          over the course of a few days will get you enough points to redeem for
+          a 10% discount off your next order online or in-store, etc.
+        </p>
+        <p>
+          The executive decision has been made to run this loyalty program
+          through commerce cloud (Shop team). There will be integrations across
+          properties within Fender Digital (for example, Fender Play, or Fender
+          Tune) and also within Fender IT (for example, our dealer portal). As
+          you would expect, this will be a highly visible industry-defining
+          program, and as such we have teams from marketing, shop, IT, digital,
+          social, etc., all working on this huge project.
+        </p>
+
+        <h3>Shop Planning/Brainstorming</h3>
+        <p>
+          Product has come up with the feature that — similar to Starbucks stars
+          — Fender Rewards points should expire after a year of when they were
+          acquired, and when someone redeems their points they don’t have to
+          redeem all of them. Let’s design an algorithm for the redemption of
+          points — this can be pseudocode, database layout, whatever you feel is
+          applicable. What does the data structure for a user’s points look
+          like? As you can imagine, this is very hard engineering with a large
+          amount of complexity. Can, and how, do we push back on product, and
+          what should we offer as an easier, faster solution?
+        </p>
+
+        <h3>Shop Engineering</h3>
+        <p>
+          Your engineering task is to design and implement a small full stack
+          application to manage a simplified version of the Fender Rewards
+          program. You may write pseudocode or provide a working demo in
+          Node.js, in a backend framework such as express, and you only need to
+          use Javascript or jQuery for your frontend work.
+        </p>
+        <p>
+          You should have a <code>server.js</code> file for your backend work
+          (in Node.js), and a <code>client.js</code> file for your frontend work
+          (in Javascript or jQuery). These are the only two files required.
+        </p>
+        <p>
+          Please be prepared to walk us through your solution, and explain your
+          thinking and reasoning for your solution. We will also walk through
+          the other parts to this scenario, including testing and QA, after the
+          coding challenge.
+        </p>
+
+        <h3>Coding Challenge</h3>
+        <p>
+          <strong>Note*</strong> For security and privacy reasons, a user's name
+          or email cannot be sent in any POST request to the backend. All
+          requests to update or change any backend data must be POST requests,
+          and all requests must follow REST standards.
+        </p>
+
+        <h4>Frontend</h4>
+
+        <p>Data for Frontend Only:</p>
+        <pre><code>const users = [
       {
         name: "Jimi Hendrix",
         email: "jimi.hendrix@example.com",
@@ -104,18 +163,29 @@
         email: "jeff.beck@example.com",
       },
     ];</code></pre>
-    
-      <h5>Frontend Task:</h5>
-      <ul>
-        <li>Create a function to get a single user's backend full data record including their points_balance based on the frontend data provided.</li>
-        <li>Update the user's points_balance on the frontend using the data returned from the function.</li>
-        <li>Create a function to post a single updated user's points balance to the backend to update their full user data record, and then update their frontend user data with their updated backend full data record.</li>
-      </ul>
-    
-      <h4>Backend</h4>
-    
-      <p>Data for Backend Only:</p>
-      <pre><code>const users = [
+
+        <h5>Frontend Task:</h5>
+        <ul>
+          <li>
+            Create a function to get a single user's backend full data record
+            including their points_balance based on the frontend data provided.
+          </li>
+          <li>
+            Update the user's points_balance on the frontend using the data
+            returned from the function.
+          </li>
+          <li>
+            Create a function to post a single updated user's points balance to
+            the backend to update their full user data record, and then update
+            their frontend user data with their updated backend full data
+            record.
+          </li>
+        </ul>
+
+        <h4>Backend</h4>
+
+        <p>Data for Backend Only:</p>
+        <pre><code>const users = [
       {
         id: "1",
         name: "jimi hendrix",
@@ -142,27 +212,74 @@
         points_balance: 500,
       },
     ];</code></pre>
-    
-      <h5>Backend Task:</h5>
-      <ul>
-        <li>Create an endpoint to get a single user record, and return the user data object to the frontend.</li>
-        <li>Create an endpoint to update a single user's points balance based on post data sent from the frontend for that user, and return that updated data record to the frontend to update their frontend user data.</li>
-      </ul>
-    
-      <h3>Shop QA/Testing</h3>
-      <p>We’re writing our Jest unit tests, and our Cypress end-to-end tests for Fender Rewards. We obviously don’t want our Jest tests to take 5 seconds per test; how can we make sure that all of our unit tests run in less than 2 seconds?</p>
-      <p>One of the issues that we’re running into is that a Cypress test to check for the content of a User’s Rewards Page works locally, but fails in our CI/CD environment because it’s getting different user data from the QA environment. What are some of the ideas you’d have to fix this?</p>
-      <p>Can and how do we still have valid tests even if we don’t know what the response is going to be from all environments (local, qa, prod)? Let’s fast-forward again to near the end of the project. We have launched our MVP, and we are adding additional features. Marketing is planning on sending an email to all of our list subscribers, over a million people, to launch Fender Rewards. Our dealers have gone through training by way of our dealer portal, everything is ready. The day of the launch, QA notices that if you place two orders online within a short time window, you can get a 10% discount on both orders. How should we triage this bug?</p>
-      <p>You’ve found a solution to the bug and are planning on doing a quick deployment to production. How can we make sure that the bug has been fixed and will never come back? QA has a limited amount of time and sanity and can’t go through a complete site regression before the CRM emails start landing; how can we prove that we haven’t broken something else on the site?</p>
-    
-      <h3>Wrap-up</h3>
-      <p>We’re now a month after the launch, which was wildly successful. We have learned a lot about our engineering process, user behavior, our technical capabilities, and have proven out that we can deploy projects which cover multiple engineering teams across all of Fender. We’re already planning the next big add-on to Fender Rewards based upon those learnings, and we’re going to have a release retrospective in Engineering. What sort of data should we expect to bring to this retrospective? In this hypothetical retro, what data would you need in order to support your points around what we did well, and how we could improve in the future?</p>
+
+        <h5>Backend Task:</h5>
+        <ul>
+          <li>
+            Create an endpoint to get a single user record, and return the user
+            data object to the frontend.
+          </li>
+          <li>
+            Create an endpoint to update a single user's points balance based on
+            post data sent from the frontend for that user, and return that
+            updated data record to the frontend to update their frontend user
+            data.
+          </li>
+        </ul>
+
+        <h3>Shop QA/Testing</h3>
+        <p>
+          We’re writing our Jest unit tests, and our Cypress end-to-end tests
+          for Fender Rewards. We obviously don’t want our Jest tests to take 5
+          seconds per test; how can we make sure that all of our unit tests run
+          in less than 2 seconds?
+        </p>
+        <p>
+          One of the issues that we’re running into is that a Cypress test to
+          check for the content of a User’s Rewards Page works locally, but
+          fails in our CI/CD environment because it’s getting different user
+          data from the QA environment. What are some of the ideas you’d have to
+          fix this?
+        </p>
+        <p>
+          Can and how do we still have valid tests even if we don’t know what
+          the response is going to be from all environments (local, qa, prod)?
+          Let’s fast-forward again to near the end of the project. We have
+          launched our MVP, and we are adding additional features. Marketing is
+          planning on sending an email to all of our list subscribers, over a
+          million people, to launch Fender Rewards. Our dealers have gone
+          through training by way of our dealer portal, everything is ready. The
+          day of the launch, QA notices that if you place two orders online
+          within a short time window, you can get a 10% discount on both orders.
+          How should we triage this bug?
+        </p>
+        <p>
+          You’ve found a solution to the bug and are planning on doing a quick
+          deployment to production. How can we make sure that the bug has been
+          fixed and will never come back? QA has a limited amount of time and
+          sanity and can’t go through a complete site regression before the CRM
+          emails start landing; how can we prove that we haven’t broken
+          something else on the site?
+        </p>
+
+        <h3>Wrap-up</h3>
+        <p>
+          We’re now a month after the launch, which was wildly successful. We
+          have learned a lot about our engineering process, user behavior, our
+          technical capabilities, and have proven out that we can deploy
+          projects which cover multiple engineering teams across all of Fender.
+          We’re already planning the next big add-on to Fender Rewards based
+          upon those learnings, and we’re going to have a release retrospective
+          in Engineering. What sort of data should we expect to bring to this
+          retrospective? In this hypothetical retro, what data would you need in
+          order to support your points around what we did well, and how we could
+          improve in the future?
+        </p>
       </div>
     </main>
 
     <footer>
       <img src="img/fender-logo-red.webp" alt="Fender logo in red" />
     </footer>
-
   </body>
 </html>

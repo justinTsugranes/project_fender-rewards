@@ -26,7 +26,9 @@ exports.createUser = async (userData) => {
       // If the error code is 11000, log the message and throw a new error.
       throw new Error('User with the same ID or email already exists.')
     } else {
+      // If an error occurs, log it and rethrow the error.
       console.log(`Error creating user: ${error.message}`)
+      // Throw an error with the message from the caught error
       throw new Error(error.message)
     }
   }
