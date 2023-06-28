@@ -8,7 +8,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/justintsugranes/">
-    <img src="images/logo.jpg" alt="Logo" width="80" height="80">
+    <img src="images/logo.webp" alt="Logo" width="80" height="80">
   </a>
 </div>
 
@@ -156,54 +156,54 @@ _For more examples, please refer to the [Documentation][repo-url]_
 ```md
 /root
 ├── client
-│   ├── public
-│   │   ├── css
-│   │   │   └── styles.css
-│   │   ├── img
-│   │   ├── js
-│   │   │   └── client.js
-│   │   ├── index.html
-│   │   ├── notes.html
-│   │   └── prompt.html
-│   ├── .gitignore
-│   ├── package-lock.json
-│   ├── package.json
-│   └── README.md
+│ ├── public
+│ │ ├── css
+│ │ │ └── styles.css
+│ │ ├── img
+│ │ ├── js
+│ │ │ └── client.js
+│ │ ├── index.html
+│ │ ├── notes.html
+│ │ └── prompt.html
+│ ├── .gitignore
+│ ├── package-lock.json
+│ ├── package.json
+│ └── README.md
 ├── server
-│   ├── config
-│   │   ├── .env
-│   │   ├── .env.production
-│   │   └── dbConfig.js
-│   ├── controllers
-│   │   ├── index.js
-│   │   └── user.controller.js
-│   ├── models
-│   │   ├── index.js
-│   │   └── user.model.js
-│   ├── routes
-│   │   ├── index.js
-│   │   └── user.routes.js
-│   ├── services
-│   │   ├── index.js
-│   │   └── user.service.js
-│   ├── swagger
-│   │   ├── swagger.css
-│   │   ├── swaggerDef.js
-│   │   └── swaggerOptions.js
-│   ├── .gitignore
-│   ├── package-lock.json
-│   ├── package.json
-│   ├── Procfile
-│   ├── README.md
-│   └── server.js
+│ ├── config
+│ │ ├── .env
+│ │ ├── .env.production
+│ │ └── dbConfig.js
+│ ├── controllers
+│ │ ├── index.js
+│ │ └── user.controller.js
+│ ├── models
+│ │ ├── index.js
+│ │ └── user.model.js
+│ ├── routes
+│ │ ├── index.js
+│ │ └── user.routes.js
+│ ├── services
+│ │ ├── index.js
+│ │ └── user.service.js
+│ ├── swagger
+│ │ ├── swagger.css
+│ │ ├── swaggerDef.js
+│ │ └── swaggerOptions.js
+│ ├── .gitignore
+│ ├── package-lock.json
+│ ├── package.json
+│ ├── Procfile
+│ ├── README.md
+│ └── server.js
 ├── tests
-│   ├── unit
-│   │   ├── user.controller.test.js
-│   │   ├── user.model.test.js
-│   │   ├── user.routes.test.js
-│   │   └── user.service.test.js
-│   └── e2e
-│       └── e2e.test.js
+│ ├── unit
+│ │ ├── user.controller.test.js
+│ │ ├── user.model.test.js
+│ │ ├── user.routes.test.js
+│ │ └── user.service.test.js
+│ └── e2e
+│ └── e2e.test.js
 ├── .gitignore
 ├── cypress.config.js
 ├── jest.config.js
