@@ -52,7 +52,7 @@ async function getUser(id) {
 
     if (response.ok) {
       clearError() // Clear any previous error messages
-      console.log(user)
+      console.log(user) // Log the user object to the console
       currentUserId = user.id // Store user ID
       userId.textContent = user.id // Update user ID
       userName.textContent = user.name // Update name
@@ -76,7 +76,7 @@ async function earnPoints(id, points) {
     return
   }
 
-  id = id.trim() // Remove leading and trailing whitespace from id
+  id = id.trim() // Remove leading and trailing whitespace from id - isn't completely necessary given we store the id in a variable
   points = points.trim() // Remove leading and trailing whitespace from points
 
   // check if points is provided and is a positive integer
@@ -101,7 +101,7 @@ async function earnPoints(id, points) {
           Date.now() + 365 * 24 * 60 * 60 * 1000,
         ).toISOString(), // Set expiry_date to one year from now
         status: 'Active', // Set the status to 'Active'
-        source_platform: 'Web', // Set the source_platform to 'Web'
+        source_platform: 'Web', // Set the source_platform to 'Web' - this is currently hardcoded, but wouldn normally be determined by the source of the request
       }),
     })
 
@@ -131,7 +131,7 @@ async function redeemPoints(id, points) {
     return
   }
 
-  id = id.trim() // Remove leading and trailing whitespace from id
+  id = id.trim() // Remove leading and trailing whitespace from id - isn't completely necessary given we store the id in a variable
   points = points.trim() // Remove leading and trailing whitespace from points
 
   // check if points is provided and is a positive integer
@@ -159,9 +159,7 @@ async function redeemPoints(id, points) {
     // Check if the response is OK
     if (response.ok) {
       clearError() // Clear any previous error messages
-
       console.log(result) // Log the result object to the console
-
       currentPoints.textContent = result.points_balance // Update the points display with the new points balance
       redeemPointsInput.value = '' // Clear the input field
     } else {
