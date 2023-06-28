@@ -1,7 +1,7 @@
 # Netlify configuration file
 
-# Redirects configuration
 [[redirects]]
-  from = "/*"
-  to = "/client/public/:splat"
+  from = "/api/*"
+  to = "https://fender-rewards-96814189b7c8.herokuapp.com/:splat"
   status = 200
+  force = true
