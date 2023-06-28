@@ -81,6 +81,7 @@ exports.earnPoints = async (id, pointsData) => {
       remaining_points: pointsData.remaining_points,
       assignment_date: pointsData.assignment_date,
       expiry_date: pointsData.expiry_date,
+      status: pointsData.status,
       source_platform: pointsData.source_platform,
       redemptions: [], // Initialize an empty array for redemptions
     }

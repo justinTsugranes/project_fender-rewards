@@ -13,7 +13,7 @@ const pointsSchema = new mongoose.Schema({
   remaining_points: { type: Number, required: true }, // remaining points after redemptions
   assignment_date: { type: Date, required: true }, // date points were assigned
   expiry_date: { type: Date, required: true }, // date of expiry
-  // points_status: { type: String, required: true }, // status of points
+  status: { type: String, required: true }, // status of points
   source_platform: { type: String, required: true }, // source of points
   redemptions: { type: [redemptionSchema], default: [] }, // redemptions of points
 })

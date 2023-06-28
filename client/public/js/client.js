@@ -100,6 +100,7 @@ async function earnPoints(id, points) {
         expiry_date: new Date(
           Date.now() + 365 * 24 * 60 * 60 * 1000,
         ).toISOString(), // Set expiry_date to one year from now
+        status: 'Active', // Set the status to 'Active'
         source_platform: 'Web', // Set the source_platform to 'Web'
       }),
     })
