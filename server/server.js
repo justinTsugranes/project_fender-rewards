@@ -14,6 +14,8 @@ const customCss = fs.readFileSync(
 require('dotenv').config({ path: './config/.env' }) // Load environment variables from the .env file
 const dbConfig = require('./config/dbConfig') // Import the dbConfig file
 
+require('./services/dbIndexing') // Import the dbIndexing file
+
 // Create a new Express application instance
 const app = express()
 
