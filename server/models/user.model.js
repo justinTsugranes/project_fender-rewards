@@ -4,7 +4,6 @@ const redemptionSchema = new mongoose.Schema({
   redemption_id: { type: String, required: true }, // redemption id
   redeemed_points: { type: Number, required: true }, // points redeemed
   redemption_date: { type: Date, required: true }, // date of redemption
-  // redemption_source: { type: String, required: true }, // source of redemption
 })
 
 const pointsSchema = new mongoose.Schema({
@@ -25,11 +24,12 @@ const rewardPointSchema = new mongoose.Schema({
 const userSchema = new mongoose.Schema({
   id: { type: String, required: true, unique: true }, // user id (unique)
   name: { type: String, required: true }, // user name
-  email: { type: String, required: true, unique: true }, // user email (unique)
-  points_balance: { type: Number, default: 0, required: false }, // points balance
+  email: { type: String, required: true, unique: true, index: true }, // user email (unique)
+  points_balance: { type: Number, default: 0, required: false, index: true }, // points balance
   reward_points: {
     type: rewardPointSchema,
     default: { points: [] },
+    index: true, // Index the entire reward_points subdocument
   },
 })
 
