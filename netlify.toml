@@ -1,0 +1,7 @@
+# Netlify configuration file
+
+# Redirects configuration
+[[redirects]]
+  from = "/*"
+  to = "/client/public/:splat"
+  status = 200
