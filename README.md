@@ -172,7 +172,6 @@ _For more examples, please refer to the [Documentation][repo-url]_
 ├── server
 │ ├── config
 │ │ ├── .env
-│ │ ├── .env.production
 │ │ └── dbConfig.js
 │ ├── controllers
 │ │ ├── index.js
@@ -196,17 +195,21 @@ _For more examples, please refer to the [Documentation][repo-url]_
 │ ├── Procfile
 │ ├── README.md
 │ └── server.js
+├── cypress
+│ ├── downloads
+│ ├── e2e
+│ │ └── spec.cy.js
+│ ├── fixtures
+│ ├── support
+│ └── videos
 ├── tests
-│ ├── unit
-│ │ ├── user.controller.test.js
-│ │ ├── user.model.test.js
-│ │ ├── user.routes.test.js
-│ │ └── user.service.test.js
-│ └── e2e
-│ └── e2e.test.js
+│ └── jest
+│ │ ├── unit
+│ │ └── jest.config.js
 ├── .gitignore
-├── cypress.config.js
-├── jest.config.js
+├── .cypress.config.js
+├── LICENSE
+├── netlify.toml
 ├── package-lock.json
 ├── package.json
 ├── node_modules

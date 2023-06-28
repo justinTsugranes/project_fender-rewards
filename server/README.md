@@ -12,7 +12,7 @@ Start a try block to catch any potential errors that may occur during the functi
 
 Log the received user ID and points data to the console for debugging purposes.
 
-Fetch the user from the database using the provided ID. We use mongoose's findOne method to retrieve the user.
+Fetch the user from the database using the provided ID. Use mongoose's findOne method to retrieve the user.
 
 If the user does not exist in the database (i.e., user is null), log the message to the console and return null. This terminates the function execution here.
 
@@ -51,6 +51,7 @@ Calculate the total available points by summing up the remaining points from the
 If the points to be redeemed exceed the total available points or if there are no available points, return an error.
 
 Define a helper function to create a point redemption which:
+
 - Creates a redemption object.
 - Adds the redemption to the point's redemptions.
 - Subtracts the redeemed points from the remaining points of the point object.
@@ -96,4 +97,4 @@ When the job is triggered:
 - Log that the point expiration task is running.
 - Run the expirePoints function.
 - Log that the point expiration task has completed.
-- If an error occurs at any point, log the error message.
+- If an error occurs at any point, log the error message

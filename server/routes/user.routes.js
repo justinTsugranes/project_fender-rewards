@@ -1,6 +1,6 @@
-const express = require('express');
-const router = express.Router();
-const { UserController } = require('../controllers');
+const express = require('express')
+const router = express.Router()
+const UserController = require('../controllers/user.controller')
 
 /**
  * @swagger
@@ -29,7 +29,7 @@ const { UserController } = require('../controllers');
  *             schema:
  *               $ref: '#/components/schemas/User'
  */
-router.post('/create', UserController.createUser);
+router.post('/create', UserController.createUser)
 
 /**
  * @swagger
@@ -61,7 +61,9 @@ router.post('/create', UserController.createUser);
  *             schema:
  *               $ref: '#/components/schemas/User'
  */
-router.post('/:id/earn-points', UserController.earnPoints);
+router.post('/:id/earn-points', UserController.earnPoints)
+
+router.post('/expire-points', UserController.expirePoints)
 
 /**
  * @swagger
@@ -93,7 +95,7 @@ router.post('/:id/earn-points', UserController.earnPoints);
  *             schema:
  *               $ref: '#/components/schemas/User'
  */
-router.post('/:id/redeem-points', UserController.redeemPoints);
+router.post('/:id/redeem-points', UserController.redeemPoints)
 
 /**
  * @swagger
@@ -116,6 +118,6 @@ router.post('/:id/redeem-points', UserController.redeemPoints);
  *             schema:
  *               $ref: '#/components/schemas/User'
  */
-router.get('/:id', UserController.getUserById);
+router.get('/:id', UserController.getUserById)
 
-module.exports = router;
+module.exports = router

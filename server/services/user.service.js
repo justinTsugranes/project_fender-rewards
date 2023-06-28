@@ -1,5 +1,5 @@
 // Import the UserModel from the models directory.
-const { UserModel } = require('../models/user.model')
+const { UserModel } = require('../models')
 
 // Import cron for running expirePoints.
 const cron = require('node-cron')

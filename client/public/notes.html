@@ -53,13 +53,25 @@
       <div class="hero notes-hero">
         <h1>Project Notes</h1>
         <h2>Scope, Integration, Data Structure, API Design</h2>
+        <ul>
+          <li><a href="#requirements">Requirements</a></li>
+          <li><a href="#benefits">Benefits</a></li>
+          <li><a href="#scope">Scope</a></li>
+          <li><a href="#teams">Teams</a></li>
+          <li><a href="#criteria">Criteria</a></li>
+          <li><a href="#data-structure">Data Structure</a></li>
+          <li><a href="#api">API</a></li>
+          <li><a href="#algorithms">Algorithms</a></li>
+          <li><a href="#testing">Testing</a></li>
+          <li><a href="#analytics">Analytics</a></li>
+        </ul>
       </div>
       <!-- /End Hero -->
     </header>
 
     <main id="main" aria-labelledby="main-content">
       <div id="notes-container">
-        <section>
+        <section id="requirements">
           <h3>Rewards Program Requirements:</h3>
           <ul>
             <li>
@@ -98,7 +110,9 @@
           </ul>
         </section>
 
-        <section>
+        <hr />
+
+        <section id="benefits">
           <h3>Benefits of the Rewards Program:</h3>
           <p>
             By offering rewards for purchases and achievements, Fender Rewards
@@ -175,7 +189,9 @@
           </ul>
         </section>
 
-        <section>
+        <hr />
+
+        <section id="scope">
           <h3>Scope and Points of Integration:</h3>
           <p>
             The scope of integration involves connecting various systems and
@@ -269,7 +285,9 @@
           </ul>
         </section>
 
-        <section>
+        <hr />
+
+        <section id="teams">
           <h3>Teams and Systems Involved:</h3>
           <h4>Shop Team:</h4>
           <ul>
@@ -369,7 +387,9 @@
           </ul>
         </section>
 
-        <section>
+        <hr />
+
+        <section id="criteria">
           <h3>Criteria, Edge Cases and Security Concerns</h3>
 
           <h4>Points Expiry:</h4>
@@ -499,7 +519,9 @@
           </ul>
         </section>
 
-        <section>
+        <hr />
+
+        <section id="data-structure">
           <h3>The Data Structure</h3>
 
           <h4>Data Structure Schema</h4>
@@ -707,7 +729,9 @@
           </ul>
         </section>
 
-        <section>
+        <hr />
+
+        <section id="api">
           <h3>API Design</h3>
           <!-- Figma -->
           <iframe
@@ -753,14 +777,171 @@
           </script>
         </section>
 
-        <section>
+        <hr />
+
+        <section id="algorithms">
           <h3>Algorithm for Redemption of Fender Rewards Points</h3>
 
-          <h4>createUser()</h4>
-          <h4>getUserById()</h4>
           <h4>earnPoints()</h4>
+          <p>
+            The function is async, which means it returns a Promise. It takes
+            two parameters: id (the user's ID) and pointsData (an object
+            containing information about the points to be added).
+          </p>
+          <p>
+            Start a try block to catch any potential errors that may occur
+            during the function execution.
+          </p>
+          <p>
+            Log the received user ID and points data to the console for
+            debugging purposes.
+          </p>
+          <p>
+            Fetch the user from the database using the provided ID. Use
+            mongoose's findOne method to retrieve the user.
+          </p>
+          <p>
+            If the user does not exist in the database (i.e., user is null), log
+            the message to the console and return null. This terminates the
+            function execution here.
+          </p>
+          <p>If the user does exist, proceed to create a new points object.</p>
+          <p>
+            This newPoints object is constructed with data from the pointsData
+            argument. It also includes an empty array for redemptions.
+          </p>
+          <p>
+            The new points object is then pushed into the user's
+            reward_points.points array.
+          </p>
+          <p>This array holds all the points transactions for the user.</p>
+          <p>
+            The user's points balance is updated by adding the remaining points
+            from the pointsData to the current balance.
+          </p>
+          <p>
+            Before saving the changes to the database, log the user object to
+            the console.
+          </p>
+          <p>
+            Save the updated user to the database using mongoose's save method.
+            This operation is asynchronous, so we await its completion. The save
+            method returns the saved user object, so we update our user variable
+            with it.
+          </p>
+          <p>
+            After saving, log the updated user object and the earned points to
+            the console.
+          </p>
+          <p>
+            Return the updated user object. This concludes the normal execution
+            of the function.
+          </p>
+          <p>
+            If there's any error during execution, it's caught by the catch
+            block. Log the error message and then throw a new Error with the
+            same message.
+          </p>
+          <p>
+            This allows the function caller to handle or display the error
+            message as appropriate.
+          </p>
           <h4>redeemPoints()</h4>
+          <p>
+            Receive a user ID and a data object detailing points to be redeemed.
+          </p>
+
+          <p>Fetch the user associated with the given ID from the database.</p>
+
+          <p>If the user does not exist, return an error.</p>
+
+          <p>
+            Calculate the total available points by summing up the remaining
+            points from the user's reward points.
+          </p>
+
+          <p>
+            If the points to be redeemed exceed the total available points or if
+            there are no available points, return an error.
+          </p>
+
+          <p>Define a helper function to create a point redemption which:</p>
+
+          <ul>
+            <li>Creates a redemption object.</li>
+            <li>Adds the redemption to the point's redemptions.</li>
+            <li>
+              Subtracts the redeemed points from the remaining points of the
+              point object.
+            </li>
+            <li>
+              If all the points have been redeemed, mark the point as redeemed.
+            </li>
+          </ul>
+
+          <p>Initialize a variable to track remaining points to be redeemed.</p>
+
+          <p>
+            Iterate over the user's points. For each point, if there are
+            remaining points to be redeemed:
+          </p>
+
+          <ul>
+            <li>
+              Calculate the points to be redeemed from the point (whichever is
+              smaller - remaining points to be redeemed or the point's remaining
+              points).
+            </li>
+            <li>
+              Subtract the redeemed points from the remaining points to be
+              redeemed.
+            </li>
+            <li>Call the helper function to create a point redemption.</li>
+          </ul>
+
+          <p>Subtract the points redeemed from the user's points balance.</p>
+
+          <p>Save the updated user to the database.</p>
+
+          <p>Return the updated user data.</p>
           <h4>expirePoints()</h4>
+          <p>Fetch all users from the database.</p>
+
+          <p>Get the current date.</p>
+
+          <p>Iterate over each user:</p>
+
+          <ul>
+            <li>
+              For each point in the user's reward points, if the point's status
+              is active and its expiry date is on or before the current date:
+            </li>
+            <ul>
+              <li>Mark the point as expired.</li>
+              <li>
+                Subtract the point's value from the user's points balance.
+              </li>
+            </ul>
+            <li>Save the user's updated data to the database.</li>
+          </ul>
+
+          <p>Log a message indicating that the points have expired.</p>
+
+          <p>
+            If an error occurs at any point, log the error message and throw an
+            error.
+          </p>
+        </section>
+
+        <section id="testing">
+          <h3>Testing</h3>
+          <h4>Unit Testing With Jest</h4>
+          <h4>End To End Testing With Cypress</h4>
+          <h4>Debugging</h4>
+        </section>
+
+        <section id="analytics">
+          <h3>Analytics</h3>
         </section>
       </div>
     </main>

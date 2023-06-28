@@ -1,5 +1,4 @@
-// const { UserService } = require('../services')
-const UserService = require('../services/user.service')
+const { UserService } = require('../services')
 
 // Create a user
 exports.createUser = async (req, res) => {
@@ -96,16 +95,16 @@ exports.redeemPoints = async (req, res) => {
 
 // manually trigger the expiration of points
 
-// exports.expirePoints = async (req, res) => {
-//   try {
-//     // Call the expirePoints function from UserService
-//     await UserService.expirePoints()
+exports.expirePoints = async (req, res) => {
+  try {
+    // Call the expirePoints function from UserService
+    await UserService.expirePoints()
 
-//     // If the operation is successful, return a success message
-//     res.status(200).json({ message: 'Points expired successfully' })
-//   } catch (error) {
-//     // If an error occurs, log it and return a 500 status with an error message
-//     console.error('Error expiring points:', error)
-//     res.status(500).json({ error: 'Failed to expire points' })
-//   }
-// }
+    // If the operation is successful, return a success message
+    res.status(200).json({ message: 'Points expired successfully' })
+  } catch (error) {
+    // If an error occurs, log it and return a 500 status with an error message
+    console.error('Error expiring points:', error)
+    res.status(500).json({ error: 'Failed to expire points' })
+  }
+}

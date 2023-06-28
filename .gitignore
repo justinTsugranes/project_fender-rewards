@@ -8,6 +8,10 @@
 # Ignore files in the server directory
 /server/node_modules
 
+# Cypress
+/cypress/videos/
+
+
 # Ignore log files
 /logs
 
