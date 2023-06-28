@@ -204,10 +204,10 @@ _For more examples, please refer to the [Documentation][repo-url]_
 │ └── videos
 ├── tests
 │ └── jest
-│ │ ├── unit
-│ │ └── jest.config.js
+│ │ └── unit
 ├── .gitignore
-├── .cypress.config.js
+├── cypress.config.js
+├── jest.config.js
 ├── LICENSE
 ├── netlify.toml
 ├── package-lock.json
