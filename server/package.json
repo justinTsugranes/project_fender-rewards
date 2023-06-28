@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "start:nodemon": "nodemon index.js"
+    "start": "node server.js",
+    "start:nodemon": "nodemon server.js"
   },
   "keywords": [],
   "author": "justinTsugranes",
