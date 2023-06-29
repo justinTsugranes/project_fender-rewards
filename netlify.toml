@@ -1,7 +1,4 @@
 # Netlify configuration file
-[build]
-  publish = "client/public"
-  base = "client/"
 
 # Redirects configuration for SPA
 [[redirects]]
