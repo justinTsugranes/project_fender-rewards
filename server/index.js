@@ -44,6 +44,11 @@ app.use(
   swaggerUi.setup(swaggerSpec, { customCss }),
 )
 
+//
+app.get('/', (req, res) => {
+  res.send('Hello, world!')
+})
+
 // Connect to MongoDB using MONGODB_URI from dbConfig.js
 mongoose
   .connect(dbConfig.MONGODB_URI, {
@@ -53,8 +58,8 @@ mongoose
   .then(() => console.log('Connected to MongoDB'))
   .catch((error) => console.error('MongoDB connection error:', error))
 
-// Specify the port using PORT from dbConfig.js
-const port = dbConfig.PORT || 5000
+// Specify the port to listen on
+const port = process.env.PORT || dbConfig.PORT || 5000
 
 // Start the server and listen on the specified port
 app.listen(port, () => {
