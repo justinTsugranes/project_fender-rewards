@@ -194,7 +194,7 @@ _For more examples, please refer to the [Documentation][repo-url]_
 │ ├── package.json
 │ ├── Procfile
 │ ├── README.md
-│ └── server.js
+│ └── index.js
 ├── cypress
 │ ├── downloads
 │ ├── e2e

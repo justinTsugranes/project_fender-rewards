@@ -1,13 +1,11 @@
 # Netlify configuration file
+[build]
+  publish = "client/public"
+  command = "npm run start"
+  base = "client/"
 
-# Redirects configuration
-[[redirects]]
-  from = "/api/*"
-  to = "https://fender-rewards-96814189b7c8.herokuapp.com/:splat"
-  status = 200
-  force = true # Ensures that only the specified redirect is performed
-
+# Redirects configuration for SPA
 [[redirects]]
   from = "/*"
-  to = "/client/public/:splat"
+  to = "/index.html"
   status = 200
