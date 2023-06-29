@@ -1,7 +1,6 @@
 # Netlify configuration file
 [build]
   publish = "client/public"
-  command = "npm run start"
   base = "client/"
 
 # Redirects configuration for SPA

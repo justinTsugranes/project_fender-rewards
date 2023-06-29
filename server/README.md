@@ -1,5 +1,11 @@
 # Notes
 
+## heroku commands
+
+git subtree split --prefix server -b heroku // to create a new branch for heroku
+git push heroku heroku:main // to push to heroku
+heroku ps:scale web=1 // to scale the app
+
 ## user.model.js
 
 ## user.service.js
