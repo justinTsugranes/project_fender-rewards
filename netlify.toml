@@ -2,6 +2,12 @@
 
 # Redirects configuration
 [[redirects]]
+  from = "/api/*"
+  to = "https://fender-rewards-96814189b7c8.herokuapp.com/:splat"
+  status = 200
+  force = true # Ensures that only the specified redirect is performed
+
+[[redirects]]
   from = "/*"
   to = "/client/public/:splat"
   status = 200
