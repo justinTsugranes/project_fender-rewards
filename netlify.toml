@@ -1,11 +1,7 @@
 # Netlify configuration file
 
-# Redirects configuration for SPA
+# Redirects
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
-
-[build]
-  base = "client"
-  publish = "public"
