@@ -14,7 +14,7 @@ const redeemPointsBtn = document.getElementById('redeem-points-btn')
 // ERROR MESSAGE
 const errorMessage = document.getElementById('error-message')
 
-// URL
+// URL of the server
 // const baseUrl = 'http://localhost:5000'
 const baseUrl = 'https://fender-rewards.netlify.app'
 
