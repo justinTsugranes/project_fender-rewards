@@ -2,8 +2,6 @@
 
 <!-- STATUS BADGES -->
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/190615d9-f107-409b-9855-22f0999b6a33/deploy-status)](https://app.netlify.com/sites/willowy-kheer-7c8f81/deploys)
-
 <!-- PROJECT HEADING -->
 <br />
 <div align="center">
@@ -14,7 +12,7 @@
 
 ### [Fender Rewards Program][project-url]
 
-The Fender Rewards Program is a simple full-stack application built using JavaScript, HTML, and CSS for the frontend and Node.js / Express.js for the server. The frontend is hosted on Netlify. The backend is hosted on Heroku. The application utilizes MongoDB Atlas as the database. It's meant to test the functionality of a hypotethical rewards program for Fender Digital.
+The Fender Rewards Program is a simple full-stack application built using JavaScript, HTML, and CSS for the frontend and Node.js and Express.js for the server. The site is hosted on Firebase. The application utilizes MongoDB Atlas as the database. It's meant to test the functionality of a hypotethical rewards program for Fender Digital.
 
 [Explore the docs][repo-url] --- [View Demo][project-url] --- [Report Bug][issues-url]
 
@@ -70,24 +68,22 @@ _I'd love to hear any feedback or just thoughts. Feel free to reach out at my co
 
 [![node]][node-url]
 [![express]][express-url]
-[![postman]][postman-url]
 [![mongodb]][mongodb-url]
+[![postman]][postman-url]
 [![swagger]][swagger-url]
 
 #### Deployment / Hosting
 
-[![heroku]][heroku-url]
-[![netlify]][netlify-url]
+[![firebase]][firebase-url]
 
-#### Security / Auth / Encryption
+<!-- #### Security / Auth / Encryption -->
 
 <!-- [jwt] -->
 <!-- [google-auth] -->
 <!-- [bcrypt] -->
 <!-- [nanoid -->
 <!-- [uuid] -->
-
-[dotenv](https://www.npmjs.com/package/dotenv)
+<!-- [dotenv](https://www.npmjs.com/package/dotenv) -->
 
 #### Testing
 
@@ -155,6 +151,9 @@ _For more examples, please refer to the [Documentation][repo-url]_
 
 ```md
 /root
+├── .firebase
+├── .github
+├── .vscode
 ├── client
 │ ├── node_modules
 │ ├── public
@@ -214,8 +213,10 @@ _For more examples, please refer to the [Documentation][repo-url]_
 │ └── mocks
 │ │ └── mockUsers.js
 ├── .env
+├── .firebaserc
 ├── .gitignore
 ├── cypress.config.js
+├── firebase.json
 ├── jest.config.js
 ├── LICENSE
 ├── package-lock.json
@@ -229,13 +230,13 @@ _For more examples, please refer to the [Documentation][repo-url]_
 
 1. Built framework free using just JavaScript, HTML, and CSS
 2. Get User, Earn Points, and Redeem Points functions
-3. Hosted on Netlify
+3. Hosted on Firebase
 
 ### Backend Features
 
 1. Node.js and Express server
 2. Follows MVP pattern
-3. Hosted on Heroku
+3. Hosted on Firebase
 4. Connected to MongoDB Atlas Backend
 5. Swagger documentation
 
@@ -270,7 +271,7 @@ Give a ⭐️ if you like this project and if you like my work, maybe you would 
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
 [project-screenshot]: images/project-screenshot.webp
-[project-url]: https://fender-rewards.netlify.app/
+[project-url]: https://fender-rewards.web.app
 [repo-url]: https://github.com/justintsugranes/project_fender-rewards.git
 [contributors-shield]: https://img.shields.io/github/contributors/justintsugranes/project_fender-rewards.svg?style=for-the-badge
 [contributors-url]: https://github.com/justintsugranes/project_fender-rewards/graphs/contributors
@@ -305,6 +306,8 @@ Give a ⭐️ if you like this project and if you like my work, maybe you would 
 [node-url]: https://nodejs.org/
 [postman]: https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white
 [postman-url]: https://www.postman.com/
+[swagger]: https://img.shields.io/badge/-Swagger-%23Clojure?style=for-the-badge&logo=swagger&logoColor=white
+[swagger-url]: https://swagger.io/
 
 <!-- DATABASE -->
 
@@ -329,7 +332,5 @@ Give a ⭐️ if you like this project and if you like my work, maybe you would 
 
 <!-- HOSTING / DEPLOYMENT -->
 
-[heroku]: https://img.shields.io/badge/Heroku-563D7C?style=for-the-badge&logo=heroku&logoColor=white
-[heroku-url]: https://www.heroku.com/
-[netlify]: https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white
-[netlify-url]: https://www.netlify.com/
+[Firebase]: https://img.shields.io/badge/firebase-%23039BE5.svg?style=for-the-badge&logo=firebase
+[firebase-url]: https://firebase.google.com/
