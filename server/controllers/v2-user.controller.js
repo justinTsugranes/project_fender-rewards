@@ -31,6 +31,8 @@ exports.getUserById = asyncHandler(async (req, res) => {
     // Extract the user ID from request parameters
     const { id } = req.params
 
+    console.log('Fetching user with ID:', id)
+
     // Call the getUserById function from UserService with the user ID
     const user = await UserService.getUserById(id)
 
@@ -41,6 +43,7 @@ exports.getUserById = asyncHandler(async (req, res) => {
       return
     }
 
+    console.log('User found:', user)
     // If the user exists, return the user
     res.json(user)
   } catch (error) {
@@ -50,17 +53,25 @@ exports.getUserById = asyncHandler(async (req, res) => {
   }
 })
 
-// @desc    Earn points for a user
-// @route   POST /api/users/:id/earn
+// @desc    Update user points
+// @route   PUT /api/users/:id/points
 // @access  Private
-exports.earnPoints = asyncHandler(async (req, res) => {
+exports.updatePoints = asyncHandler(async (req, res) => {
   try {
     // Extract the user ID and points data from request parameters and body
     const { id } = req.params
-    const pointsData = req.body
+    const { points, action } = req.body
 
-    // Call the earnPoints function from UserService with the user ID and points data
-    const user = await UserService.earnPoints(id, pointsData)
+    let user
+    if (action === 'earn') {
+      // Call the earnPoints function from UserService with the user ID and points
+      user = await UserService.earnPoints(id, points)
+    } else if (action === 'redeem') {
+      // Call the redeemPoints function from UserService with the user ID and points
+      user = await UserService.redeemPoints(id, points)
+    } else {
+      throw new Error('Invalid action')
+    }
 
     // If the user does not exist, return a 404 status with an error message
     if (!user) {
@@ -73,36 +84,8 @@ exports.earnPoints = asyncHandler(async (req, res) => {
     res.json(user)
   } catch (error) {
     // If an error occurs, log it and return a 500 status with an error message
-    console.error('Error earning points:', error)
-    res.status(500).json({ error: `Failed to earn points: ${error.message}` })
-  }
-})
-
-// @desc    Redeem points for a user
-// @route   POST /api/users/:id/redeem
-// @access  Private
-exports.redeemPoints = asyncHandler(async (req, res) => {
-  try {
-    // Extract the user ID and points data from request parameters and body
-    const { id } = req.params
-    const pointsData = req.body
-
-    // Call the redeemPoints function from UserService with the user ID and points data
-    const user = await UserService.redeemPoints(id, pointsData)
-
-    // If the user does not exist, return a 404 status with an error message
-    if (!user) {
-      console.error(`User not found: ID ${id}`)
-      res.status(404).json({ error: 'User not found' })
-      return
-    }
-
-    // If the operation is successful, return the updated user
-    res.json(user)
-  } catch (error) {
-    // If an error occurs, log it and return a 500 status with an error message
-    console.error('Error redeeming points:', error)
-    res.status(500).json({ error: `Failed to redeem points: ${error.message}` })
+    console.error('Error updating points:', error)
+    res.status(500).json({ error: `Failed to update points: ${error.message}` })
   }
 })
 

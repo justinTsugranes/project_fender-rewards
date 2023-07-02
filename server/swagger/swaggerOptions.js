@@ -19,4 +19,4 @@ const swaggerOptions = {
   components: swaggerDefinitions,
 }
 
-module.exports = swaggerOptions
+module.exports = { swaggerOptions }

@@ -1,5 +1,41 @@
 # Notes
 
+## Folder Structure
+
+```md
+server
+├── config
+│ ├── allowedOrigins.js
+│ ├── corsOptions.js
+│ ├── dbConfig.js
+│ └── index.js
+├── controllers
+│ └── user.controller.js
+├── logs
+├── middleware
+│ ├── errorHandler.js
+│ ├── index.js
+│ └── logger.js
+├── models
+│ ├── index.js
+│ └── user.model.js
+├── routes
+│ ├── index.js
+│ └── user.routes.js
+├── services
+│ ├── dbIndexing.js
+│ ├── index.js
+│ └── user.service.js
+├── swagger
+│ ├── swagger.css
+│ ├── swaggerDef.js
+│ └── swaggerOptions.js
+├── .gitignore
+├── Procfile
+├── README.md
+└── server.js
+```
+
 ## heroku commands
 
 git subtree split --prefix server -b heroku // to create a new branch for heroku

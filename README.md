@@ -156,6 +156,7 @@ _For more examples, please refer to the [Documentation][repo-url]_
 ```md
 /root
 ├── client
+│ ├── node_modules
 │ ├── public
 │ │ ├── css
 │ │ │ └── styles.css
@@ -166,16 +167,24 @@ _For more examples, please refer to the [Documentation][repo-url]_
 │ │ ├── notes.html
 │ │ └── prompt.html
 │ ├── .gitignore
+│ ├── bs-config.json
+│ ├── fabicon.ico
 │ ├── package-lock.json
-│ ├── package.json
-│ └── README.md
+│ └── package.json
+├── node_modules
 ├── server
 │ ├── config
-│ │ ├── .env
-│ │ └── dbConfig.js
+│ │ ├── allowedOrigins.js
+│ │ ├── corsOptions.js
+│ │ ├── dbConfig.js
+│ │ └── index.js
 │ ├── controllers
-│ │ ├── index.js
 │ │ └── user.controller.js
+│ ├── logs
+│ ├── middleware
+│ │ ├── errorHandler.js
+│ │ ├── index.js
+│ │ └── logger.js
 │ ├── models
 │ │ ├── index.js
 │ │ └── user.model.js
@@ -183,6 +192,7 @@ _For more examples, please refer to the [Documentation][repo-url]_
 │ │ ├── index.js
 │ │ └── user.routes.js
 │ ├── services
+│ │ ├── dbIndexing.js
 │ │ ├── index.js
 │ │ └── user.service.js
 │ ├── swagger
@@ -190,21 +200,21 @@ _For more examples, please refer to the [Documentation][repo-url]_
 │ │ ├── swaggerDef.js
 │ │ └── swaggerOptions.js
 │ ├── .gitignore
-│ ├── package-lock.json
-│ ├── package.json
 │ ├── Procfile
 │ ├── README.md
-│ └── index.js
-├── cypress
-│ ├── downloads
-│ ├── e2e
-│ │ └── spec.cy.js
-│ ├── fixtures
-│ ├── support
-│ └── videos
+│ └── server.js
 ├── tests
+│ └── cypress
+│ │ ├── downloads
+│ │ ├── e2e
+│ │ ├── fixtures
+│ │ ├── support
+│ │ └── videos
 │ └── jest
 │ │ └── unit
+│ └── mocks
+│ │ └── mockUsers.js
+├── .env
 ├── .gitignore
 ├── cypress.config.js
 ├── jest.config.js
@@ -212,7 +222,6 @@ _For more examples, please refer to the [Documentation][repo-url]_
 ├── netlify.toml
 ├── package-lock.json
 ├── package.json
-├── node_modules
 └── README.md
 ```
 

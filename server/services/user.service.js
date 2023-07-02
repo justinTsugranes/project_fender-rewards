@@ -1,6 +1,5 @@
 // Import the UserModel from the models directory.
 const { UserModel } = require('../models')
-
 // Import cron for running expirePoints.
 const cron = require('node-cron')
 
@@ -227,7 +226,7 @@ exports.redeemPoints = async (id, pointsToRedeem) => {
 }
 
 // Define an asynchronous function 'expirePoints'
-const expirePoints = async () => {
+exports.expirePoints = async () => {
   try {
     // Fetch all user data from the database
     const users = await UserModel.find()
