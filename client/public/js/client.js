@@ -16,8 +16,8 @@ const errorMessage = document.getElementById('error-message')
 
 // URL of the server
 // const baseUrl = 'http://localhost:5000'
-// const baseUrl = 'https://fender-rewards.netlify.app'
-const baseUrl = 'https://fender-rewards-ad6260c69224.herokuapp.com'
+const baseUrl = 'https://fender-rewards.netlify.app'
+// const baseUrl = 'https://fender-rewards-ad6260c69224.herokuapp.com'
 
 // Variable to store the current User ID
 let currentUserId = null
