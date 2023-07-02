@@ -200,7 +200,6 @@ _For more examples, please refer to the [Documentation][repo-url]_
 │ │ ├── swaggerDef.js
 │ │ └── swaggerOptions.js
 │ ├── .gitignore
-│ ├── Procfile
 │ ├── README.md
 │ └── server.js
 ├── tests
@@ -222,6 +221,7 @@ _For more examples, please refer to the [Documentation][repo-url]_
 ├── netlify.toml
 ├── package-lock.json
 ├── package.json
+├── Procfile
 └── README.md
 ```
 
