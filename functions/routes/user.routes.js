@@ -1,6 +1,6 @@
-const express = require('express')
-const router = express.Router()
-const UserController = require('../controllers/v2-user.controller')
+const express = require("express");
+const router = express.Router();
+const {UserController} = require("../controllers");
 
 /**
  * @swagger
@@ -11,7 +11,7 @@ const UserController = require('../controllers/v2-user.controller')
 
 /**
  * @swagger
- * /api/users:
+ * /api/users/create:
  *   post:
  *     summary: Create a new user
  *     tags: [Users]
@@ -29,13 +29,13 @@ const UserController = require('../controllers/v2-user.controller')
  *             schema:
  *               $ref: '#/components/schemas/User'
  */
-router.post('/', UserController.createUser)
+router.post("/create", UserController.createUser);
 
 /**
  * @swagger
- * /api/users/{id}/points:
- *   put:
- *     summary: Update user points
+ * /api/users/{id}/earn-points:
+ *   post:
+ *     summary: User earns points
  *     tags: [Users]
  *     parameters:
  *       - in: path
@@ -53,18 +53,49 @@ router.post('/', UserController.createUser)
  *             properties:
  *               points:
  *                 type: number
- *               action:
- *                 type: string
- *                 enum: [earn, redeem]
  *     responses:
  *       200:
- *         description: User after updating points
+ *         description: User after earning points
  *         content:
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/User'
  */
-router.put('/:id/points', UserController.updatePoints)
+router.post("/:id/earn-points", UserController.earnPoints);
+
+// router.put('/expire-points', UserController.expirePoints)
+
+/**
+ * @swagger
+ * /api/users/{id}/redeem-points:
+ *   post:
+ *     summary: User redeems points
+ *     tags: [Users]
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         schema:
+ *           type: string
+ *         required: true
+ *         description: User ID
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               points:
+ *                 type: number
+ *     responses:
+ *       200:
+ *         description: User after redeeming points
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/User'
+ */
+router.post("/:id/redeem-points", UserController.redeemPoints);
 
 /**
  * @swagger
@@ -87,6 +118,6 @@ router.put('/:id/points', UserController.updatePoints)
  *             schema:
  *               $ref: '#/components/schemas/User'
  */
-router.get('/:id', UserController.getUserById)
+router.get("/:id", UserController.getUserById);
 
-module.exports = router
+module.exports = router;

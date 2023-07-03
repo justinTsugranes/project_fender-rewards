@@ -171,7 +171,7 @@ _For more examples, please refer to the [Documentation][repo-url]_
 │ ├── package-lock.json
 │ └── package.json
 ├── node_modules
-├── server
+├── functions
 │ ├── config
 │ │ ├── allowedOrigins.js
 │ │ ├── corsOptions.js
@@ -198,9 +198,11 @@ _For more examples, please refer to the [Documentation][repo-url]_
 │ │ ├── swagger.css
 │ │ ├── swaggerDef.js
 │ │ └── swaggerOptions.js
+│ ├── .eslintrc.js
 │ ├── .gitignore
-│ ├── README.md
-│ └── server.js
+│ ├── index.js
+│ ├── package.json
+│ └── README.md
 ├── tests
 │ └── cypress
 │ │ ├── downloads
@@ -334,3 +336,5 @@ Give a ⭐️ if you like this project and if you like my work, maybe you would 
 
 [Firebase]: https://img.shields.io/badge/firebase-%23039BE5.svg?style=for-the-badge&logo=firebase
 [firebase-url]: https://firebase.google.com/
+
+<!--     "predeploy": ["npm --prefix \"$RESOURCE_DIR\" run lint"], -->

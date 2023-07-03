@@ -1,15 +1,21 @@
+const functions = require('firebase-functions')
+
 const express = require('express')
 const app = express()
 const colors = require('colors')
-const { errorHandler, logger } = require('./middleware')
-const { corsOptions, connectDB, connection, PORT } = require('./config')
+const { errorHandler, logger, checkDbConnection } = require('./middleware')
+const { corsOptions, connection } = require('./config')
+// const { connectDB, PORT } = require('./config')
 const cors = require('cors')
 const swaggerJsDoc = require('swagger-jsdoc')
 const swaggerUi = require('swagger-ui-express')
 const { swaggerOptions, swaggerCss } = require('./swagger')
+const swaggerSpec = swaggerJsDoc(swaggerOptions)
 const path = require('path')
-const port = PORT || 5000
-
+// const port = PORT || 5000
+// Import routes
+const UserRoutes = require('./routes')
+// Import database indexing
 require('./services/dbIndexing')
 
 // Middleware
@@ -17,15 +23,8 @@ app.use(logger)
 app.use(cors(corsOptions))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
-
-// Initialize swagger-jsdoc -> returns validated swagger spec in json format
-const swaggerSpec = swaggerJsDoc(swaggerOptions)
-// Import routes
-const UserRoutes = require('./routes')
-
-// Use routes
 app.use('/api', UserRoutes)
-// Serve swagger docs
+app.use(checkDbConnection)
 app.use(
   '/api-docs',
   swaggerUi.serve,
@@ -70,22 +69,25 @@ process.on('uncaughtException', (err) => {
   })
 })
 
-let server // Declare server variable at top scope
+// let server // Declare server variable at top scope
 
 // Async function to start the server after database connection
-async function startServer() {
-  try {
-    await connectDB()
-    server = app.listen(port, () => {
-      // Assign the return value of app.listen to server
-      if (process.env.NODE_ENV !== 'production') {
-        console.log(colors.cyan(`Server started on port ${port}`))
-      }
-    })
-  } catch (err) {
-    console.error(colors.red(`Failed to start the server: ${err.message}`))
-    process.exit(1)
-  }
-}
+// async function startServer() {
+//   try {
+//     await connectDB()
+//     server = app.listen(port, () => {
+//       // Assign the return value of app.listen to server
+//       if (process.env.NODE_ENV !== 'production') {
+//         console.log(colors.cyan(`Server started on port ${port}`))
+//       }
+//     })
+//   } catch (err) {
+//     console.error(colors.red(`Failed to start the server: ${err.message}`))
+//     process.exit(1)
+//   }
+// }
 
-startServer()
+// startServer()
+
+// export the app as a function
+exports.api = functions.https.onRequest(app)
