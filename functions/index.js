@@ -13,9 +13,7 @@ const { swaggerOptions, swaggerCss } = require('./swagger')
 const swaggerSpec = swaggerJsDoc(swaggerOptions)
 const path = require('path')
 // const port = PORT || 5000
-// Import routes
 const UserRoutes = require('./routes')
-// Import database indexing
 require('./services/dbIndexing')
 
 // Middleware
